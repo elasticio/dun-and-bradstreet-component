@@ -1,6 +1,7 @@
 package io.elastic.dnb.match.actions;
 
 import com.dnb.services.match.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.elastic.api.ExecutionParameters;
 import io.elastic.api.Module;
 import io.elastic.dnb.GenericSOAPClient;
@@ -9,6 +10,7 @@ import io.elastic.dnb.soap.client.SoapAction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.json.JsonObject;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
@@ -17,6 +19,7 @@ import javax.xml.soap.*;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
+import java.io.IOException;
 
 public class Match implements Module {
 
@@ -24,6 +27,14 @@ public class Match implements Module {
 
     @Override
     public void execute(ExecutionParameters parameters) {
+        JsonObject body = parameters.getMessage().getBody();
+        logger.info(":::::" + body.toString());
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            mapper.readValue(body.toString(), MatchRequest.class);
+        } catch (IOException e) {
+            throw new ClassCastException("Can't map JSON object to MatchRequest XML");
+        }
 
     }
 
