@@ -1,0 +1,406 @@
+{
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "properties": {
+    "com:MatchResponse": {
+      "$id": "/properties/com:MatchResponse",
+      "type": "object",
+      "properties": {
+        "TransactionDetail": {
+          "$id": "/properties/com:MatchResponse/properties/TransactionDetail",
+          "type": "object",
+          "properties": {
+            "ApplicationTransactionID": {
+              "$id": "/properties/com:MatchResponse/properties/TransactionDetail/properties/ApplicationTransactionID",
+              "type": "string"
+            },
+            "ServiceTransactionID": {
+              "$id": "/properties/com:MatchResponse/properties/TransactionDetail/properties/ServiceTransactionID",
+              "type": "string"
+            },
+            "TransactionTimestamp": {
+              "$id": "/properties/com:MatchResponse/properties/TransactionDetail/properties/TransactionTimestamp",
+              "type": "string"
+            }
+          }
+        },
+        "TransactionResult": {
+          "$id": "/properties/com:MatchResponse/properties/TransactionResult",
+          "type": "object",
+          "properties": {
+            "SeverityText": {
+              "$id": "/properties/com:MatchResponse/properties/TransactionResult/properties/SeverityText",
+              "type": "string"
+            },
+            "ResultID": {
+              "$id": "/properties/com:MatchResponse/properties/TransactionResult/properties/ResultID",
+              "type": "string"
+            },
+            "ResultText": {
+              "$id": "/properties/com:MatchResponse/properties/TransactionResult/properties/ResultText",
+              "type": "string"
+            },
+            "ResultMessage": {
+              "$id": "/properties/com:MatchResponse/properties/TransactionResult/properties/ResultMessage",
+              "type": "object",
+              "properties": {
+                "ResultDescription": {
+                  "$id": "/properties/com:MatchResponse/properties/TransactionResult/properties/ResultMessage/properties/ResultDescription",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "MatchResponseDetail": {
+          "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail",
+          "type": "object",
+          "properties": {
+            "MatchDataCriteriaText": {
+              "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchDataCriteriaText",
+              "type": "object",
+              "properties": {
+                "-DNBCodeValue": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchDataCriteriaText/properties/-DNBCodeValue",
+                  "type": "string"
+                },
+                "-DNBCodeTableNumber": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchDataCriteriaText/properties/-DNBCodeTableNumber",
+                  "type": "string"
+                },
+                "#text": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchDataCriteriaText/properties/#text",
+                  "type": "string"
+                }
+              }
+            },
+            "CandidateMatchedQuantity": {
+              "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/CandidateMatchedQuantity",
+              "type": "string"
+            },
+            "MatchCandidate": {
+              "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate",
+              "type": "object",
+              "properties": {
+                "DUNSNumber": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/DUNSNumber",
+                  "type": "string"
+                },
+                "SubjectID": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/SubjectID",
+                  "type": "string"
+                },
+                "OrganizationPrimaryName": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/OrganizationPrimaryName",
+                  "type": "object",
+                  "properties": {
+                    "OrganizationName": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/OrganizationPrimaryName/properties/OrganizationName",
+                      "type": "string"
+                    }
+                  }
+                },
+                "TradeStyleName": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/TradeStyleName",
+                  "type": "object",
+                  "properties": {
+                    "OrganizationName": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/TradeStyleName/properties/OrganizationName",
+                      "type": "object"
+                    }
+                  }
+                },
+                "SeniorPrincipalName": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/SeniorPrincipalName",
+                  "type": "object",
+                  "properties": {
+                    "NamePrefix": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/SeniorPrincipalName/properties/NamePrefix",
+                      "type": "object",
+                      "properties": {
+                        "NamePrefixText": {
+                          "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/SeniorPrincipalName/properties/NamePrefix/properties/NamePrefixText",
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "FirstName": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/SeniorPrincipalName/properties/FirstName",
+                      "type": "string"
+                    },
+                    "MiddleName": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/SeniorPrincipalName/properties/MiddleName",
+                      "type": "string"
+                    },
+                    "LastName": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/SeniorPrincipalName/properties/LastName",
+                      "type": "string"
+                    },
+                    "FullName": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/SeniorPrincipalName/properties/FullName",
+                      "type": "string"
+                    },
+                    "NameSuffix": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/SeniorPrincipalName/properties/NameSuffix",
+                      "type": "object",
+                      "properties": {
+                        "NameSuffixText": {
+                          "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/SeniorPrincipalName/properties/NameSuffix/properties/NameSuffixText",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "PrimaryAddress": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/PrimaryAddress",
+                  "type": "object",
+                  "properties": {
+                    "StreetAddressLine": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/PrimaryAddress/properties/StreetAddressLine",
+                      "type": "object",
+                      "properties": {
+                        "LineText": {
+                          "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/PrimaryAddress/properties/StreetAddressLine/properties/LineText",
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "PrimaryTownName": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/PrimaryAddress/properties/PrimaryTownName",
+                      "type": "string"
+                    },
+                    "CountryISOAlpha2Code": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/PrimaryAddress/properties/CountryISOAlpha2Code",
+                      "type": "string"
+                    },
+                    "PostalCode": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/PrimaryAddress/properties/PostalCode",
+                      "type": "string"
+                    },
+                    "PostalCodeExtensionCode": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/PrimaryAddress/properties/PostalCodeExtensionCode",
+                      "type": "string"
+                    },
+                    "TerritoryOfficialName": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/PrimaryAddress/properties/TerritoryOfficialName",
+                      "type": "string"
+                    },
+                    "TerritoryAbbreviatedName": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/PrimaryAddress/properties/TerritoryAbbreviatedName",
+                      "type": "string"
+                    },
+                    "UndeliverableIndicator": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/PrimaryAddress/properties/UndeliverableIndicator",
+                      "type": "string"
+                    }
+                  }
+                },
+                "MailingAddress": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MailingAddress",
+                  "type": "object",
+                  "properties": {
+                    "StreetAddressLine": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MailingAddress/properties/StreetAddressLine",
+                      "type": "object",
+                      "properties": {
+                        "LineText": {
+                          "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MailingAddress/properties/StreetAddressLine/properties/LineText",
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "PrimaryTownName": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MailingAddress/properties/PrimaryTownName",
+                      "type": "string"
+                    },
+                    "CountryISOAlpha2Code": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MailingAddress/properties/CountryISOAlpha2Code",
+                      "type": "string"
+                    },
+                    "PostalCode": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MailingAddress/properties/PostalCode",
+                      "type": "string"
+                    },
+                    "PostalCodeExtensionCode": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MailingAddress/properties/PostalCodeExtensionCode",
+                      "type": "string"
+                    },
+                    "TerritoryOfficialName": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MailingAddress/properties/TerritoryOfficialName",
+                      "type": "string"
+                    },
+                    "TerritoryAbbreviatedName": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MailingAddress/properties/TerritoryAbbreviatedName",
+                      "type": "string"
+                    },
+                    "UndeliverableIndicator": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MailingAddress/properties/UndeliverableIndicator",
+                      "type": "string"
+                    }
+                  }
+                },
+                "TelephoneNumber": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/TelephoneNumber",
+                  "type": "object",
+                  "properties": {
+                    "TelecommunicationNumber": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/TelephoneNumber/properties/TelecommunicationNumber",
+                      "type": "string"
+                    },
+                    "InternationalDialingCode": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/TelephoneNumber/properties/InternationalDialingCode",
+                      "type": "string"
+                    },
+                    "UnreachableIndicator": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/TelephoneNumber/properties/UnreachableIndicator",
+                      "type": "string"
+                    }
+                  }
+                },
+                "WebPageAddress": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/WebPageAddress",
+                  "type": "object",
+                  "properties": {
+                    "TelecommunicationAddress": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/WebPageAddress/properties/TelecommunicationAddress",
+                      "type": "string"
+                    },
+                    "UnreachableIndicator": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/WebPageAddress/properties/UnreachableIndicator",
+                      "type": "string"
+                    }
+                  }
+                },
+                "OperatingStatusText": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/OperatingStatusText",
+                  "type": "string"
+                },
+                "FamilyTreeMemberRole": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/FamilyTreeMemberRole",
+                  "type": "object",
+                  "properties": {
+                    "FamilyTreeMemberRoleText": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/FamilyTreeMemberRole/properties/FamilyTreeMemberRoleText",
+                      "type": "string"
+                    }
+                  }
+                },
+                "MarketabilityIndicator": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MarketabilityIndicator",
+                  "type": "string"
+                },
+                "StandaloneOrganizationIndicator": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/StandaloneOrganizationIndicator",
+                  "type": "string"
+                },
+                "OrganizationIdentificationNumberDetail": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/OrganizationIdentificationNumberDetail",
+                  "type": "string"
+                },
+                "MatchQualityInformation": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation",
+                  "type": "object",
+                  "properties": {
+                    "ConfidenceCodeValue": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation/properties/ConfidenceCodeValue",
+                      "type": "string"
+                    },
+                    "MatchBasis": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation/properties/MatchBasis",
+                      "type": "object",
+                      "properties": {
+                        "EndIndicator": {
+                          "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation/properties/MatchBasis/properties/EndIndicator",
+                          "type": "string"
+                        },
+                        "SubjectTypeText": {
+                          "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation/properties/MatchBasis/properties/SubjectTypeText",
+                          "type": "string"
+                        },
+                        "SeniorPrincipalIndicator": {
+                          "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation/properties/MatchBasis/properties/SeniorPrincipalIndicator",
+                          "type": "string"
+                        },
+                        "MatchBasisText": {
+                          "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation/properties/MatchBasis/properties/MatchBasisText",
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "MatchGradeText": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation/properties/MatchGradeText",
+                      "type": "string"
+                    },
+                    "MatchGradeComponentCount": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation/properties/MatchGradeComponentCount",
+                      "type": "string"
+                    },
+                    "MatchGradeComponent": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation/properties/MatchGradeComponent",
+                      "type": "object",
+                      "properties": {
+                        "MatchGradeComponentTypeText": {
+                          "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation/properties/MatchGradeComponent/properties/MatchGradeComponentTypeText",
+                          "type": "string"
+                        },
+                        "MatchGradeComponentRating": {
+                          "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation/properties/MatchGradeComponent/properties/MatchGradeComponentRating",
+                          "type": "string"
+                        },
+                        "MatchGradeComponentScore": {
+                          "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation/properties/MatchGradeComponent/properties/MatchGradeComponentScore",
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "MatchDataProfileText": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation/properties/MatchDataProfileText",
+                      "type": "string"
+                    },
+                    "MatchDataProfileComponentCount": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation/properties/MatchDataProfileComponentCount",
+                      "type": "string"
+                    },
+                    "MatchDataProfileComponent": {
+                      "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation/properties/MatchDataProfileComponent",
+                      "type": "object",
+                      "properties": {
+                        "MatchDataProfileComponentTypeText": {
+                          "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation/properties/MatchDataProfileComponent/properties/MatchDataProfileComponentTypeText",
+                          "type": "string"
+                        },
+                        "MatchDataProfileComponentValue": {
+                          "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/MatchQualityInformation/properties/MatchDataProfileComponent/properties/MatchDataProfileComponentValue",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "DisplaySequence": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/MatchCandidate/properties/DisplaySequence",
+                  "type": "string"
+                }
+              }
+            },
+            "InquiryReferenceDetail": {
+              "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/InquiryReferenceDetail",
+              "type": "object",
+              "properties": {
+                "CustomerReferenceText": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/InquiryReferenceDetail/properties/CustomerReferenceText",
+                  "type": "string"
+                },
+                "CustomerBillingEndorsementText": {
+                  "$id": "/properties/com:MatchResponse/properties/MatchResponseDetail/properties/InquiryReferenceDetail/properties/CustomerBillingEndorsementText",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+	"title": "Dun & Bradstreet",
+	"description": "Dun & Bradstreet - Master Data Hierarchy, Credit Check, MDR Database",
+	"language": "java",
+	"credentials": {
+		"fields": {
+			"username": {
+				"viewClass": "TextFieldView",
+				"label": "Username",
+				"required": true,
+				"placeholder": "Username"
+			},
+			"password": {
+				"viewClass": "TextFieldView",
+				"label": "Password",
+				"required": true,
+				"placeholder": "Password"
+			}
+		},
+		"verifier": "io.elastic.dnb.DnBCredentialsVerifier"
+	},
+	"actions": {
+		"match": {
+			"main": "io.elastic.dnb.match.actions.Match",
+            "title": "Match",
+            "metadata": {
+            	"in": "./schemas/json/Match.in.json",
+            	"out": "./schemas/json/Match.out.json"
+            }
+		}
+	}
+}

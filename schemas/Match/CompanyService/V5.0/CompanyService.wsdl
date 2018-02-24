@@ -1,0 +1,229 @@
+<!-- edited with XMLSpy v2010 rel. 2 (http://www.altova.com) by PUNNOOSE JACOB (DUN & BRADSTREET) -->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:transactionfault="http://services.dnb.com/TransactionFaultV2.0" xmlns:tns="http://services.dnb.com/CompanyServiceV2.0" name="CompanyService" targetNamespace="http://services.dnb.com/CompanyServiceV2.0">
+	<wsdl:types>
+		<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified">
+			<xs:import namespace="http://services.dnb.com/CompanyServiceV2.0" schemaLocation="Schema/CompanyService.xsd"/>
+			<xs:import namespace="http://services.dnb.com/TransactionFaultV2.0" schemaLocation="Schema/TransactionFault.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="MatchResponse">
+		<wsdl:part name="parameter" element="tns:MatchResponse"/>
+	</wsdl:message>
+	<wsdl:message name="MatchRequest">
+		<wsdl:part name="parameter" element="tns:MatchRequest"/>
+	</wsdl:message>
+	<wsdl:message name="TransactionFault">
+		<wsdl:part name="parameter" element="transactionfault:TransactionResult"/>
+	</wsdl:message>
+	<wsdl:message name="GetFraudScoreRequest">
+		<wsdl:part name="GetFraudScoreRequest" element="tns:GetFraudScoreRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetFraudScoreResponse">
+		<wsdl:part name="GetFraudScoreResponse" element="tns:GetFraudScoreResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetMatchAndFraudScoreRequest">
+		<wsdl:part name="parameter" element="tns:GetMatchAndFraudScoreRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetMatchAndFraudScoreResponse">
+		<wsdl:part name="parameter" element="tns:GetMatchAndFraudScoreResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SearchByFilingNameRequest">
+		<wsdl:part name="parameter" element="tns:SearchByFilingNameRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SearchByFilingNameResponse">
+		<wsdl:part name="parameter" element="tns:SearchByFilingNameResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SearchByFilingNumberRequest">
+		<wsdl:part name="parameter" element="tns:SearchByFilingNumberRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SearchByFilingNumberResponse">
+		<wsdl:part name="parameter" element="tns:SearchByFilingNumberResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CleanseAndStandardizeRequest">
+		<wsdl:part name="parameter" element="tns:CleanseAndStandardizeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CleanseAndStandardizeResponse">
+		<wsdl:part name="parameter" element="tns:CleanseAndStandardizeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CheckRefreshRequest">
+		<wsdl:part name="parameter" element="tns:CheckRefreshRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CheckRefreshResponse">
+		<wsdl:part name="parameter" element="tns:CheckRefreshResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetCleanseMatchRequest">
+		<wsdl:part name="parameter" element="tns:GetCleanseMatchRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetCleanseMatchResponse">
+		<wsdl:part name="parameter" element="tns:GetCleanseMatchResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetRefreshByOrganizationsRequest">
+		<wsdl:part name="parameter" element="tns:GetRefreshByOrganizationsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetRefreshByOrganizationsResponse">
+		<wsdl:part name="parameter" element="tns:GetRefreshByOrganizationsResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="Company">
+		<wsdl:operation name="Match">
+			<wsdl:input message="tns:MatchRequest"/>
+			<wsdl:output message="tns:MatchResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetFraudScore">
+			<wsdl:input message="tns:GetFraudScoreRequest"/>
+			<wsdl:output message="tns:GetFraudScoreResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetMatchAndFraudScore">
+			<wsdl:input message="tns:GetMatchAndFraudScoreRequest"/>
+			<wsdl:output message="tns:GetMatchAndFraudScoreResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="SearchByFilingName">
+			<wsdl:input message="tns:SearchByFilingNameRequest"/>
+			<wsdl:output message="tns:SearchByFilingNameResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="SearchByFilingNumber">
+			<wsdl:input message="tns:SearchByFilingNumberRequest"/>
+			<wsdl:output message="tns:SearchByFilingNumberResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="CleanseAndStandardize">
+			<wsdl:input message="tns:CleanseAndStandardizeRequest"/>
+			<wsdl:output message="tns:CleanseAndStandardizeResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="CheckRefresh">
+			<wsdl:input message="tns:CheckRefreshRequest"/>
+			<wsdl:output message="tns:CheckRefreshResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetCleanseMatch">
+			<wsdl:input message="tns:GetCleanseMatchRequest"/>
+			<wsdl:output message="tns:GetCleanseMatchResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetRefreshByOrganizations">
+			<wsdl:input message="tns:GetRefreshByOrganizationsRequest"/>
+			<wsdl:output message="tns:GetRefreshByOrganizationsResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CompanySoapBinding" type="tns:Company">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="Match">
+			<soap:operation soapAction="http://services.dnb.com/CompanyService/V5.0/Match"/>
+			<wsdl:input>
+				<soap:body parts="parameter" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="parameter" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetFraudScore">
+			<soap:operation soapAction="http://services.dnb.com/CompanyService/V5.0/GetFraudScore"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetMatchAndFraudScore">
+			<soap:operation soapAction="http://services.dnb.com/CompanyService/V5.0/GetMatchAndFraudScore"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SearchByFilingName">
+			<soap:operation soapAction="http://services.dnb.com/CompanyService/V5.0/SearchByFilingName"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SearchByFilingNumber">
+			<soap:operation soapAction="http://services.dnb.com/CompanyService/V5.0/SearchByFilingNumber"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CleanseAndStandardize">
+			<soap:operation soapAction="http://services.dnb.com/CompanyService/V5.0/CleanseAndStandardize"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CheckRefresh">
+			<soap:operation soapAction="http://services.dnb.com/CompanyService/V5.0/CheckRefresh"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetCleanseMatch">
+			<soap:operation soapAction="http://services.dnb.com/CompanyService/V5.0/GetCleanseMatch"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetRefreshByOrganizations">
+			<soap:operation soapAction="http://services.dnb.com/CompanyService/V5.0/GetRefreshByOrganizations"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CompanyService">
+		<wsdl:port name="CompanyServiceEndPoint" binding="tns:CompanySoapBinding">
+			<soap:address location="https://direct.dnb.com/Company/V5.0"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
