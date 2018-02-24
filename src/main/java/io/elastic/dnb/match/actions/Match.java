@@ -1,6 +1,7 @@
 package io.elastic.dnb.match.actions;
 
 import com.dnb.services.match.*;
+import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.elastic.api.ExecutionParameters;
 import io.elastic.api.Module;
@@ -11,10 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.json.JsonObject;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.*;
 import javax.xml.soap.*;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -30,27 +28,13 @@ public class Match implements Module {
         JsonObject body = parameters.getMessage().getBody();
         logger.info(":::::" + body.toString());
         ObjectMapper mapper = new ObjectMapper();
+        
+        mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         try {
-            mapper.readValue(body.toString(), MatchRequest.class);
+            MatchRequest matchRequest = mapper.readValue(body.toString(), MatchRequest.class);
         } catch (IOException e) {
             throw new ClassCastException("Can't map JSON object to MatchRequest XML");
         }
-
-    }
-
-    public static void main(String[] args) throws SOAPException, JAXBException, XMLStreamException {
-        SOAPMessage soapResponse = new GenericSOAPClient.Builder()
-                .setLogin("P2000000C49DC06FDA0481EAD1AE30A9")
-                .setPassword("tcyt9ucg")
-                .setSoapAction(SoapAction.MATCH)
-                .setBodyObject(buildMatchRequest())
-                .setEndpointUrl(EndpointUrl.V5)
-                .call();
-
-//        logger.info(soapResponse.getSOAPPart().getEnvelope().getBody().getFirstChild().getTextContent());
-        logger.info(soapResponse.getSOAPBody().getElementsByTagName("ServiceTransactionID").item(0).getTextContent());
-        bindToJaxb(soapResponse);
-
 
     }
 
