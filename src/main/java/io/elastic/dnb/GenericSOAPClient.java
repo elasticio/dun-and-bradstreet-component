@@ -61,7 +61,7 @@ public class GenericSOAPClient {
         }
 
         /**
-         * Create connection, send request, get response
+         * Create connection, send request, get response.
          *
          * @param soapEndpointUrl
          * @param soapAction
