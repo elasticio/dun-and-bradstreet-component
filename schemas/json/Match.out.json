@@ -44,18 +44,7 @@
           "type": "object",
           "properties": {
             "MatchDataCriteriaText": {
-              "type": "object",
-              "properties": {
-                "-DNBCodeValue": {
-                  "type": "string"
-                },
-                "-DNBCodeTableNumber": {
-                  "type": "string"
-                },
-                "#text": {
-                  "type": "string"
-                }
-              }
+              "type": "string"
             },
             "CandidateMatchedQuantity": {
               "type": "string"
