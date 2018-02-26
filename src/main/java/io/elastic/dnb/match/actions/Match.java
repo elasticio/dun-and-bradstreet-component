@@ -4,6 +4,8 @@ import com.dnb.services.match.*;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.elastic.api.ExecutionParameters;
+import io.elastic.api.JSON;
+import io.elastic.api.Message;
 import io.elastic.api.Module;
 import io.elastic.dnb.GenericSOAPClient;
 import io.elastic.dnb.Utils;
@@ -13,8 +15,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.json.JsonObject;
-import javax.xml.bind.*;
-import javax.xml.soap.*;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.soap.SOAPException;
+import javax.xml.soap.SOAPMessage;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
@@ -33,7 +39,7 @@ public class Match implements Module {
 
 
         JsonObject configuration = parameters.getConfiguration();
-
+        JsonObject jsonObject = null;
 
         JsonObject body = parameters.getMessage().getBody();
         logger.info(":::::" + body.toString());
@@ -59,7 +65,7 @@ public class Match implements Module {
             StringWriter sw = new StringWriter();
             responseMapper.writeValue(sw, matchResponse);
             logger.info("===============" + sw);
-
+            jsonObject = JSON.parseObject(sw.toString());
 
         } catch (IOException e) {
 
@@ -71,11 +77,7 @@ public class Match implements Module {
             e.printStackTrace();
         }
 
-//        final JsonObject body = Json.createObjectBuilder()
-//                .add(FeedSubmissionUtils.FEED_SUBMISSION_ID, feedSubmissionId)
-//                .build();
-//
-//        parameters.getEventEmitter().emitData(new Message.Builder(body).build());
+        parameters.getEventEmitter().emitData(new Message.Builder().body(jsonObject).build());
 
     }
 
