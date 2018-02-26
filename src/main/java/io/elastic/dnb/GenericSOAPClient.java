@@ -24,13 +24,21 @@ public class GenericSOAPClient {
     public static class Builder<T> {
 
         private T bodyObject;
+        private Class requestClass;
+
         private String username;
         private String password;
+
         private SoapAction soapAction;
         private EndpointUrl endpointUrl;
 
         private static final String NAMESPACE_COM_URI = "http://services.dnb.com/CompanyServiceV2.0";
         private static final String NAMESPACE_COM = "com";
+
+        public Builder setRequestClass(Class requestClass) {
+            this.requestClass = requestClass;
+            return this;
+        }
 
         public Builder setBodyObject(T bodyObject) {
             this.bodyObject = bodyObject;
@@ -133,7 +141,7 @@ public class GenericSOAPClient {
 
             Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
 
-            JAXBContext jaxbContext = JAXBContext.newInstance(MatchRequest.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(requestClass);
             Marshaller marshaller = jaxbContext.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             StringWriter sw = new StringWriter();

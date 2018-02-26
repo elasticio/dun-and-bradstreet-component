@@ -44,6 +44,7 @@ public class Match implements Module {
             MatchRequest matchRequest = mapper.readValue(body.toString(), MatchRequest.class);
 
             SOAPMessage response = new GenericSOAPClient.Builder()
+                    .setRequestClass(MatchRequest.class)
                     .setBodyObject(matchRequest)
                     .setEndpointUrl(EndpointUrl.V5)
                     .setSoapAction(SoapAction.MATCH)
