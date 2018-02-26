@@ -42,6 +42,7 @@ public class Match implements Module {
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         try {
             MatchRequest matchRequest = mapper.readValue(body.toString(), MatchRequest.class);
+            logger.info("))))))))" + matchRequest.getMatchRequestDetail().getInquiryDetail().getSubjectName());
         } catch (IOException e) {
             throw new ClassCastException("Can't map JSON object to MatchRequest XML");
         }
