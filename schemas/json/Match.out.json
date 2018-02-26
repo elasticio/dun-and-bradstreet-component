@@ -1,296 +1,296 @@
 {
   "type": "object",
   "properties": {
-    "TransactionDetail": {
+    "transactionDetail": {
       "type": "object",
       "properties": {
-        "ApplicationTransactionID": {
+        "applicationTransactionID": {
           "type": "string"
         },
-        "ServiceTransactionID": {
+        "serviceTransactionID": {
           "type": "string"
         },
-        "TransactionTimestamp": {
+        "transactionTimestamp": {
           "type": "string"
         }
       }
     },
-    "TransactionResult": {
+    "transactionResult": {
       "type": "object",
       "properties": {
-        "SeverityText": {
+        "severityText": {
           "type": "string"
         },
-        "ResultID": {
+        "resultID": {
           "type": "string"
         },
-        "ResultText": {
+        "resultText": {
           "type": "string"
         },
-        "ResultMessage": {
+        "resultMessage": {
           "type": "object",
           "properties": {
-            "ResultDescription": {
+            "resultDescription": {
               "type": "string"
             }
           }
         }
       }
     },
-    "MatchResponseDetail": {
+    "matchResponseDetail": {
       "type": "object",
       "properties": {
-        "MatchDataCriteriaText": {
+        "matchDataCriteriaText": {
           "type": "string"
         },
-        "CandidateMatchedQuantity": {
+        "candidateMatchedQuantity": {
           "type": "string"
         },
-        "MatchCandidate": {
+        "matchCandidate": {
           "type": "object",
           "properties": {
-            "DUNSNumber": {
+            "dunsnumber": {
               "type": "string"
             },
-            "SubjectID": {
+            "subjectID": {
               "type": "string"
             },
-            "OrganizationPrimaryName": {
+            "organizationPrimaryName": {
               "type": "object",
               "properties": {
-                "OrganizationName": {
+                "organizationName": {
                   "type": "string"
                 }
               }
             },
-            "TradeStyleName": {
+            "tradeStyleName": {
               "type": "object",
               "properties": {
-                "OrganizationName": {
+                "organizationName": {
                   "type": "object"
                 }
               }
             },
-            "SeniorPrincipalName": {
+            "seniorPrincipalName": {
               "type": "object",
               "properties": {
-                "NamePrefix": {
+                "namePrefix": {
                   "type": "object",
                   "properties": {
-                    "NamePrefixText": {
+                    "namePrefixText": {
                       "type": "string"
                     }
                   }
                 },
-                "FirstName": {
+                "firstName": {
                   "type": "string"
                 },
-                "MiddleName": {
+                "middleName": {
                   "type": "string"
                 },
-                "LastName": {
+                "lastName": {
                   "type": "string"
                 },
-                "FullName": {
+                "fullName": {
                   "type": "string"
                 },
-                "NameSuffix": {
+                "nameSuffix": {
                   "type": "object",
                   "properties": {
-                    "NameSuffixText": {
+                    "nameSuffixText": {
                       "type": "string"
                     }
                   }
                 }
               }
             },
-            "PrimaryAddress": {
+            "primaryAddress": {
               "type": "object",
               "properties": {
-                "StreetAddressLine": {
+                "streetAddressLine": {
                   "type": "object",
                   "properties": {
-                    "LineText": {
+                    "lineText": {
                       "type": "string"
                     }
                   }
                 },
-                "PrimaryTownName": {
+                "primaryTownName": {
                   "type": "string"
                 },
-                "CountryISOAlpha2Code": {
+                "countryISOAlpha2Code": {
                   "type": "string"
                 },
-                "PostalCode": {
+                "postalCode": {
                   "type": "string"
                 },
-                "PostalCodeExtensionCode": {
+                "postalCodeExtensionCode": {
                   "type": "string"
                 },
-                "TerritoryOfficialName": {
+                "territoryOfficialName": {
                   "type": "string"
                 },
-                "TerritoryAbbreviatedName": {
+                "territoryAbbreviatedName": {
                   "type": "string"
                 },
-                "UndeliverableIndicator": {
+                "undeliverableIndicator": {
                   "type": "string"
                 }
               }
             },
-            "MailingAddress": {
+            "mailingAddress": {
               "type": "object",
               "properties": {
-                "StreetAddressLine": {
+                "streetAddressLine": {
                   "type": "object",
                   "properties": {
-                    "LineText": {
+                    "lineText": {
                       "type": "string"
                     }
                   }
                 },
-                "PrimaryTownName": {
+                "primaryTownName": {
                   "type": "string"
                 },
-                "CountryISOAlpha2Code": {
+                "countryISOAlpha2Code": {
                   "type": "string"
                 },
-                "PostalCode": {
+                "postalCode": {
                   "type": "string"
                 },
-                "PostalCodeExtensionCode": {
+                "postalCodeExtensionCode": {
                   "type": "string"
                 },
-                "TerritoryOfficialName": {
+                "territoryOfficialName": {
                   "type": "string"
                 },
-                "TerritoryAbbreviatedName": {
+                "territoryAbbreviatedName": {
                   "type": "string"
                 },
-                "UndeliverableIndicator": {
+                "undeliverableIndicator": {
                   "type": "string"
                 }
               }
             },
-            "TelephoneNumber": {
+            "telephoneNumber": {
               "type": "object",
               "properties": {
-                "TelecommunicationNumber": {
+                "telecommunicationNumber": {
                   "type": "string"
                 },
-                "InternationalDialingCode": {
+                "internationalDialingCode": {
                   "type": "string"
                 },
-                "UnreachableIndicator": {
+                "unreachableIndicator": {
                   "type": "string"
                 }
               }
             },
-            "WebPageAddress": {
+            "webPageAddress": {
               "type": "object",
               "properties": {
-                "TelecommunicationAddress": {
+                "telecommunicationAddress": {
                   "type": "string"
                 },
-                "UnreachableIndicator": {
+                "unreachableIndicator": {
                   "type": "string"
                 }
               }
             },
-            "OperatingStatusText": {
+            "operatingStatusText": {
               "type": "string"
             },
-            "FamilyTreeMemberRole": {
+            "familyTreeMemberRole": {
               "type": "object",
               "properties": {
-                "FamilyTreeMemberRoleText": {
+                "familyTreeMemberRoleText": {
                   "type": "string"
                 }
               }
             },
-            "MarketabilityIndicator": {
+            "marketabilityIndicator": {
               "type": "string"
             },
-            "StandaloneOrganizationIndicator": {
+            "standaloneOrganizationIndicator": {
               "type": "string"
             },
-            "OrganizationIdentificationNumberDetail": {
+            "organizationIdentificationNumberDetail": {
               "type": "string"
             },
-            "MatchQualityInformation": {
+            "matchQualityInformation": {
               "type": "object",
               "properties": {
-                "ConfidenceCodeValue": {
+                "confidenceCodeValue": {
                   "type": "string"
                 },
-                "MatchBasis": {
+                "matchBasis": {
                   "type": "object",
                   "properties": {
-                    "EndIndicator": {
+                    "endIndicator": {
                       "type": "string"
                     },
-                    "SubjectTypeText": {
+                    "subjectTypeText": {
                       "type": "string"
                     },
-                    "SeniorPrincipalIndicator": {
+                    "seniorPrincipalIndicator": {
                       "type": "string"
                     },
-                    "MatchBasisText": {
+                    "matchBasisText": {
                       "type": "string"
                     }
                   }
                 },
-                "MatchGradeText": {
+                "matchGradeText": {
                   "type": "string"
                 },
-                "MatchGradeComponentCount": {
+                "matchGradeComponentCount": {
                   "type": "string"
                 },
-                "MatchGradeComponent": {
+                "matchGradeComponent": {
                   "type": "object",
                   "properties": {
-                    "MatchGradeComponentTypeText": {
+                    "matchGradeComponentTypeText": {
                       "type": "string"
                     },
-                    "MatchGradeComponentRating": {
+                    "matchGradeComponentRating": {
                       "type": "string"
                     },
-                    "MatchGradeComponentScore": {
+                    "matchGradeComponentScore": {
                       "type": "string"
                     }
                   }
                 },
-                "MatchDataProfileText": {
+                "matchDataProfileText": {
                   "type": "string"
                 },
-                "MatchDataProfileComponentCount": {
+                "matchDataProfileComponentCount": {
                   "type": "string"
                 },
-                "MatchDataProfileComponent": {
+                "matchDataProfileComponent": {
                   "type": "object",
                   "properties": {
-                    "MatchDataProfileComponentTypeText": {
+                    "matchDataProfileComponentTypeText": {
                       "type": "string"
                     },
-                    "MatchDataProfileComponentValue": {
+                    "matchDataProfileComponentValue": {
                       "type": "string"
                     }
                   }
                 }
               }
             },
-            "DisplaySequence": {
+            "displaySequence": {
               "type": "string"
             }
           }
         },
-        "InquiryReferenceDetail": {
+        "inquiryReferenceDetail": {
           "type": "object",
           "properties": {
-            "CustomerReferenceText": {
+            "customerReferenceText": {
               "type": "string"
             },
-            "CustomerBillingEndorsementText": {
+            "customerBillingEndorsementText": {
               "type": "string"
             }
           }
