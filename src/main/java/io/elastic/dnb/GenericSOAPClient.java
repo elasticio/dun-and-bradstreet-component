@@ -8,12 +8,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
+import javax.xml.bind.*;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.soap.*;
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
 import java.io.StringWriter;
 
 public class GenericSOAPClient {
@@ -56,8 +57,27 @@ public class GenericSOAPClient {
             return this;
         }
 
-        public SOAPMessage call() throws SOAPException {
+        public SOAPMessage call() {
             return callSoapWebService(endpointUrl.getEndpointUrl(), soapAction.getSoapActionValue());
+        }
+
+        public static JAXBElement bindToJaxb(Class t, SOAPMessage soapResponse) throws XMLStreamException, SOAPException, JAXBException {
+            //Unmarshall XML and bind to JAXB:
+            XMLInputFactory xif = XMLInputFactory.newFactory();
+            XMLStreamReader xsr = xif.createXMLStreamReader(soapResponse.getSOAPPart().getContent());
+            xsr.nextTag(); // Advance to Envelope tag
+            xsr.nextTag(); // Advance to Body tag
+            xsr.nextTag(); // Advance to MatchResponse tag
+//            System.out.println(xsr.getNamespaceContext().getNamespaceURI("com"));
+
+            JAXBContext jc = JAXBContext.newInstance(t);
+            Unmarshaller unmarshaller = jc.createUnmarshaller();
+            JAXBElement je = unmarshaller.unmarshal(xsr, t);
+//            System.out.println(je.getValue());
+//            MatchResponse matchResponse = (MatchResponse) je.getValue();
+//            System.out.println(matchResponse.getTransactionResult().getResultID());
+
+            return je;
         }
 
         /**
@@ -75,6 +95,9 @@ public class GenericSOAPClient {
                 soapResponse = soapConnection.call(createSOAPRequest(soapAction), soapEndpointUrl);
 
                 logger.info("Response SOAP Message:");
+                if (soapResponse.getSOAPPart().getEnvelope().getHeader() != null) {
+                    soapResponse.getSOAPPart().getEnvelope().getHeader().detachNode();
+                }
                 soapResponse.writeTo(System.out);
 
                 soapConnection.close();

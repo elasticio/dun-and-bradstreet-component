@@ -25,16 +25,30 @@ public class Match implements Module {
 
     @Override
     public void execute(ExecutionParameters parameters) {
+
+
+        //Парсится норм. Дописать парсинг ответа и emitData
+
+
+
+
+
+
+
         JsonObject body = parameters.getMessage().getBody();
         logger.info(":::::" + body.toString());
         ObjectMapper mapper = new ObjectMapper();
-        
+
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         try {
             MatchRequest matchRequest = mapper.readValue(body.toString(), MatchRequest.class);
         } catch (IOException e) {
             throw new ClassCastException("Can't map JSON object to MatchRequest XML");
         }
+
+    }
+
+    public static void main(String[] args) {
 
     }
 
