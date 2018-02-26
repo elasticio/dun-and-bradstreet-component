@@ -1,302 +1,297 @@
 {
   "type": "object",
   "properties": {
-    "com:MatchResponse": {
+    "TransactionDetail": {
       "type": "object",
       "properties": {
-        "TransactionDetail": {
+        "ApplicationTransactionID": {
+          "type": "string"
+        },
+        "ServiceTransactionID": {
+          "type": "string"
+        },
+        "TransactionTimestamp": {
+          "type": "string"
+        }
+      }
+    },
+    "TransactionResult": {
+      "type": "object",
+      "properties": {
+        "SeverityText": {
+          "type": "string"
+        },
+        "ResultID": {
+          "type": "string"
+        },
+        "ResultText": {
+          "type": "string"
+        },
+        "ResultMessage": {
           "type": "object",
           "properties": {
-            "ApplicationTransactionID": {
+            "ResultDescription": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "MatchResponseDetail": {
+      "type": "object",
+      "properties": {
+        "MatchDataCriteriaText": {
+          "type": "string"
+        },
+        "CandidateMatchedQuantity": {
+          "type": "string"
+        },
+        "MatchCandidate": {
+          "type": "object",
+          "properties": {
+            "DUNSNumber": {
               "type": "string"
             },
-            "ServiceTransactionID": {
+            "SubjectID": {
               "type": "string"
             },
-            "TransactionTimestamp": {
+            "OrganizationPrimaryName": {
+              "type": "object",
+              "properties": {
+                "OrganizationName": {
+                  "type": "string"
+                }
+              }
+            },
+            "TradeStyleName": {
+              "type": "object",
+              "properties": {
+                "OrganizationName": {
+                  "type": "object"
+                }
+              }
+            },
+            "SeniorPrincipalName": {
+              "type": "object",
+              "properties": {
+                "NamePrefix": {
+                  "type": "object",
+                  "properties": {
+                    "NamePrefixText": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "FirstName": {
+                  "type": "string"
+                },
+                "MiddleName": {
+                  "type": "string"
+                },
+                "LastName": {
+                  "type": "string"
+                },
+                "FullName": {
+                  "type": "string"
+                },
+                "NameSuffix": {
+                  "type": "object",
+                  "properties": {
+                    "NameSuffixText": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "PrimaryAddress": {
+              "type": "object",
+              "properties": {
+                "StreetAddressLine": {
+                  "type": "object",
+                  "properties": {
+                    "LineText": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "PrimaryTownName": {
+                  "type": "string"
+                },
+                "CountryISOAlpha2Code": {
+                  "type": "string"
+                },
+                "PostalCode": {
+                  "type": "string"
+                },
+                "PostalCodeExtensionCode": {
+                  "type": "string"
+                },
+                "TerritoryOfficialName": {
+                  "type": "string"
+                },
+                "TerritoryAbbreviatedName": {
+                  "type": "string"
+                },
+                "UndeliverableIndicator": {
+                  "type": "string"
+                }
+              }
+            },
+            "MailingAddress": {
+              "type": "object",
+              "properties": {
+                "StreetAddressLine": {
+                  "type": "object",
+                  "properties": {
+                    "LineText": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "PrimaryTownName": {
+                  "type": "string"
+                },
+                "CountryISOAlpha2Code": {
+                  "type": "string"
+                },
+                "PostalCode": {
+                  "type": "string"
+                },
+                "PostalCodeExtensionCode": {
+                  "type": "string"
+                },
+                "TerritoryOfficialName": {
+                  "type": "string"
+                },
+                "TerritoryAbbreviatedName": {
+                  "type": "string"
+                },
+                "UndeliverableIndicator": {
+                  "type": "string"
+                }
+              }
+            },
+            "TelephoneNumber": {
+              "type": "object",
+              "properties": {
+                "TelecommunicationNumber": {
+                  "type": "string"
+                },
+                "InternationalDialingCode": {
+                  "type": "string"
+                },
+                "UnreachableIndicator": {
+                  "type": "string"
+                }
+              }
+            },
+            "WebPageAddress": {
+              "type": "object",
+              "properties": {
+                "TelecommunicationAddress": {
+                  "type": "string"
+                },
+                "UnreachableIndicator": {
+                  "type": "string"
+                }
+              }
+            },
+            "OperatingStatusText": {
+              "type": "string"
+            },
+            "FamilyTreeMemberRole": {
+              "type": "object",
+              "properties": {
+                "FamilyTreeMemberRoleText": {
+                  "type": "string"
+                }
+              }
+            },
+            "MarketabilityIndicator": {
+              "type": "string"
+            },
+            "StandaloneOrganizationIndicator": {
+              "type": "string"
+            },
+            "OrganizationIdentificationNumberDetail": {
+              "type": "string"
+            },
+            "MatchQualityInformation": {
+              "type": "object",
+              "properties": {
+                "ConfidenceCodeValue": {
+                  "type": "string"
+                },
+                "MatchBasis": {
+                  "type": "object",
+                  "properties": {
+                    "EndIndicator": {
+                      "type": "string"
+                    },
+                    "SubjectTypeText": {
+                      "type": "string"
+                    },
+                    "SeniorPrincipalIndicator": {
+                      "type": "string"
+                    },
+                    "MatchBasisText": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "MatchGradeText": {
+                  "type": "string"
+                },
+                "MatchGradeComponentCount": {
+                  "type": "string"
+                },
+                "MatchGradeComponent": {
+                  "type": "object",
+                  "properties": {
+                    "MatchGradeComponentTypeText": {
+                      "type": "string"
+                    },
+                    "MatchGradeComponentRating": {
+                      "type": "string"
+                    },
+                    "MatchGradeComponentScore": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "MatchDataProfileText": {
+                  "type": "string"
+                },
+                "MatchDataProfileComponentCount": {
+                  "type": "string"
+                },
+                "MatchDataProfileComponent": {
+                  "type": "object",
+                  "properties": {
+                    "MatchDataProfileComponentTypeText": {
+                      "type": "string"
+                    },
+                    "MatchDataProfileComponentValue": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "DisplaySequence": {
               "type": "string"
             }
           }
         },
-        "TransactionResult": {
+        "InquiryReferenceDetail": {
           "type": "object",
           "properties": {
-            "SeverityText": {
+            "CustomerReferenceText": {
               "type": "string"
             },
-            "ResultID": {
+            "CustomerBillingEndorsementText": {
               "type": "string"
-            },
-            "ResultText": {
-              "type": "string"
-            },
-            "ResultMessage": {
-              "type": "object",
-              "properties": {
-                "ResultDescription": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        },
-        "MatchResponseDetail": {
-          "type": "object",
-          "properties": {
-            "MatchDataCriteriaText": {
-              "type": "string"
-            },
-            "CandidateMatchedQuantity": {
-              "type": "string"
-            },
-            "MatchCandidate": {
-              "type": "object",
-              "properties": {
-                "DUNSNumber": {
-                  "type": "string"
-                },
-                "SubjectID": {
-                  "type": "string"
-                },
-                "OrganizationPrimaryName": {
-                  "type": "object",
-                  "properties": {
-                    "OrganizationName": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "TradeStyleName": {
-                  "type": "object",
-                  "properties": {
-                    "OrganizationName": {
-                      "type": "object"
-                    }
-                  }
-                },
-                "SeniorPrincipalName": {
-                  "type": "object",
-                  "properties": {
-                    "NamePrefix": {
-                      "type": "object",
-                      "properties": {
-                        "NamePrefixText": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "FirstName": {
-                      "type": "string"
-                    },
-                    "MiddleName": {
-                      "type": "string"
-                    },
-                    "LastName": {
-                      "type": "string"
-                    },
-                    "FullName": {
-                      "type": "string"
-                    },
-                    "NameSuffix": {
-                      "type": "object",
-                      "properties": {
-                        "NameSuffixText": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  }
-                },
-                "PrimaryAddress": {
-                  "type": "object",
-                  "properties": {
-                    "StreetAddressLine": {
-                      "type": "object",
-                      "properties": {
-                        "LineText": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "PrimaryTownName": {
-                      "type": "string"
-                    },
-                    "CountryISOAlpha2Code": {
-                      "type": "string"
-                    },
-                    "PostalCode": {
-                      "type": "string"
-                    },
-                    "PostalCodeExtensionCode": {
-                      "type": "string"
-                    },
-                    "TerritoryOfficialName": {
-                      "type": "string"
-                    },
-                    "TerritoryAbbreviatedName": {
-                      "type": "string"
-                    },
-                    "UndeliverableIndicator": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "MailingAddress": {
-                  "type": "object",
-                  "properties": {
-                    "StreetAddressLine": {
-                      "type": "object",
-                      "properties": {
-                        "LineText": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "PrimaryTownName": {
-                      "type": "string"
-                    },
-                    "CountryISOAlpha2Code": {
-                      "type": "string"
-                    },
-                    "PostalCode": {
-                      "type": "string"
-                    },
-                    "PostalCodeExtensionCode": {
-                      "type": "string"
-                    },
-                    "TerritoryOfficialName": {
-                      "type": "string"
-                    },
-                    "TerritoryAbbreviatedName": {
-                      "type": "string"
-                    },
-                    "UndeliverableIndicator": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "TelephoneNumber": {
-                  "type": "object",
-                  "properties": {
-                    "TelecommunicationNumber": {
-                      "type": "string"
-                    },
-                    "InternationalDialingCode": {
-                      "type": "string"
-                    },
-                    "UnreachableIndicator": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "WebPageAddress": {
-                  "type": "object",
-                  "properties": {
-                    "TelecommunicationAddress": {
-                      "type": "string"
-                    },
-                    "UnreachableIndicator": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "OperatingStatusText": {
-                  "type": "string"
-                },
-                "FamilyTreeMemberRole": {
-                  "type": "object",
-                  "properties": {
-                    "FamilyTreeMemberRoleText": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "MarketabilityIndicator": {
-                  "type": "string"
-                },
-                "StandaloneOrganizationIndicator": {
-                  "type": "string"
-                },
-                "OrganizationIdentificationNumberDetail": {
-                  "type": "string"
-                },
-                "MatchQualityInformation": {
-                  "type": "object",
-                  "properties": {
-                    "ConfidenceCodeValue": {
-                      "type": "string"
-                    },
-                    "MatchBasis": {
-                      "type": "object",
-                      "properties": {
-                        "EndIndicator": {
-                          "type": "string"
-                        },
-                        "SubjectTypeText": {
-                          "type": "string"
-                        },
-                        "SeniorPrincipalIndicator": {
-                          "type": "string"
-                        },
-                        "MatchBasisText": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "MatchGradeText": {
-                      "type": "string"
-                    },
-                    "MatchGradeComponentCount": {
-                      "type": "string"
-                    },
-                    "MatchGradeComponent": {
-                      "type": "object",
-                      "properties": {
-                        "MatchGradeComponentTypeText": {
-                          "type": "string"
-                        },
-                        "MatchGradeComponentRating": {
-                          "type": "string"
-                        },
-                        "MatchGradeComponentScore": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "MatchDataProfileText": {
-                      "type": "string"
-                    },
-                    "MatchDataProfileComponentCount": {
-                      "type": "string"
-                    },
-                    "MatchDataProfileComponent": {
-                      "type": "object",
-                      "properties": {
-                        "MatchDataProfileComponentTypeText": {
-                          "type": "string"
-                        },
-                        "MatchDataProfileComponentValue": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  }
-                },
-                "DisplaySequence": {
-                  "type": "string"
-                }
-              }
-            },
-            "InquiryReferenceDetail": {
-              "type": "object",
-              "properties": {
-                "CustomerReferenceText": {
-                  "type": "string"
-                },
-                "CustomerBillingEndorsementText": {
-                  "type": "string"
-                }
-              }
             }
           }
         }
