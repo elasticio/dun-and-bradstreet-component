@@ -1,20 +1,16 @@
 {
-  "$id": "http://example.com/example.json",
-  "type": "object",
+    "type": "object",
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
   "properties": {
     "matchResponseDetail": {
-      "$id": "/properties/matchResponseDetail",
-      "type": "object",
+            "type": "object",
       "properties": {
         "inquiryReferenceDetail": {
-          "$id": "/properties/matchResponseDetail/properties/inquiryReferenceDetail",
-          "type": "object",
+                    "type": "object",
           "properties": {
             "customerBillingEndorsementText": {
-              "$id": "/properties/matchResponseDetail/properties/inquiryReferenceDetail/properties/customerBillingEndorsementText",
-              "type": "string",
+                            "type": "string",
               "title": "The Customerbillingendorsementtext Schema",
               "default": "",
               "examples": [
@@ -22,11 +18,9 @@
               ]
             },
             "customerReferenceText": {
-              "$id": "/properties/matchResponseDetail/properties/inquiryReferenceDetail/properties/customerReferenceText",
-              "type": "array",
+                            "type": "array",
               "items": {
-                "$id": "/properties/matchResponseDetail/properties/inquiryReferenceDetail/properties/customerReferenceText/items",
-                "type": "string",
+                                "type": "string",
                 "title": "The 0 Schema",
                 "default": "",
                 "examples": [
@@ -37,15 +31,12 @@
           }
         },
         "matchCandidate": {
-          "$id": "/properties/matchResponseDetail/properties/matchCandidate",
-          "type": "array",
+                    "type": "array",
           "items": {
-            "$id": "/properties/matchResponseDetail/properties/matchCandidate/items",
-            "type": "object",
+                        "type": "object",
             "properties": {
               "dunsnumber": {
-                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/dunsnumber",
-                "type": "string",
+                                "type": "string",
                 "title": "The Dunsnumber Schema",
                 "default": "",
                 "examples": [
@@ -53,8 +44,7 @@
                 ]
               },
               "displaySequence": {
-                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/displaySequence",
-                "type": "integer",
+                                "type": "integer",
                 "title": "The Displaysequence Schema",
                 "default": 0,
                 "examples": [
@@ -62,19 +52,15 @@
                 ]
               },
               "matchQualityInformation": {
-                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation",
-                "type": "object",
+                                "type": "object",
                 "properties": {
                   "matchDataProfileComponent": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileComponent",
-                    "type": "array",
+                                        "type": "array",
                     "items": {
-                      "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileComponent/items",
-                      "type": "object",
+                                            "type": "object",
                       "properties": {
                         "matchDataProfileComponentValue": {
-                          "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileComponent/items/properties/matchDataProfileComponentValue",
-                          "type": "string",
+                                                    "type": "string",
                           "title": "The Matchdataprofilecomponentvalue Schema",
                           "default": "",
                           "examples": [
@@ -82,12 +68,10 @@
                           ]
                         },
                         "matchDataProfileComponentTypeText": {
-                          "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileComponent/items/properties/matchDataProfileComponentTypeText",
-                          "type": "object",
+                                                    "type": "object",
                           "properties": {
                             "dnbcodeValue": {
-                              "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileComponent/items/properties/matchDataProfileComponentTypeText/properties/dnbcodeValue",
-                              "type": "null",
+                                                            "type": "null",
                               "title": "The Dnbcodevalue Schema",
                               "default": null,
                               "examples": [
@@ -95,8 +79,7 @@
                               ]
                             },
                             "dnbcodeTableNumber": {
-                              "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileComponent/items/properties/matchDataProfileComponentTypeText/properties/dnbcodeTableNumber",
-                              "type": "null",
+                                                            "type": "null",
                               "title": "The Dnbcodetablenumber Schema",
                               "default": null,
                               "examples": [
@@ -104,8 +87,7 @@
                               ]
                             },
                             "value": {
-                              "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileComponent/items/properties/matchDataProfileComponentTypeText/properties/value",
-                              "type": "string",
+                                                            "type": "string",
                               "title": "The Value Schema",
                               "default": "",
                               "examples": [
@@ -118,8 +100,7 @@
                     }
                   },
                   "matchDataProfileComponentCount": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileComponentCount",
-                    "type": "integer",
+                                        "type": "integer",
                     "title": "The Matchdataprofilecomponentcount Schema",
                     "default": 0,
                     "examples": [
@@ -127,8 +108,7 @@
                     ]
                   },
                   "matchDataProfileText": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileText",
-                    "type": "string",
+                                        "type": "string",
                     "title": "The Matchdataprofiletext Schema",
                     "default": "",
                     "examples": [
@@ -136,15 +116,12 @@
                     ]
                   },
                   "matchGradeComponent": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponent",
-                    "type": "array",
+                                        "type": "array",
                     "items": {
-                      "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponent/items",
-                      "type": "object",
+                                            "type": "object",
                       "properties": {
                         "matchGradeComponentScore": {
-                          "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponent/items/properties/matchGradeComponentScore",
-                          "type": "integer",
+                                                    "type": "integer",
                           "title": "The Matchgradecomponentscore Schema",
                           "default": 0,
                           "examples": [
@@ -152,8 +129,7 @@
                           ]
                         },
                         "matchGradeComponentRating": {
-                          "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponent/items/properties/matchGradeComponentRating",
-                          "type": "string",
+                                                    "type": "string",
                           "title": "The Matchgradecomponentrating Schema",
                           "default": "",
                           "examples": [
@@ -161,12 +137,10 @@
                           ]
                         },
                         "matchGradeComponentTypeText": {
-                          "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponent/items/properties/matchGradeComponentTypeText",
-                          "type": "object",
+                                                    "type": "object",
                           "properties": {
                             "dnbcodeValue": {
-                              "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponent/items/properties/matchGradeComponentTypeText/properties/dnbcodeValue",
-                              "type": "null",
+                                                            "type": "null",
                               "title": "The Dnbcodevalue Schema",
                               "default": null,
                               "examples": [
@@ -174,8 +148,7 @@
                               ]
                             },
                             "dnbcodeTableNumber": {
-                              "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponent/items/properties/matchGradeComponentTypeText/properties/dnbcodeTableNumber",
-                              "type": "null",
+                                                            "type": "null",
                               "title": "The Dnbcodetablenumber Schema",
                               "default": null,
                               "examples": [
@@ -183,8 +156,7 @@
                               ]
                             },
                             "value": {
-                              "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponent/items/properties/matchGradeComponentTypeText/properties/value",
-                              "type": "string",
+                                                            "type": "string",
                               "title": "The Value Schema",
                               "default": "",
                               "examples": [
@@ -197,8 +169,7 @@
                     }
                   },
                   "matchGradeComponentCount": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponentCount",
-                    "type": "integer",
+                                        "type": "integer",
                     "title": "The Matchgradecomponentcount Schema",
                     "default": 0,
                     "examples": [
@@ -206,8 +177,7 @@
                     ]
                   },
                   "matchGradeText": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeText",
-                    "type": "string",
+                                        "type": "string",
                     "title": "The Matchgradetext Schema",
                     "default": "",
                     "examples": [
@@ -215,12 +185,10 @@
                     ]
                   },
                   "matchBasis": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchBasis",
-                    "type": "array"
+                                        "type": "array"
                   },
                   "confidenceCodeValue": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/confidenceCodeValue",
-                    "type": "integer",
+                                        "type": "integer",
                     "title": "The Confidencecodevalue Schema",
                     "default": 0,
                     "examples": [
@@ -230,12 +198,10 @@
                 }
               },
               "organizationIdentificationNumberDetail": {
-                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationIdentificationNumberDetail",
-                "type": "object",
+                                "type": "object",
                 "properties": {
                   "dnbcodeValue": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationIdentificationNumberDetail/properties/dnbcodeValue",
-                    "type": "integer",
+                                        "type": "integer",
                     "title": "The Dnbcodevalue Schema",
                     "default": 0,
                     "examples": [
@@ -243,8 +209,7 @@
                     ]
                   },
                   "dnbcodeTableNumber": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationIdentificationNumberDetail/properties/dnbcodeTableNumber",
-                    "type": "integer",
+                                        "type": "integer",
                     "title": "The Dnbcodetablenumber Schema",
                     "default": 0,
                     "examples": [
@@ -252,8 +217,7 @@
                     ]
                   },
                   "typeText": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationIdentificationNumberDetail/properties/typeText",
-                    "type": "string",
+                                        "type": "string",
                     "title": "The Typetext Schema",
                     "default": "",
                     "examples": [
@@ -261,8 +225,7 @@
                     ]
                   },
                   "organizationIdentificationNumber": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationIdentificationNumberDetail/properties/organizationIdentificationNumber",
-                    "type": "string",
+                                        "type": "string",
                     "title": "The Organizationidentificationnumber Schema",
                     "default": "",
                     "examples": [
@@ -272,8 +235,7 @@
                 }
               },
               "standaloneOrganizationIndicator": {
-                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/standaloneOrganizationIndicator",
-                "type": "boolean",
+                                "type": "boolean",
                 "title": "The Standaloneorganizationindicator Schema",
                 "default": false,
                 "examples": [
@@ -281,8 +243,7 @@
                 ]
               },
               "marketabilityIndicator": {
-                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/marketabilityIndicator",
-                "type": "null",
+                                "type": "null",
                 "title": "The Marketabilityindicator Schema",
                 "default": null,
                 "examples": [
@@ -290,16 +251,13 @@
                 ]
               },
               "familyTreeMemberRole": {
-                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/familyTreeMemberRole",
-                "type": "array"
+                                "type": "array"
               },
               "operatingStatusText": {
-                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/operatingStatusText",
-                "type": "object",
+                                "type": "object",
                 "properties": {
                   "dnbcodeValue": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/operatingStatusText/properties/dnbcodeValue",
-                    "type": "null",
+                                        "type": "null",
                     "title": "The Dnbcodevalue Schema",
                     "default": null,
                     "examples": [
@@ -307,8 +265,7 @@
                     ]
                   },
                   "dnbcodeTableNumber": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/operatingStatusText/properties/dnbcodeTableNumber",
-                    "type": "null",
+                                        "type": "null",
                     "title": "The Dnbcodetablenumber Schema",
                     "default": null,
                     "examples": [
@@ -316,8 +273,7 @@
                     ]
                   },
                   "value": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/operatingStatusText/properties/value",
-                    "type": "string",
+                                        "type": "string",
                     "title": "The Value Schema",
                     "default": "",
                     "examples": [
@@ -327,8 +283,7 @@
                 }
               },
               "webPageAddress": {
-                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/webPageAddress",
-                "type": "null",
+                                "type": "null",
                 "title": "The Webpageaddress Schema",
                 "default": null,
                 "examples": [
@@ -336,12 +291,10 @@
                 ]
               },
               "telephoneNumber": {
-                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/telephoneNumber",
-                "type": "object",
+                                "type": "object",
                 "properties": {
                   "unreachableIndicator": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/telephoneNumber/properties/unreachableIndicator",
-                    "type": "boolean",
+                                        "type": "boolean",
                     "title": "The Unreachableindicator Schema",
                     "default": false,
                     "examples": [
@@ -349,8 +302,7 @@
                     ]
                   },
                   "internationalDialingCode": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/telephoneNumber/properties/internationalDialingCode",
-                    "type": "null",
+                                        "type": "null",
                     "title": "The Internationaldialingcode Schema",
                     "default": null,
                     "examples": [
@@ -358,8 +310,7 @@
                     ]
                   },
                   "telecommunicationNumber": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/telephoneNumber/properties/telecommunicationNumber",
-                    "type": "string",
+                                        "type": "string",
                     "title": "The Telecommunicationnumber Schema",
                     "default": "",
                     "examples": [
@@ -369,12 +320,10 @@
                 }
               },
               "mailingAddress": {
-                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress",
-                "type": "object",
+                                "type": "object",
                 "properties": {
                   "undeliverableIndicator": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress/properties/undeliverableIndicator",
-                    "type": "boolean",
+                                        "type": "boolean",
                     "title": "The Undeliverableindicator Schema",
                     "default": false,
                     "examples": [
@@ -382,8 +331,7 @@
                     ]
                   },
                   "territoryAbbreviatedName": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress/properties/territoryAbbreviatedName",
-                    "type": "null",
+                                        "type": "null",
                     "title": "The Territoryabbreviatedname Schema",
                     "default": null,
                     "examples": [
@@ -391,8 +339,7 @@
                     ]
                   },
                   "territoryOfficialName": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress/properties/territoryOfficialName",
-                    "type": "null",
+                                        "type": "null",
                     "title": "The Territoryofficialname Schema",
                     "default": null,
                     "examples": [
@@ -400,8 +347,7 @@
                     ]
                   },
                   "postalCodeExtensionCode": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress/properties/postalCodeExtensionCode",
-                    "type": "null",
+                                        "type": "null",
                     "title": "The Postalcodeextensioncode Schema",
                     "default": null,
                     "examples": [
@@ -409,8 +355,7 @@
                     ]
                   },
                   "postalCode": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress/properties/postalCode",
-                    "type": "null",
+                                        "type": "null",
                     "title": "The Postalcode Schema",
                     "default": null,
                     "examples": [
@@ -418,8 +363,7 @@
                     ]
                   },
                   "countryISOAlpha2Code": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress/properties/countryISOAlpha2Code",
-                    "type": "string",
+                                        "type": "string",
                     "title": "The Countryisoalpha2code Schema",
                     "default": "",
                     "examples": [
@@ -427,8 +371,7 @@
                     ]
                   },
                   "primaryTownName": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress/properties/primaryTownName",
-                    "type": "null",
+                                        "type": "null",
                     "title": "The Primarytownname Schema",
                     "default": null,
                     "examples": [
@@ -436,18 +379,15 @@
                     ]
                   },
                   "streetAddressLine": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress/properties/streetAddressLine",
-                    "type": "array"
+                                        "type": "array"
                   }
                 }
               },
               "primaryAddress": {
-                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress",
-                "type": "object",
+                                "type": "object",
                 "properties": {
                   "undeliverableIndicator": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/undeliverableIndicator",
-                    "type": "boolean",
+                                        "type": "boolean",
                     "title": "The Undeliverableindicator Schema",
                     "default": false,
                     "examples": [
@@ -455,8 +395,7 @@
                     ]
                   },
                   "territoryAbbreviatedName": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/territoryAbbreviatedName",
-                    "type": "null",
+                                        "type": "null",
                     "title": "The Territoryabbreviatedname Schema",
                     "default": null,
                     "examples": [
@@ -464,8 +403,7 @@
                     ]
                   },
                   "territoryOfficialName": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/territoryOfficialName",
-                    "type": "null",
+                                        "type": "null",
                     "title": "The Territoryofficialname Schema",
                     "default": null,
                     "examples": [
@@ -473,8 +411,7 @@
                     ]
                   },
                   "postalCodeExtensionCode": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/postalCodeExtensionCode",
-                    "type": "null",
+                                        "type": "null",
                     "title": "The Postalcodeextensioncode Schema",
                     "default": null,
                     "examples": [
@@ -482,8 +419,7 @@
                     ]
                   },
                   "postalCode": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/postalCode",
-                    "type": "string",
+                                        "type": "string",
                     "title": "The Postalcode Schema",
                     "default": "",
                     "examples": [
@@ -491,8 +427,7 @@
                     ]
                   },
                   "countryISOAlpha2Code": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/countryISOAlpha2Code",
-                    "type": "string",
+                                        "type": "string",
                     "title": "The Countryisoalpha2code Schema",
                     "default": "",
                     "examples": [
@@ -500,8 +435,7 @@
                     ]
                   },
                   "primaryTownName": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/primaryTownName",
-                    "type": "string",
+                                        "type": "string",
                     "title": "The Primarytownname Schema",
                     "default": "",
                     "examples": [
@@ -509,15 +443,12 @@
                     ]
                   },
                   "streetAddressLine": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/streetAddressLine",
-                    "type": "array",
+                                        "type": "array",
                     "items": {
-                      "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/streetAddressLine/items",
-                      "type": "object",
+                                            "type": "object",
                       "properties": {
                         "lineText": {
-                          "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/streetAddressLine/items/properties/lineText",
-                          "type": "string",
+                                                    "type": "string",
                           "title": "The Linetext Schema",
                           "default": "",
                           "examples": [
@@ -530,8 +461,7 @@
                 }
               },
               "seniorPrincipalName": {
-                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/seniorPrincipalName",
-                "type": "null",
+                                "type": "null",
                 "title": "The Seniorprincipalname Schema",
                 "default": null,
                 "examples": [
@@ -539,8 +469,7 @@
                 ]
               },
               "tradeStyleName": {
-                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/tradeStyleName",
-                "type": "null",
+                                "type": "null",
                 "title": "The Tradestylename Schema",
                 "default": null,
                 "examples": [
@@ -548,12 +477,10 @@
                 ]
               },
               "organizationPrimaryName": {
-                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationPrimaryName",
-                "type": "object",
+                                "type": "object",
                 "properties": {
                   "registeredNameIndicator": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationPrimaryName/properties/registeredNameIndicator",
-                    "type": "null",
+                                        "type": "null",
                     "title": "The Registerednameindicator Schema",
                     "default": null,
                     "examples": [
@@ -561,12 +488,10 @@
                     ]
                   },
                   "organizationName": {
-                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationPrimaryName/properties/organizationName",
-                    "type": "object",
+                                        "type": "object",
                     "properties": {
                       "writingScriptISOAlpha4Code": {
-                        "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationPrimaryName/properties/organizationName/properties/writingScriptISOAlpha4Code",
-                        "type": "null",
+                                                "type": "null",
                         "title": "The Writingscriptisoalpha4code Schema",
                         "default": null,
                         "examples": [
@@ -574,8 +499,7 @@
                         ]
                       },
                       "languageCode": {
-                        "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationPrimaryName/properties/organizationName/properties/languageCode",
-                        "type": "null",
+                                                "type": "null",
                         "title": "The Languagecode Schema",
                         "default": null,
                         "examples": [
@@ -583,8 +507,7 @@
                         ]
                       },
                       "value": {
-                        "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationPrimaryName/properties/organizationName/properties/value",
-                        "type": "string",
+                                                "type": "string",
                         "title": "The Value Schema",
                         "default": "",
                         "examples": [
@@ -596,8 +519,7 @@
                 }
               },
               "subjectID": {
-                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/subjectID",
-                "type": "null",
+                                "type": "null",
                 "title": "The Subjectid Schema",
                 "default": null,
                 "examples": [
@@ -608,8 +530,7 @@
           }
         },
         "candidateMatchedQuantity": {
-          "$id": "/properties/matchResponseDetail/properties/candidateMatchedQuantity",
-          "type": "integer",
+                    "type": "integer",
           "title": "The Candidatematchedquantity Schema",
           "default": 0,
           "examples": [
@@ -617,12 +538,10 @@
           ]
         },
         "matchDataCriteriaText": {
-          "$id": "/properties/matchResponseDetail/properties/matchDataCriteriaText",
-          "type": "object",
+                    "type": "object",
           "properties": {
             "dnbcodeValue": {
-              "$id": "/properties/matchResponseDetail/properties/matchDataCriteriaText/properties/dnbcodeValue",
-              "type": "null",
+                            "type": "null",
               "title": "The Dnbcodevalue Schema",
               "default": null,
               "examples": [
@@ -630,8 +549,7 @@
               ]
             },
             "dnbcodeTableNumber": {
-              "$id": "/properties/matchResponseDetail/properties/matchDataCriteriaText/properties/dnbcodeTableNumber",
-              "type": "null",
+                            "type": "null",
               "title": "The Dnbcodetablenumber Schema",
               "default": null,
               "examples": [
@@ -639,8 +557,7 @@
               ]
             },
             "value": {
-              "$id": "/properties/matchResponseDetail/properties/matchDataCriteriaText/properties/value",
-              "type": "string",
+                            "type": "string",
               "title": "The Value Schema",
               "default": "",
               "examples": [
@@ -652,8 +569,7 @@
       }
     },
     "serviceVersionNumber": {
-      "$id": "/properties/serviceVersionNumber",
-      "type": "string",
+            "type": "string",
       "title": "The Serviceversionnumber Schema",
       "default": "",
       "examples": [
@@ -661,16 +577,13 @@
       ]
     },
     "transactionResult": {
-      "$id": "/properties/transactionResult",
-      "type": "object",
+            "type": "object",
       "properties": {
         "resultMessage": {
-          "$id": "/properties/transactionResult/properties/resultMessage",
-          "type": "array"
+                    "type": "array"
         },
         "resultText": {
-          "$id": "/properties/transactionResult/properties/resultText",
-          "type": "string",
+                    "type": "string",
           "title": "The Resulttext Schema",
           "default": "",
           "examples": [
@@ -678,8 +591,7 @@
           ]
         },
         "resultID": {
-          "$id": "/properties/transactionResult/properties/resultID",
-          "type": "string",
+                    "type": "string",
           "title": "The Resultid Schema",
           "default": "",
           "examples": [
@@ -687,8 +599,7 @@
           ]
         },
         "severityText": {
-          "$id": "/properties/transactionResult/properties/severityText",
-          "type": "string",
+                    "type": "string",
           "title": "The Severitytext Schema",
           "default": "",
           "examples": [
@@ -698,12 +609,10 @@
       }
     },
     "transactionDetail": {
-      "$id": "/properties/transactionDetail",
-      "type": "object",
+            "type": "object",
       "properties": {
         "transactionTimestamp": {
-          "$id": "/properties/transactionDetail/properties/transactionTimestamp",
-          "type": "integer",
+                    "type": "integer",
           "title": "The Transactiontimestamp Schema",
           "default": 0,
           "examples": [
@@ -711,8 +620,7 @@
           ]
         },
         "serviceTransactionID": {
-          "$id": "/properties/transactionDetail/properties/serviceTransactionID",
-          "type": "string",
+                    "type": "string",
           "title": "The Servicetransactionid Schema",
           "default": "",
           "examples": [
@@ -720,8 +628,7 @@
           ]
         },
         "applicationTransactionID": {
-          "$id": "/properties/transactionDetail/properties/applicationTransactionID",
-          "type": "null",
+                    "type": "null",
           "title": "The Applicationtransactionid Schema",
           "default": null,
           "examples": [
