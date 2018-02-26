@@ -1,0 +1,114 @@
+<!-- edited with XMLSpy v2010 rel. 2 (http://www.altova.com) by DNB (DUN & BRADSTREET) -->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:transactionfault="http://services.dnb.com/TransactionFaultV2.0" xmlns:tns="http://services.dnb.com/EntityListServiceV2.0" name="EntityListService" targetNamespace="http://services.dnb.com/EntityListServiceV2.0">
+	<wsdl:types>
+		<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified">
+			<xs:import namespace="http://services.dnb.com/EntityListServiceV2.0" schemaLocation="Schema/EntityListService.xsd"/>
+			<xs:import namespace="http://services.dnb.com/TransactionFaultV2.0" schemaLocation="Schema/TransactionFault.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="FindCompanyResponse">
+		<wsdl:part name="parameter" element="tns:FindCompanyResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FindCompanyRequest">
+		<wsdl:part name="parameter" element="tns:FindCompanyRequest"/>
+	</wsdl:message>
+	<wsdl:message name="TransactionFault">
+		<wsdl:part name="parameter" element="transactionfault:TransactionResult"/>
+	</wsdl:message>
+	<wsdl:message name="FindContactRequest">
+		<wsdl:part name="parameter" element="tns:FindContactRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FindContactResponse">
+		<wsdl:part name="parameter" element="tns:FindContactResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FindCompetitorRequest">
+		<wsdl:part name="parameter" element="tns:FindCompetitorRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FindCompetitorResponse">
+		<wsdl:part name="parameter" element="tns:FindCompetitorResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FindIndustryRequest">
+		<wsdl:part name="parameter" element="tns:FindIndustryRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FindIndustryResponse">
+		<wsdl:part name="parameter" element="tns:FindIndustryResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="EntityList">
+		<wsdl:operation name="FindCompany">
+			<wsdl:input message="tns:FindCompanyRequest"/>
+			<wsdl:output message="tns:FindCompanyResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="FindContact">
+			<wsdl:input message="tns:FindContactRequest"/>
+			<wsdl:output message="tns:FindContactResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="FindCompetitor">
+			<wsdl:input message="tns:FindCompetitorRequest"/>
+			<wsdl:output message="tns:FindCompetitorResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="FindIndustry">
+			<wsdl:input message="tns:FindIndustryRequest"/>
+			<wsdl:output message="tns:FindIndustryResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="EntityListSoapBinding" type="tns:EntityList">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="FindCompany">
+			<soap:operation soapAction="http://services.dnb.com/EntityListService/V6.4/FindCompany"/>
+			<wsdl:input>
+				<soap:body parts="parameter" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="parameter" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="FindContact">
+			<soap:operation soapAction="http://services.dnb.com/EntityListService/V6.4/FindContact"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="FindCompetitor">
+			<soap:operation soapAction="http://services.dnb.com/EntityListService/V6.4/FindCompetitor"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="FindIndustry">
+			<soap:operation soapAction="http://services.dnb.com/EntityListService/V6.4/FindIndustry"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="EntityListService">
+		<wsdl:port name="EntityListServiceEndPoint" binding="tns:EntityListSoapBinding">
+			<soap:address location="https://direct.dnb.com/EntityList/V6.4"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

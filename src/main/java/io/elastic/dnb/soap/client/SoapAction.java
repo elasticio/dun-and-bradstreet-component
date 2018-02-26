@@ -3,7 +3,7 @@ package io.elastic.dnb.soap.client;
     public enum SoapAction {
 
         MATCH("http://services.dnb.com/CompanyService/V5.0/Match"),
-        BLABLA("");
+        FIND_COMPETITOR("http://services.dnb.com/EntityListService/V6.4/FindCompetitor");
 
         private String soapActionValue;
 

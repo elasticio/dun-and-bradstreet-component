@@ -28,5 +28,15 @@
             	"out": "./schemas/json/Match.out.json"
             }
 		}
+	},
+	"actions": {
+		"findCompetitors": {
+			"main": "io.elastic.dnb.entitylist.actions.FindCompetitors",
+            "title": "Find Competitors",
+            "metadata": {
+            	"in": "./schemas/json/FindCompetitors.in.json",
+            	"out": "./schemas/json/FindCompetitors.out.json"
+            }
+		}
 	}
 }

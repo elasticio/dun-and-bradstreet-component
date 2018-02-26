@@ -1,0 +1,51 @@
+{
+  "type": "object",
+  "properties": {
+    "transactionDetail": {
+      "type": "object",
+      "properties": {
+        "applicationTransactionID": {
+          "type": "string"
+        },
+        "transactionTimestamp": {
+          "type": "string"
+        },
+        "submittingOfficeID": {
+          "type": "string"
+        }
+      }
+    },
+    "findCompetitorRequestDetail": {
+      "type": "object",
+      "properties": {
+        "inquiryDetail": {
+          "type": "object",
+          "properties": {
+            "dunsnumber": {
+              "type": "string"
+            }
+          }
+        },
+        "findCompetitorSpecification": {
+          "type": "object",
+          "properties": {
+            "returnOnlyTopCompetitorIndicator": {
+              "type": "boolean"
+            }
+          }
+        },
+        "inquiryReferenceDetail": {
+          "type": "object",
+          "properties": {
+            "customerReferenceText": {
+              "type": "string"
+            },
+            "customerBillingEndorsementText": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

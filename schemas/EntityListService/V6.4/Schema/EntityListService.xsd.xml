@@ -1,0 +1,28 @@
+<ent:FindCompetitorRequest ServiceVersionNumber="string" xmlns:ent="http://services.dnb.com/EntityListServiceV2.0">
+  <!--Optional:-->
+  <TransactionDetail>
+    <!--Optional:-->
+    <ApplicationTransactionID>string</ApplicationTransactionID>
+    <!--Optional:-->
+    <TransactionTimestamp>2008-09-29T04:49:45</TransactionTimestamp>
+    <!--Optional:-->
+    <SubmittingOfficeID>string</SubmittingOfficeID>
+  </TransactionDetail>
+  <FindCompetitorRequestDetail>
+    <InquiryDetail>
+      <DUNSNumber>string</DUNSNumber>
+    </InquiryDetail>
+    <!--Optional:-->
+    <FindCompetitorSpecification>
+      <!--Optional:-->
+      <ReturnOnlyTopCompetitorIndicator>true</ReturnOnlyTopCompetitorIndicator>
+    </FindCompetitorSpecification>
+    <!--Optional:-->
+    <InquiryReferenceDetail>
+      <!--0 to 5 repetitions:-->
+      <CustomerReferenceText>string</CustomerReferenceText>
+      <!--Optional:-->
+      <CustomerBillingEndorsementText>string</CustomerBillingEndorsementText>
+    </InquiryReferenceDetail>
+  </FindCompetitorRequestDetail>
+</ent:FindCompetitorRequest>

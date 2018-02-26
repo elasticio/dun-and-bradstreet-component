@@ -3,7 +3,7 @@ package io.elastic.dnb.soap.client;
     public enum EndpointUrl {
 
         V5("https://direct.dnb.com/Company/V5.0"),
-        BLABLA("");
+        V6_4("https://direct.dnb.com/EntityList/V6.4");
 
         private String endpointUrl;
 
