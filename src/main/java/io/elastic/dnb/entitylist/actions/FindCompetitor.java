@@ -2,8 +2,6 @@ package io.elastic.dnb.entitylist.actions;
 
 import com.dnb.services.entitylist.FindCompetitorRequest;
 import com.dnb.services.entitylist.FindCompetitorResponse;
-import com.dnb.services.match.MatchRequest;
-import com.dnb.services.match.MatchResponse;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.elastic.api.ExecutionParameters;
@@ -27,9 +25,9 @@ import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
 import java.io.StringWriter;
 
-public class FindCompetitors implements Module {
+public class FindCompetitor implements Module {
 
-    protected static final Logger logger = LoggerFactory.getLogger(FindCompetitors.class);
+    protected static final Logger logger = LoggerFactory.getLogger(FindCompetitor.class);
 
     @Override
     public void execute(ExecutionParameters parameters) {
