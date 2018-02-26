@@ -37,6 +37,7 @@ public class FindCompetitor implements Module {
         JsonObject jsonDataObject = null;
 
         JsonObject body = parameters.getMessage().getBody();
+
         logger.info("About to call DnB API. Request message: {}", body.toString());
         ObjectMapper mapper = new ObjectMapper();
 
