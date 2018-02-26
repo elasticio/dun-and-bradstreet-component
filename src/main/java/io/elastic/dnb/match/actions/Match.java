@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.elastic.api.ExecutionParameters;
 import io.elastic.api.Module;
 import io.elastic.dnb.GenericSOAPClient;
+import io.elastic.dnb.Utils;
 import io.elastic.dnb.soap.client.EndpointUrl;
 import io.elastic.dnb.soap.client.SoapAction;
 import org.slf4j.Logger;
@@ -18,6 +19,7 @@ import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import java.io.IOException;
+import java.io.StringWriter;
 
 public class Match implements Module {
 
@@ -30,9 +32,7 @@ public class Match implements Module {
         //Парсится норм. Дописать парсинг ответа и emitData
 
 
-
-
-
+        JsonObject configuration = parameters.getConfiguration();
 
 
         JsonObject body = parameters.getMessage().getBody();
@@ -43,9 +43,39 @@ public class Match implements Module {
         try {
             MatchRequest matchRequest = mapper.readValue(body.toString(), MatchRequest.class);
             logger.info("))))))))" + matchRequest.getMatchRequestDetail().getInquiryDetail().getSubjectName());
+
+
+            SOAPMessage response = new GenericSOAPClient.Builder()
+                    .setBodyObject(matchRequest)
+                    .setEndpointUrl(EndpointUrl.V5)
+                    .setSoapAction(SoapAction.MATCH)
+                    .setUsername(Utils.getUsername(configuration))
+                    .setPassword(Utils.getPassword(configuration))
+                    .call();
+
+            JAXBElement jaxbElement = new GenericSOAPClient.Builder().bindToJaxb(MatchResponse.class, response);
+            MatchResponse matchResponse = (MatchResponse) jaxbElement.getValue();
+            ObjectMapper responseMapper = new ObjectMapper();
+            StringWriter sw = new StringWriter();
+            responseMapper.writeValue(sw, matchResponse);
+            logger.info("===============" + sw);
+
+
         } catch (IOException e) {
+
+        } catch (SOAPException e) {
+            e.printStackTrace();
+        } catch (JAXBException e) {
             throw new ClassCastException("Can't map JSON object to MatchRequest XML");
+        } catch (XMLStreamException e) {
+            e.printStackTrace();
         }
+
+//        final JsonObject body = Json.createObjectBuilder()
+//                .add(FeedSubmissionUtils.FEED_SUBMISSION_ID, feedSubmissionId)
+//                .build();
+//
+//        parameters.getEventEmitter().emitData(new Message.Builder(body).build());
 
     }
 

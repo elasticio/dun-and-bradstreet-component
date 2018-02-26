@@ -31,7 +31,7 @@ public class DnBCredentialsVerifier implements CredentialsVerifier {
         }
 
         try {
-            SOAPMessage response = new GenericSOAPClient.Builder().setBodyObject(buildEmptyMatchRequest()).setEndpointUrl(EndpointUrl.V5).setSoapAction(SoapAction.MATCH).setLogin(username).setPassword(password).call();
+            SOAPMessage response = new GenericSOAPClient.Builder().setBodyObject(buildEmptyMatchRequest()).setEndpointUrl(EndpointUrl.V5).setSoapAction(SoapAction.MATCH).setUsername(username).setPassword(password).call();
             JAXBElement jaxbElement = new GenericSOAPClient.Builder().bindToJaxb(MatchResponse.class, response);
             MatchResponse matchResponse = (MatchResponse) jaxbElement.getValue();
 

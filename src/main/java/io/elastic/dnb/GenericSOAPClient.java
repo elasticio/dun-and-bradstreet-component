@@ -24,7 +24,7 @@ public class GenericSOAPClient {
     public static class Builder<T> {
 
         private T bodyObject;
-        private String login;
+        private String username;
         private String password;
         private SoapAction soapAction;
         private EndpointUrl endpointUrl;
@@ -37,8 +37,8 @@ public class GenericSOAPClient {
             return this;
         }
 
-        public Builder setLogin(String login) {
-            this.login = login;
+        public Builder setUsername(String username) {
+            this.username = username;
             return this;
         }
 
@@ -61,7 +61,7 @@ public class GenericSOAPClient {
             return callSoapWebService(endpointUrl.getEndpointUrl(), soapAction.getSoapActionValue());
         }
 
-        public static JAXBElement bindToJaxb(Class t, SOAPMessage soapResponse) throws XMLStreamException, SOAPException, JAXBException {
+        public static JAXBElement bindToJaxb(Class clazz, SOAPMessage soapResponse) throws XMLStreamException, SOAPException, JAXBException {
             //Unmarshall XML and bind to JAXB:
             XMLInputFactory xif = XMLInputFactory.newFactory();
             XMLStreamReader xsr = xif.createXMLStreamReader(soapResponse.getSOAPPart().getContent());
@@ -70,9 +70,9 @@ public class GenericSOAPClient {
             xsr.nextTag(); // Advance to MatchResponse tag
 //            System.out.println(xsr.getNamespaceContext().getNamespaceURI("com"));
 
-            JAXBContext jc = JAXBContext.newInstance(t);
+            JAXBContext jc = JAXBContext.newInstance(clazz);
             Unmarshaller unmarshaller = jc.createUnmarshaller();
-            JAXBElement je = unmarshaller.unmarshal(xsr, t);
+            JAXBElement je = unmarshaller.unmarshal(xsr, clazz);
 //            System.out.println(je.getValue());
 //            MatchResponse matchResponse = (MatchResponse) je.getValue();
 //            System.out.println(matchResponse.getTransactionResult().getResultID());
@@ -114,7 +114,7 @@ public class GenericSOAPClient {
             SOAPMessage soapMessage = messageFactory.createMessage();
 
             createSoapEnvelope(bodyObject, soapMessage);
-            WSPolicy.addWSSEHeader(soapMessage, login, password);
+            WSPolicy.addWSSEHeader(soapMessage, username, password);
 
             MimeHeaders headers = soapMessage.getMimeHeaders();
             headers.addHeader("SOAPAction", soapAction);

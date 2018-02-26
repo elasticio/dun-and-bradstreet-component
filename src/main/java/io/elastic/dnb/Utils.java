@@ -29,4 +29,14 @@ public class Utils {
 
         return value.getString();
     }
+
+    public static String getUsername(final JsonObject config) {
+        return Utils.getConfigParam(config, AppConstants.USERNAME_CONFIG_NAME);
+    }
+
+    public static String getPassword(final JsonObject config) {
+        return Utils.getConfigParam(config, AppConstants.PASSWORD_CONFIG_NAME);
+    }
+
+
 }
