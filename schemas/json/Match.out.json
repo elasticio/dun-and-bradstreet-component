@@ -1,16 +1,15 @@
 {
-    "type": "object",
+  "type": "object",
   "definitions": {},
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "properties": {
     "matchResponseDetail": {
-            "type": "object",
+      "type": "object",
       "properties": {
         "inquiryReferenceDetail": {
-                    "type": "object",
+          "type": "object",
           "properties": {
             "customerBillingEndorsementText": {
-                            "type": "string",
+              "type": "string",
               "title": "The Customerbillingendorsementtext Schema",
               "default": "",
               "examples": [
@@ -18,9 +17,9 @@
               ]
             },
             "customerReferenceText": {
-                            "type": "array",
+              "type": "array",
               "items": {
-                                "type": "string",
+                "type": "string",
                 "title": "The 0 Schema",
                 "default": "",
                 "examples": [
@@ -31,12 +30,12 @@
           }
         },
         "matchCandidate": {
-                    "type": "array",
+          "type": "array",
           "items": {
-                        "type": "object",
+            "type": "object",
             "properties": {
               "dunsnumber": {
-                                "type": "string",
+                "type": "string",
                 "title": "The Dunsnumber Schema",
                 "default": "",
                 "examples": [
@@ -44,7 +43,7 @@
                 ]
               },
               "displaySequence": {
-                                "type": "integer",
+                "type": "integer",
                 "title": "The Displaysequence Schema",
                 "default": 0,
                 "examples": [
@@ -52,15 +51,15 @@
                 ]
               },
               "matchQualityInformation": {
-                                "type": "object",
+                "type": "object",
                 "properties": {
                   "matchDataProfileComponent": {
-                                        "type": "array",
+                    "type": "array",
                     "items": {
-                                            "type": "object",
+                      "type": "object",
                       "properties": {
                         "matchDataProfileComponentValue": {
-                                                    "type": "string",
+                          "type": "string",
                           "title": "The Matchdataprofilecomponentvalue Schema",
                           "default": "",
                           "examples": [
@@ -68,10 +67,10 @@
                           ]
                         },
                         "matchDataProfileComponentTypeText": {
-                                                    "type": "object",
+                          "type": "object",
                           "properties": {
                             "dnbcodeValue": {
-                                                            "type": "null",
+                              "type": "null",
                               "title": "The Dnbcodevalue Schema",
                               "default": null,
                               "examples": [
@@ -79,7 +78,7 @@
                               ]
                             },
                             "dnbcodeTableNumber": {
-                                                            "type": "null",
+                              "type": "null",
                               "title": "The Dnbcodetablenumber Schema",
                               "default": null,
                               "examples": [
@@ -87,7 +86,7 @@
                               ]
                             },
                             "value": {
-                                                            "type": "string",
+                              "type": "string",
                               "title": "The Value Schema",
                               "default": "",
                               "examples": [
@@ -100,7 +99,7 @@
                     }
                   },
                   "matchDataProfileComponentCount": {
-                                        "type": "integer",
+                    "type": "integer",
                     "title": "The Matchdataprofilecomponentcount Schema",
                     "default": 0,
                     "examples": [
@@ -108,7 +107,7 @@
                     ]
                   },
                   "matchDataProfileText": {
-                                        "type": "string",
+                    "type": "string",
                     "title": "The Matchdataprofiletext Schema",
                     "default": "",
                     "examples": [
@@ -116,12 +115,12 @@
                     ]
                   },
                   "matchGradeComponent": {
-                                        "type": "array",
+                    "type": "array",
                     "items": {
-                                            "type": "object",
+                      "type": "object",
                       "properties": {
                         "matchGradeComponentScore": {
-                                                    "type": "integer",
+                          "type": "integer",
                           "title": "The Matchgradecomponentscore Schema",
                           "default": 0,
                           "examples": [
@@ -129,7 +128,7 @@
                           ]
                         },
                         "matchGradeComponentRating": {
-                                                    "type": "string",
+                          "type": "string",
                           "title": "The Matchgradecomponentrating Schema",
                           "default": "",
                           "examples": [
@@ -137,10 +136,10 @@
                           ]
                         },
                         "matchGradeComponentTypeText": {
-                                                    "type": "object",
+                          "type": "object",
                           "properties": {
                             "dnbcodeValue": {
-                                                            "type": "null",
+                              "type": "null",
                               "title": "The Dnbcodevalue Schema",
                               "default": null,
                               "examples": [
@@ -148,7 +147,7 @@
                               ]
                             },
                             "dnbcodeTableNumber": {
-                                                            "type": "null",
+                              "type": "null",
                               "title": "The Dnbcodetablenumber Schema",
                               "default": null,
                               "examples": [
@@ -156,7 +155,7 @@
                               ]
                             },
                             "value": {
-                                                            "type": "string",
+                              "type": "string",
                               "title": "The Value Schema",
                               "default": "",
                               "examples": [
@@ -169,7 +168,7 @@
                     }
                   },
                   "matchGradeComponentCount": {
-                                        "type": "integer",
+                    "type": "integer",
                     "title": "The Matchgradecomponentcount Schema",
                     "default": 0,
                     "examples": [
@@ -177,7 +176,7 @@
                     ]
                   },
                   "matchGradeText": {
-                                        "type": "string",
+                    "type": "string",
                     "title": "The Matchgradetext Schema",
                     "default": "",
                     "examples": [
@@ -185,10 +184,10 @@
                     ]
                   },
                   "matchBasis": {
-                                        "type": "array"
+                    "type": "array"
                   },
                   "confidenceCodeValue": {
-                                        "type": "integer",
+                    "type": "integer",
                     "title": "The Confidencecodevalue Schema",
                     "default": 0,
                     "examples": [
@@ -198,10 +197,10 @@
                 }
               },
               "organizationIdentificationNumberDetail": {
-                                "type": "object",
+                "type": "object",
                 "properties": {
                   "dnbcodeValue": {
-                                        "type": "integer",
+                    "type": "integer",
                     "title": "The Dnbcodevalue Schema",
                     "default": 0,
                     "examples": [
@@ -209,7 +208,7 @@
                     ]
                   },
                   "dnbcodeTableNumber": {
-                                        "type": "integer",
+                    "type": "integer",
                     "title": "The Dnbcodetablenumber Schema",
                     "default": 0,
                     "examples": [
@@ -217,7 +216,7 @@
                     ]
                   },
                   "typeText": {
-                                        "type": "string",
+                    "type": "string",
                     "title": "The Typetext Schema",
                     "default": "",
                     "examples": [
@@ -225,7 +224,7 @@
                     ]
                   },
                   "organizationIdentificationNumber": {
-                                        "type": "string",
+                    "type": "string",
                     "title": "The Organizationidentificationnumber Schema",
                     "default": "",
                     "examples": [
@@ -235,7 +234,7 @@
                 }
               },
               "standaloneOrganizationIndicator": {
-                                "type": "boolean",
+                "type": "boolean",
                 "title": "The Standaloneorganizationindicator Schema",
                 "default": false,
                 "examples": [
@@ -243,7 +242,7 @@
                 ]
               },
               "marketabilityIndicator": {
-                                "type": "null",
+                "type": "null",
                 "title": "The Marketabilityindicator Schema",
                 "default": null,
                 "examples": [
@@ -251,13 +250,13 @@
                 ]
               },
               "familyTreeMemberRole": {
-                                "type": "array"
+                "type": "array"
               },
               "operatingStatusText": {
-                                "type": "object",
+                "type": "object",
                 "properties": {
                   "dnbcodeValue": {
-                                        "type": "null",
+                    "type": "null",
                     "title": "The Dnbcodevalue Schema",
                     "default": null,
                     "examples": [
@@ -265,7 +264,7 @@
                     ]
                   },
                   "dnbcodeTableNumber": {
-                                        "type": "null",
+                    "type": "null",
                     "title": "The Dnbcodetablenumber Schema",
                     "default": null,
                     "examples": [
@@ -273,7 +272,7 @@
                     ]
                   },
                   "value": {
-                                        "type": "string",
+                    "type": "string",
                     "title": "The Value Schema",
                     "default": "",
                     "examples": [
@@ -283,7 +282,7 @@
                 }
               },
               "webPageAddress": {
-                                "type": "null",
+                "type": "null",
                 "title": "The Webpageaddress Schema",
                 "default": null,
                 "examples": [
@@ -291,10 +290,10 @@
                 ]
               },
               "telephoneNumber": {
-                                "type": "object",
+                "type": "object",
                 "properties": {
                   "unreachableIndicator": {
-                                        "type": "boolean",
+                    "type": "boolean",
                     "title": "The Unreachableindicator Schema",
                     "default": false,
                     "examples": [
@@ -302,7 +301,7 @@
                     ]
                   },
                   "internationalDialingCode": {
-                                        "type": "null",
+                    "type": "null",
                     "title": "The Internationaldialingcode Schema",
                     "default": null,
                     "examples": [
@@ -310,7 +309,7 @@
                     ]
                   },
                   "telecommunicationNumber": {
-                                        "type": "string",
+                    "type": "string",
                     "title": "The Telecommunicationnumber Schema",
                     "default": "",
                     "examples": [
@@ -320,10 +319,10 @@
                 }
               },
               "mailingAddress": {
-                                "type": "object",
+                "type": "object",
                 "properties": {
                   "undeliverableIndicator": {
-                                        "type": "boolean",
+                    "type": "boolean",
                     "title": "The Undeliverableindicator Schema",
                     "default": false,
                     "examples": [
@@ -331,7 +330,7 @@
                     ]
                   },
                   "territoryAbbreviatedName": {
-                                        "type": "null",
+                    "type": "null",
                     "title": "The Territoryabbreviatedname Schema",
                     "default": null,
                     "examples": [
@@ -339,7 +338,7 @@
                     ]
                   },
                   "territoryOfficialName": {
-                                        "type": "null",
+                    "type": "null",
                     "title": "The Territoryofficialname Schema",
                     "default": null,
                     "examples": [
@@ -347,7 +346,7 @@
                     ]
                   },
                   "postalCodeExtensionCode": {
-                                        "type": "null",
+                    "type": "null",
                     "title": "The Postalcodeextensioncode Schema",
                     "default": null,
                     "examples": [
@@ -355,7 +354,7 @@
                     ]
                   },
                   "postalCode": {
-                                        "type": "null",
+                    "type": "null",
                     "title": "The Postalcode Schema",
                     "default": null,
                     "examples": [
@@ -363,7 +362,7 @@
                     ]
                   },
                   "countryISOAlpha2Code": {
-                                        "type": "string",
+                    "type": "string",
                     "title": "The Countryisoalpha2code Schema",
                     "default": "",
                     "examples": [
@@ -371,7 +370,7 @@
                     ]
                   },
                   "primaryTownName": {
-                                        "type": "null",
+                    "type": "null",
                     "title": "The Primarytownname Schema",
                     "default": null,
                     "examples": [
@@ -379,15 +378,15 @@
                     ]
                   },
                   "streetAddressLine": {
-                                        "type": "array"
+                    "type": "array"
                   }
                 }
               },
               "primaryAddress": {
-                                "type": "object",
+                "type": "object",
                 "properties": {
                   "undeliverableIndicator": {
-                                        "type": "boolean",
+                    "type": "boolean",
                     "title": "The Undeliverableindicator Schema",
                     "default": false,
                     "examples": [
@@ -395,7 +394,7 @@
                     ]
                   },
                   "territoryAbbreviatedName": {
-                                        "type": "null",
+                    "type": "null",
                     "title": "The Territoryabbreviatedname Schema",
                     "default": null,
                     "examples": [
@@ -403,7 +402,7 @@
                     ]
                   },
                   "territoryOfficialName": {
-                                        "type": "null",
+                    "type": "null",
                     "title": "The Territoryofficialname Schema",
                     "default": null,
                     "examples": [
@@ -411,7 +410,7 @@
                     ]
                   },
                   "postalCodeExtensionCode": {
-                                        "type": "null",
+                    "type": "null",
                     "title": "The Postalcodeextensioncode Schema",
                     "default": null,
                     "examples": [
@@ -419,7 +418,7 @@
                     ]
                   },
                   "postalCode": {
-                                        "type": "string",
+                    "type": "string",
                     "title": "The Postalcode Schema",
                     "default": "",
                     "examples": [
@@ -427,7 +426,7 @@
                     ]
                   },
                   "countryISOAlpha2Code": {
-                                        "type": "string",
+                    "type": "string",
                     "title": "The Countryisoalpha2code Schema",
                     "default": "",
                     "examples": [
@@ -435,7 +434,7 @@
                     ]
                   },
                   "primaryTownName": {
-                                        "type": "string",
+                    "type": "string",
                     "title": "The Primarytownname Schema",
                     "default": "",
                     "examples": [
@@ -443,12 +442,12 @@
                     ]
                   },
                   "streetAddressLine": {
-                                        "type": "array",
+                    "type": "array",
                     "items": {
-                                            "type": "object",
+                      "type": "object",
                       "properties": {
                         "lineText": {
-                                                    "type": "string",
+                          "type": "string",
                           "title": "The Linetext Schema",
                           "default": "",
                           "examples": [
@@ -461,7 +460,7 @@
                 }
               },
               "seniorPrincipalName": {
-                                "type": "null",
+                "type": "null",
                 "title": "The Seniorprincipalname Schema",
                 "default": null,
                 "examples": [
@@ -469,7 +468,7 @@
                 ]
               },
               "tradeStyleName": {
-                                "type": "null",
+                "type": "null",
                 "title": "The Tradestylename Schema",
                 "default": null,
                 "examples": [
@@ -477,10 +476,10 @@
                 ]
               },
               "organizationPrimaryName": {
-                                "type": "object",
+                "type": "object",
                 "properties": {
                   "registeredNameIndicator": {
-                                        "type": "null",
+                    "type": "null",
                     "title": "The Registerednameindicator Schema",
                     "default": null,
                     "examples": [
@@ -488,10 +487,10 @@
                     ]
                   },
                   "organizationName": {
-                                        "type": "object",
+                    "type": "object",
                     "properties": {
                       "writingScriptISOAlpha4Code": {
-                                                "type": "null",
+                        "type": "null",
                         "title": "The Writingscriptisoalpha4code Schema",
                         "default": null,
                         "examples": [
@@ -499,7 +498,7 @@
                         ]
                       },
                       "languageCode": {
-                                                "type": "null",
+                        "type": "null",
                         "title": "The Languagecode Schema",
                         "default": null,
                         "examples": [
@@ -507,7 +506,7 @@
                         ]
                       },
                       "value": {
-                                                "type": "string",
+                        "type": "string",
                         "title": "The Value Schema",
                         "default": "",
                         "examples": [
@@ -519,7 +518,7 @@
                 }
               },
               "subjectID": {
-                                "type": "null",
+                "type": "null",
                 "title": "The Subjectid Schema",
                 "default": null,
                 "examples": [
@@ -530,7 +529,7 @@
           }
         },
         "candidateMatchedQuantity": {
-                    "type": "integer",
+          "type": "integer",
           "title": "The Candidatematchedquantity Schema",
           "default": 0,
           "examples": [
@@ -538,10 +537,10 @@
           ]
         },
         "matchDataCriteriaText": {
-                    "type": "object",
+          "type": "object",
           "properties": {
             "dnbcodeValue": {
-                            "type": "null",
+              "type": "null",
               "title": "The Dnbcodevalue Schema",
               "default": null,
               "examples": [
@@ -549,7 +548,7 @@
               ]
             },
             "dnbcodeTableNumber": {
-                            "type": "null",
+              "type": "null",
               "title": "The Dnbcodetablenumber Schema",
               "default": null,
               "examples": [
@@ -557,7 +556,7 @@
               ]
             },
             "value": {
-                            "type": "string",
+              "type": "string",
               "title": "The Value Schema",
               "default": "",
               "examples": [
@@ -569,7 +568,7 @@
       }
     },
     "serviceVersionNumber": {
-            "type": "string",
+      "type": "string",
       "title": "The Serviceversionnumber Schema",
       "default": "",
       "examples": [
@@ -577,13 +576,13 @@
       ]
     },
     "transactionResult": {
-            "type": "object",
+      "type": "object",
       "properties": {
         "resultMessage": {
-                    "type": "array"
+          "type": "array"
         },
         "resultText": {
-                    "type": "string",
+          "type": "string",
           "title": "The Resulttext Schema",
           "default": "",
           "examples": [
@@ -591,7 +590,7 @@
           ]
         },
         "resultID": {
-                    "type": "string",
+          "type": "string",
           "title": "The Resultid Schema",
           "default": "",
           "examples": [
@@ -599,7 +598,7 @@
           ]
         },
         "severityText": {
-                    "type": "string",
+          "type": "string",
           "title": "The Severitytext Schema",
           "default": "",
           "examples": [
@@ -609,10 +608,10 @@
       }
     },
     "transactionDetail": {
-            "type": "object",
+      "type": "object",
       "properties": {
         "transactionTimestamp": {
-                    "type": "integer",
+          "type": "integer",
           "title": "The Transactiontimestamp Schema",
           "default": 0,
           "examples": [
@@ -620,7 +619,7 @@
           ]
         },
         "serviceTransactionID": {
-                    "type": "string",
+          "type": "string",
           "title": "The Servicetransactionid Schema",
           "default": "",
           "examples": [
@@ -628,7 +627,7 @@
           ]
         },
         "applicationTransactionID": {
-                    "type": "null",
+          "type": "null",
           "title": "The Applicationtransactionid Schema",
           "default": null,
           "examples": [
