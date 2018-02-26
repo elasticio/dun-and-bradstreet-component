@@ -1,310 +1,732 @@
 {
+  "$id": "http://example.com/example.json",
   "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "properties": {
-    "transactionDetail": {
+    "matchResponseDetail": {
+      "$id": "/properties/matchResponseDetail",
       "type": "object",
       "properties": {
-        "applicationTransactionID": {
-          "type": "string"
-        },
-        "serviceTransactionID": {
-          "type": "string"
-        },
-        "transactionTimestamp": {
-          "type": "string"
-        }
-      }
-    },
-    "transactionResult": {
-      "type": "object",
-      "properties": {
-        "severityText": {
-          "type": "string"
-        },
-        "resultID": {
-          "type": "string"
-        },
-        "resultText": {
-          "type": "string"
-        },
-        "resultMessage": {
+        "inquiryReferenceDetail": {
+          "$id": "/properties/matchResponseDetail/properties/inquiryReferenceDetail",
           "type": "object",
           "properties": {
-            "resultDescription": {
-              "type": "string"
+            "customerBillingEndorsementText": {
+              "$id": "/properties/matchResponseDetail/properties/inquiryReferenceDetail/properties/customerBillingEndorsementText",
+              "type": "string",
+              "title": "The Customerbillingendorsementtext Schema",
+              "default": "",
+              "examples": [
+                "Sample"
+              ]
+            },
+            "customerReferenceText": {
+              "$id": "/properties/matchResponseDetail/properties/inquiryReferenceDetail/properties/customerReferenceText",
+              "type": "array",
+              "items": {
+                "$id": "/properties/matchResponseDetail/properties/inquiryReferenceDetail/properties/customerReferenceText/items",
+                "type": "string",
+                "title": "The 0 Schema",
+                "default": "",
+                "examples": [
+                  "Sample"
+                ]
+              }
             }
           }
-        }
-      }
-    },
-    "matchResponseDetail": {
-      "type": "object",
-      "properties": {
-        "matchDataCriteriaText": {
-          "type": "object",
-          "properties": {
-            "dnbcodeValue": {
-              "type": "string"
-            },
-            "dnbcodeTableNumber": {
-              "type": "string"
-            },
-            "value": {
-              "type": "string"
+        },
+        "matchCandidate": {
+          "$id": "/properties/matchResponseDetail/properties/matchCandidate",
+          "type": "array",
+          "items": {
+            "$id": "/properties/matchResponseDetail/properties/matchCandidate/items",
+            "type": "object",
+            "properties": {
+              "dunsnumber": {
+                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/dunsnumber",
+                "type": "string",
+                "title": "The Dunsnumber Schema",
+                "default": "",
+                "examples": [
+                  "1234567890"
+                ]
+              },
+              "displaySequence": {
+                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/displaySequence",
+                "type": "integer",
+                "title": "The Displaysequence Schema",
+                "default": 0,
+                "examples": [
+                  1
+                ]
+              },
+              "matchQualityInformation": {
+                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation",
+                "type": "object",
+                "properties": {
+                  "matchDataProfileComponent": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileComponent",
+                    "type": "array",
+                    "items": {
+                      "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileComponent/items",
+                      "type": "object",
+                      "properties": {
+                        "matchDataProfileComponentValue": {
+                          "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileComponent/items/properties/matchDataProfileComponentValue",
+                          "type": "string",
+                          "title": "The Matchdataprofilecomponentvalue Schema",
+                          "default": "",
+                          "examples": [
+                            "20"
+                          ]
+                        },
+                        "matchDataProfileComponentTypeText": {
+                          "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileComponent/items/properties/matchDataProfileComponentTypeText",
+                          "type": "object",
+                          "properties": {
+                            "dnbcodeValue": {
+                              "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileComponent/items/properties/matchDataProfileComponentTypeText/properties/dnbcodeValue",
+                              "type": "null",
+                              "title": "The Dnbcodevalue Schema",
+                              "default": null,
+                              "examples": [
+                                null
+                              ]
+                            },
+                            "dnbcodeTableNumber": {
+                              "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileComponent/items/properties/matchDataProfileComponentTypeText/properties/dnbcodeTableNumber",
+                              "type": "null",
+                              "title": "The Dnbcodetablenumber Schema",
+                              "default": null,
+                              "examples": [
+                                null
+                              ]
+                            },
+                            "value": {
+                              "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileComponent/items/properties/matchDataProfileComponentTypeText/properties/value",
+                              "type": "string",
+                              "title": "The Value Schema",
+                              "default": "",
+                              "examples": [
+                                "Name"
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "matchDataProfileComponentCount": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileComponentCount",
+                    "type": "integer",
+                    "title": "The Matchdataprofilecomponentcount Schema",
+                    "default": 0,
+                    "examples": [
+                      14
+                    ]
+                  },
+                  "matchDataProfileText": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchDataProfileText",
+                    "type": "string",
+                    "title": "The Matchdataprofiletext Schema",
+                    "default": "",
+                    "examples": [
+                      "2099999998999899000098009898"
+                    ]
+                  },
+                  "matchGradeComponent": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponent",
+                    "type": "array",
+                    "items": {
+                      "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponent/items",
+                      "type": "object",
+                      "properties": {
+                        "matchGradeComponentScore": {
+                          "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponent/items/properties/matchGradeComponentScore",
+                          "type": "integer",
+                          "title": "The Matchgradecomponentscore Schema",
+                          "default": 0,
+                          "examples": [
+                            0
+                          ]
+                        },
+                        "matchGradeComponentRating": {
+                          "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponent/items/properties/matchGradeComponentRating",
+                          "type": "string",
+                          "title": "The Matchgradecomponentrating Schema",
+                          "default": "",
+                          "examples": [
+                            "Z"
+                          ]
+                        },
+                        "matchGradeComponentTypeText": {
+                          "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponent/items/properties/matchGradeComponentTypeText",
+                          "type": "object",
+                          "properties": {
+                            "dnbcodeValue": {
+                              "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponent/items/properties/matchGradeComponentTypeText/properties/dnbcodeValue",
+                              "type": "null",
+                              "title": "The Dnbcodevalue Schema",
+                              "default": null,
+                              "examples": [
+                                null
+                              ]
+                            },
+                            "dnbcodeTableNumber": {
+                              "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponent/items/properties/matchGradeComponentTypeText/properties/dnbcodeTableNumber",
+                              "type": "null",
+                              "title": "The Dnbcodetablenumber Schema",
+                              "default": null,
+                              "examples": [
+                                null
+                              ]
+                            },
+                            "value": {
+                              "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponent/items/properties/matchGradeComponentTypeText/properties/value",
+                              "type": "string",
+                              "title": "The Value Schema",
+                              "default": "",
+                              "examples": [
+                                "Name"
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "matchGradeComponentCount": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeComponentCount",
+                    "type": "integer",
+                    "title": "The Matchgradecomponentcount Schema",
+                    "default": 0,
+                    "examples": [
+                      10
+                    ]
+                  },
+                  "matchGradeText": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchGradeText",
+                    "type": "string",
+                    "title": "The Matchgradetext Schema",
+                    "default": "",
+                    "examples": [
+                      "ZZZZZZZZZAZ"
+                    ]
+                  },
+                  "matchBasis": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/matchBasis",
+                    "type": "array"
+                  },
+                  "confidenceCodeValue": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/matchQualityInformation/properties/confidenceCodeValue",
+                    "type": "integer",
+                    "title": "The Confidencecodevalue Schema",
+                    "default": 0,
+                    "examples": [
+                      10
+                    ]
+                  }
+                }
+              },
+              "organizationIdentificationNumberDetail": {
+                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationIdentificationNumberDetail",
+                "type": "object",
+                "properties": {
+                  "dnbcodeValue": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationIdentificationNumberDetail/properties/dnbcodeValue",
+                    "type": "integer",
+                    "title": "The Dnbcodevalue Schema",
+                    "default": 0,
+                    "examples": [
+                      23097
+                    ]
+                  },
+                  "dnbcodeTableNumber": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationIdentificationNumberDetail/properties/dnbcodeTableNumber",
+                    "type": "integer",
+                    "title": "The Dnbcodetablenumber Schema",
+                    "default": 0,
+                    "examples": [
+                      7
+                    ]
+                  },
+                  "typeText": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationIdentificationNumberDetail/properties/typeText",
+                    "type": "string",
+                    "title": "The Typetext Schema",
+                    "default": "",
+                    "examples": [
+                      "RSIN"
+                    ]
+                  },
+                  "organizationIdentificationNumber": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationIdentificationNumberDetail/properties/organizationIdentificationNumber",
+                    "type": "string",
+                    "title": "The Organizationidentificationnumber Schema",
+                    "default": "",
+                    "examples": [
+                      "123456AAAA11"
+                    ]
+                  }
+                }
+              },
+              "standaloneOrganizationIndicator": {
+                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/standaloneOrganizationIndicator",
+                "type": "boolean",
+                "title": "The Standaloneorganizationindicator Schema",
+                "default": false,
+                "examples": [
+                  true
+                ]
+              },
+              "marketabilityIndicator": {
+                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/marketabilityIndicator",
+                "type": "null",
+                "title": "The Marketabilityindicator Schema",
+                "default": null,
+                "examples": [
+                  null
+                ]
+              },
+              "familyTreeMemberRole": {
+                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/familyTreeMemberRole",
+                "type": "array"
+              },
+              "operatingStatusText": {
+                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/operatingStatusText",
+                "type": "object",
+                "properties": {
+                  "dnbcodeValue": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/operatingStatusText/properties/dnbcodeValue",
+                    "type": "null",
+                    "title": "The Dnbcodevalue Schema",
+                    "default": null,
+                    "examples": [
+                      null
+                    ]
+                  },
+                  "dnbcodeTableNumber": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/operatingStatusText/properties/dnbcodeTableNumber",
+                    "type": "null",
+                    "title": "The Dnbcodetablenumber Schema",
+                    "default": null,
+                    "examples": [
+                      null
+                    ]
+                  },
+                  "value": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/operatingStatusText/properties/value",
+                    "type": "string",
+                    "title": "The Value Schema",
+                    "default": "",
+                    "examples": [
+                      "Active"
+                    ]
+                  }
+                }
+              },
+              "webPageAddress": {
+                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/webPageAddress",
+                "type": "null",
+                "title": "The Webpageaddress Schema",
+                "default": null,
+                "examples": [
+                  null
+                ]
+              },
+              "telephoneNumber": {
+                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/telephoneNumber",
+                "type": "object",
+                "properties": {
+                  "unreachableIndicator": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/telephoneNumber/properties/unreachableIndicator",
+                    "type": "boolean",
+                    "title": "The Unreachableindicator Schema",
+                    "default": false,
+                    "examples": [
+                      false
+                    ]
+                  },
+                  "internationalDialingCode": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/telephoneNumber/properties/internationalDialingCode",
+                    "type": "null",
+                    "title": "The Internationaldialingcode Schema",
+                    "default": null,
+                    "examples": [
+                      null
+                    ]
+                  },
+                  "telecommunicationNumber": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/telephoneNumber/properties/telecommunicationNumber",
+                    "type": "string",
+                    "title": "The Telecommunicationnumber Schema",
+                    "default": "",
+                    "examples": [
+                      "1234567890"
+                    ]
+                  }
+                }
+              },
+              "mailingAddress": {
+                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress",
+                "type": "object",
+                "properties": {
+                  "undeliverableIndicator": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress/properties/undeliverableIndicator",
+                    "type": "boolean",
+                    "title": "The Undeliverableindicator Schema",
+                    "default": false,
+                    "examples": [
+                      false
+                    ]
+                  },
+                  "territoryAbbreviatedName": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress/properties/territoryAbbreviatedName",
+                    "type": "null",
+                    "title": "The Territoryabbreviatedname Schema",
+                    "default": null,
+                    "examples": [
+                      null
+                    ]
+                  },
+                  "territoryOfficialName": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress/properties/territoryOfficialName",
+                    "type": "null",
+                    "title": "The Territoryofficialname Schema",
+                    "default": null,
+                    "examples": [
+                      null
+                    ]
+                  },
+                  "postalCodeExtensionCode": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress/properties/postalCodeExtensionCode",
+                    "type": "null",
+                    "title": "The Postalcodeextensioncode Schema",
+                    "default": null,
+                    "examples": [
+                      null
+                    ]
+                  },
+                  "postalCode": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress/properties/postalCode",
+                    "type": "null",
+                    "title": "The Postalcode Schema",
+                    "default": null,
+                    "examples": [
+                      null
+                    ]
+                  },
+                  "countryISOAlpha2Code": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress/properties/countryISOAlpha2Code",
+                    "type": "string",
+                    "title": "The Countryisoalpha2code Schema",
+                    "default": "",
+                    "examples": [
+                      "NL"
+                    ]
+                  },
+                  "primaryTownName": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress/properties/primaryTownName",
+                    "type": "null",
+                    "title": "The Primarytownname Schema",
+                    "default": null,
+                    "examples": [
+                      null
+                    ]
+                  },
+                  "streetAddressLine": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/mailingAddress/properties/streetAddressLine",
+                    "type": "array"
+                  }
+                }
+              },
+              "primaryAddress": {
+                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress",
+                "type": "object",
+                "properties": {
+                  "undeliverableIndicator": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/undeliverableIndicator",
+                    "type": "boolean",
+                    "title": "The Undeliverableindicator Schema",
+                    "default": false,
+                    "examples": [
+                      false
+                    ]
+                  },
+                  "territoryAbbreviatedName": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/territoryAbbreviatedName",
+                    "type": "null",
+                    "title": "The Territoryabbreviatedname Schema",
+                    "default": null,
+                    "examples": [
+                      null
+                    ]
+                  },
+                  "territoryOfficialName": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/territoryOfficialName",
+                    "type": "null",
+                    "title": "The Territoryofficialname Schema",
+                    "default": null,
+                    "examples": [
+                      null
+                    ]
+                  },
+                  "postalCodeExtensionCode": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/postalCodeExtensionCode",
+                    "type": "null",
+                    "title": "The Postalcodeextensioncode Schema",
+                    "default": null,
+                    "examples": [
+                      null
+                    ]
+                  },
+                  "postalCode": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/postalCode",
+                    "type": "string",
+                    "title": "The Postalcode Schema",
+                    "default": "",
+                    "examples": [
+                      "9261 VK"
+                    ]
+                  },
+                  "countryISOAlpha2Code": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/countryISOAlpha2Code",
+                    "type": "string",
+                    "title": "The Countryisoalpha2code Schema",
+                    "default": "",
+                    "examples": [
+                      "NL"
+                    ]
+                  },
+                  "primaryTownName": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/primaryTownName",
+                    "type": "string",
+                    "title": "The Primarytownname Schema",
+                    "default": "",
+                    "examples": [
+                      "Eastermar"
+                    ]
+                  },
+                  "streetAddressLine": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/streetAddressLine",
+                    "type": "array",
+                    "items": {
+                      "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/streetAddressLine/items",
+                      "type": "object",
+                      "properties": {
+                        "lineText": {
+                          "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/primaryAddress/properties/streetAddressLine/items/properties/lineText",
+                          "type": "string",
+                          "title": "The Linetext Schema",
+                          "default": "",
+                          "examples": [
+                            "E M Beimastrjitte 56-58"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "seniorPrincipalName": {
+                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/seniorPrincipalName",
+                "type": "null",
+                "title": "The Seniorprincipalname Schema",
+                "default": null,
+                "examples": [
+                  null
+                ]
+              },
+              "tradeStyleName": {
+                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/tradeStyleName",
+                "type": "null",
+                "title": "The Tradestylename Schema",
+                "default": null,
+                "examples": [
+                  null
+                ]
+              },
+              "organizationPrimaryName": {
+                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationPrimaryName",
+                "type": "object",
+                "properties": {
+                  "registeredNameIndicator": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationPrimaryName/properties/registeredNameIndicator",
+                    "type": "null",
+                    "title": "The Registerednameindicator Schema",
+                    "default": null,
+                    "examples": [
+                      null
+                    ]
+                  },
+                  "organizationName": {
+                    "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationPrimaryName/properties/organizationName",
+                    "type": "object",
+                    "properties": {
+                      "writingScriptISOAlpha4Code": {
+                        "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationPrimaryName/properties/organizationName/properties/writingScriptISOAlpha4Code",
+                        "type": "null",
+                        "title": "The Writingscriptisoalpha4code Schema",
+                        "default": null,
+                        "examples": [
+                          null
+                        ]
+                      },
+                      "languageCode": {
+                        "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationPrimaryName/properties/organizationName/properties/languageCode",
+                        "type": "null",
+                        "title": "The Languagecode Schema",
+                        "default": null,
+                        "examples": [
+                          null
+                        ]
+                      },
+                      "value": {
+                        "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/organizationPrimaryName/properties/organizationName/properties/value",
+                        "type": "string",
+                        "title": "The Value Schema",
+                        "default": "",
+                        "examples": [
+                          "Studio Staalkaart"
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "subjectID": {
+                "$id": "/properties/matchResponseDetail/properties/matchCandidate/items/properties/subjectID",
+                "type": "null",
+                "title": "The Subjectid Schema",
+                "default": null,
+                "examples": [
+                  null
+                ]
+              }
             }
           }
         },
         "candidateMatchedQuantity": {
-          "type": "integer"
+          "$id": "/properties/matchResponseDetail/properties/candidateMatchedQuantity",
+          "type": "integer",
+          "title": "The Candidatematchedquantity Schema",
+          "default": 0,
+          "examples": [
+            1
+          ]
         },
-        "matchCandidate": {
+        "matchDataCriteriaText": {
+          "$id": "/properties/matchResponseDetail/properties/matchDataCriteriaText",
           "type": "object",
           "properties": {
-            "dunsnumber": {
-              "type": "string"
+            "dnbcodeValue": {
+              "$id": "/properties/matchResponseDetail/properties/matchDataCriteriaText/properties/dnbcodeValue",
+              "type": "null",
+              "title": "The Dnbcodevalue Schema",
+              "default": null,
+              "examples": [
+                null
+              ]
             },
-            "subjectID": {
-              "type": "string"
+            "dnbcodeTableNumber": {
+              "$id": "/properties/matchResponseDetail/properties/matchDataCriteriaText/properties/dnbcodeTableNumber",
+              "type": "null",
+              "title": "The Dnbcodetablenumber Schema",
+              "default": null,
+              "examples": [
+                null
+              ]
             },
-            "organizationPrimaryName": {
-              "type": "object",
-              "properties": {
-                "organizationName": {
-                  "type": "string"
-                }
-              }
-            },
-            "tradeStyleName": {
-              "type": "object",
-              "properties": {
-                "organizationName": {
-                  "type": "object"
-                }
-              }
-            },
-            "seniorPrincipalName": {
-              "type": "object",
-              "properties": {
-                "namePrefix": {
-                  "type": "object",
-                  "properties": {
-                    "namePrefixText": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "firstName": {
-                  "type": "string"
-                },
-                "middleName": {
-                  "type": "string"
-                },
-                "lastName": {
-                  "type": "string"
-                },
-                "fullName": {
-                  "type": "string"
-                },
-                "nameSuffix": {
-                  "type": "object",
-                  "properties": {
-                    "nameSuffixText": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            },
-            "primaryAddress": {
-              "type": "object",
-              "properties": {
-                "streetAddressLine": {
-                  "type": "object",
-                  "properties": {
-                    "lineText": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "primaryTownName": {
-                  "type": "string"
-                },
-                "countryISOAlpha2Code": {
-                  "type": "string"
-                },
-                "postalCode": {
-                  "type": "string"
-                },
-                "postalCodeExtensionCode": {
-                  "type": "string"
-                },
-                "territoryOfficialName": {
-                  "type": "string"
-                },
-                "territoryAbbreviatedName": {
-                  "type": "string"
-                },
-                "undeliverableIndicator": {
-                  "type": "string"
-                }
-              }
-            },
-            "mailingAddress": {
-              "type": "object",
-              "properties": {
-                "streetAddressLine": {
-                  "type": "object",
-                  "properties": {
-                    "lineText": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "primaryTownName": {
-                  "type": "string"
-                },
-                "countryISOAlpha2Code": {
-                  "type": "string"
-                },
-                "postalCode": {
-                  "type": "string"
-                },
-                "postalCodeExtensionCode": {
-                  "type": "string"
-                },
-                "territoryOfficialName": {
-                  "type": "string"
-                },
-                "territoryAbbreviatedName": {
-                  "type": "string"
-                },
-                "undeliverableIndicator": {
-                  "type": "string"
-                }
-              }
-            },
-            "telephoneNumber": {
-              "type": "object",
-              "properties": {
-                "telecommunicationNumber": {
-                  "type": "string"
-                },
-                "internationalDialingCode": {
-                  "type": "string"
-                },
-                "unreachableIndicator": {
-                  "type": "string"
-                }
-              }
-            },
-            "webPageAddress": {
-              "type": "object",
-              "properties": {
-                "telecommunicationAddress": {
-                  "type": "string"
-                },
-                "unreachableIndicator": {
-                  "type": "string"
-                }
-              }
-            },
-            "operatingStatusText": {
-              "type": "string"
-            },
-            "familyTreeMemberRole": {
-              "type": "object",
-              "properties": {
-                "familyTreeMemberRoleText": {
-                  "type": "string"
-                }
-              }
-            },
-            "marketabilityIndicator": {
-              "type": "string"
-            },
-            "standaloneOrganizationIndicator": {
-              "type": "string"
-            },
-            "organizationIdentificationNumberDetail": {
-              "type": "string"
-            },
-            "matchQualityInformation": {
-              "type": "object",
-              "properties": {
-                "confidenceCodeValue": {
-                  "type": "string"
-                },
-                "matchBasis": {
-                  "type": "object",
-                  "properties": {
-                    "endIndicator": {
-                      "type": "string"
-                    },
-                    "subjectTypeText": {
-                      "type": "string"
-                    },
-                    "seniorPrincipalIndicator": {
-                      "type": "string"
-                    },
-                    "matchBasisText": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "matchGradeText": {
-                  "type": "string"
-                },
-                "matchGradeComponentCount": {
-                  "type": "string"
-                },
-                "matchGradeComponent": {
-                  "type": "object",
-                  "properties": {
-                    "matchGradeComponentTypeText": {
-                      "type": "string"
-                    },
-                    "matchGradeComponentRating": {
-                      "type": "string"
-                    },
-                    "matchGradeComponentScore": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "matchDataProfileText": {
-                  "type": "string"
-                },
-                "matchDataProfileComponentCount": {
-                  "type": "string"
-                },
-                "matchDataProfileComponent": {
-                  "type": "object",
-                  "properties": {
-                    "matchDataProfileComponentTypeText": {
-                      "type": "string"
-                    },
-                    "matchDataProfileComponentValue": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            },
-            "displaySequence": {
-              "type": "string"
+            "value": {
+              "$id": "/properties/matchResponseDetail/properties/matchDataCriteriaText/properties/value",
+              "type": "string",
+              "title": "The Value Schema",
+              "default": "",
+              "examples": [
+                "National ID Lookup"
+              ]
             }
           }
+        }
+      }
+    },
+    "serviceVersionNumber": {
+      "$id": "/properties/serviceVersionNumber",
+      "type": "string",
+      "title": "The Serviceversionnumber Schema",
+      "default": "",
+      "examples": [
+        "5.0"
+      ]
+    },
+    "transactionResult": {
+      "$id": "/properties/transactionResult",
+      "type": "object",
+      "properties": {
+        "resultMessage": {
+          "$id": "/properties/transactionResult/properties/resultMessage",
+          "type": "array"
         },
-        "inquiryReferenceDetail": {
-          "type": "object",
-          "properties": {
-            "customerReferenceText": {
-              "type": "string"
-            },
-            "customerBillingEndorsementText": {
-              "type": "string"
-            }
-          }
+        "resultText": {
+          "$id": "/properties/transactionResult/properties/resultText",
+          "type": "string",
+          "title": "The Resulttext Schema",
+          "default": "",
+          "examples": [
+            "Success"
+          ]
+        },
+        "resultID": {
+          "$id": "/properties/transactionResult/properties/resultID",
+          "type": "string",
+          "title": "The Resultid Schema",
+          "default": "",
+          "examples": [
+            "CM000"
+          ]
+        },
+        "severityText": {
+          "$id": "/properties/transactionResult/properties/severityText",
+          "type": "string",
+          "title": "The Severitytext Schema",
+          "default": "",
+          "examples": [
+            "INFORMATION"
+          ]
+        }
+      }
+    },
+    "transactionDetail": {
+      "$id": "/properties/transactionDetail",
+      "type": "object",
+      "properties": {
+        "transactionTimestamp": {
+          "$id": "/properties/transactionDetail/properties/transactionTimestamp",
+          "type": "integer",
+          "title": "The Transactiontimestamp Schema",
+          "default": 0,
+          "examples": [
+            1437442405000
+          ]
+        },
+        "serviceTransactionID": {
+          "$id": "/properties/transactionDetail/properties/serviceTransactionID",
+          "type": "string",
+          "title": "The Servicetransactionid Schema",
+          "default": "",
+          "examples": [
+            "Id-a5d9ad5583e20000b5440500292a0073-1"
+          ]
+        },
+        "applicationTransactionID": {
+          "$id": "/properties/transactionDetail/properties/applicationTransactionID",
+          "type": "null",
+          "title": "The Applicationtransactionid Schema",
+          "default": null,
+          "examples": [
+            null
+          ]
         }
       }
     }
