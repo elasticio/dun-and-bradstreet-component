@@ -1186,7 +1186,7 @@ Records data used by a matching routine to identify the customer and search para
 	</xs:complexType>
 	<xs:complexType name="MatchResponseDetail">
 		<xs:sequence>
-			<xs:element name="MatchDataCriteriaText" type="xs:string" minOccurs="0"/>
+			<xs:element name="MatchDataCriteriaText" type="cy:DNBDecodedStringType" minOccurs="0"/>
 			<xs:element name="CandidateMatchedQuantity">
 				<xs:simpleType>
 					<xs:restriction base="xs:int">

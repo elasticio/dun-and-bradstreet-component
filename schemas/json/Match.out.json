@@ -41,7 +41,18 @@
       "type": "object",
       "properties": {
         "matchDataCriteriaText": {
-          "type": "string"
+          "type": "object",
+          "properties": {
+            "dnbcodeValue": {
+              "type": "string"
+            },
+            "dnbcodeTableNumber": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          }
         },
         "candidateMatchedQuantity": {
           "type": "integer"
