@@ -44,7 +44,7 @@
           "type": "string"
         },
         "candidateMatchedQuantity": {
-          "type": "string"
+          "type": "integer"
         },
         "matchCandidate": {
           "type": "object",

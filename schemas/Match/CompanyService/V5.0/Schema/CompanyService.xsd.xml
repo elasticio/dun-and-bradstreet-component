@@ -1,0 +1,176 @@
+<com:MatchResponse ServiceVersionNumber="string" xmlns:com="http://services.dnb.com/CompanyServiceV2.0">
+  <TransactionDetail>
+    <!--Optional:-->
+    <ApplicationTransactionID>string</ApplicationTransactionID>
+    <ServiceTransactionID>string</ServiceTransactionID>
+    <TransactionTimestamp>2008-09-29T04:49:45</TransactionTimestamp>
+  </TransactionDetail>
+  <TransactionResult>
+    <SeverityText>Fatal</SeverityText>
+    <ResultID>string</ResultID>
+    <!--Optional:-->
+    <ResultText>string</ResultText>
+    <!--Zero or more repetitions:-->
+    <ResultMessage>
+      <ResultDescription>string</ResultDescription>
+    </ResultMessage>
+  </TransactionResult>
+  <!--Optional:-->
+  <MatchResponseDetail>
+    <!--Optional:-->
+    <MatchDataCriteriaText DNBCodeValue="100" DNBCodeTableNumber="3">string</MatchDataCriteriaText>
+    <CandidateMatchedQuantity>3</CandidateMatchedQuantity>
+    <!--Zero or more repetitions:-->
+    <MatchCandidate>
+      <!--Optional:-->
+      <DUNSNumber>string</DUNSNumber>
+      <!--Optional:-->
+      <SubjectID>string</SubjectID>
+      <OrganizationPrimaryName RegisteredNameIndicator="true">
+        <OrganizationName LanguageCode="100" WritingScriptISOAlpha4Code="stri">string</OrganizationName>
+      </OrganizationPrimaryName>
+      <!--Optional:-->
+      <TradeStyleName>
+        <OrganizationName LanguageCode="100" WritingScriptISOAlpha4Code="stri">string</OrganizationName>
+      </TradeStyleName>
+      <!--Optional:-->
+      <SeniorPrincipalName>
+        <!--Zero or more repetitions:-->
+        <NamePrefix>
+          <!--Optional:-->
+          <NamePrefixText>string</NamePrefixText>
+        </NamePrefix>
+        <!--Optional:-->
+        <FirstName>string</FirstName>
+        <!--Optional:-->
+        <MiddleName>string</MiddleName>
+        <!--Optional:-->
+        <LastName>string</LastName>
+        <!--Optional:-->
+        <FullName>string</FullName>
+        <!--Zero or more repetitions:-->
+        <NameSuffix>
+          <!--Optional:-->
+          <NameSuffixText>string</NameSuffixText>
+        </NameSuffix>
+      </SeniorPrincipalName>
+      <!--Optional:-->
+      <PrimaryAddress>
+        <!--Zero or more repetitions:-->
+        <StreetAddressLine>
+          <LineText>string</LineText>
+        </StreetAddressLine>
+        <!--Optional:-->
+        <PrimaryTownName>string</PrimaryTownName>
+        <!--Optional:-->
+        <CountryISOAlpha2Code>st</CountryISOAlpha2Code>
+        <!--Optional:-->
+        <PostalCode>string</PostalCode>
+        <!--Optional:-->
+        <PostalCodeExtensionCode>string</PostalCodeExtensionCode>
+        <!--Optional:-->
+        <TerritoryOfficialName>string</TerritoryOfficialName>
+        <!--Optional:-->
+        <TerritoryAbbreviatedName>string</TerritoryAbbreviatedName>
+        <!--Optional:-->
+        <UndeliverableIndicator>true</UndeliverableIndicator>
+      </PrimaryAddress>
+      <!--Optional:-->
+      <MailingAddress>
+        <!--Zero or more repetitions:-->
+        <StreetAddressLine>
+          <LineText>string</LineText>
+        </StreetAddressLine>
+        <!--Optional:-->
+        <PrimaryTownName>string</PrimaryTownName>
+        <!--Optional:-->
+        <CountryISOAlpha2Code>st</CountryISOAlpha2Code>
+        <!--Optional:-->
+        <PostalCode>string</PostalCode>
+        <!--Optional:-->
+        <PostalCodeExtensionCode>string</PostalCodeExtensionCode>
+        <!--Optional:-->
+        <TerritoryOfficialName>string</TerritoryOfficialName>
+        <!--Optional:-->
+        <TerritoryAbbreviatedName>string</TerritoryAbbreviatedName>
+        <!--Optional:-->
+        <UndeliverableIndicator>true</UndeliverableIndicator>
+      </MailingAddress>
+      <!--Optional:-->
+      <TelephoneNumber>
+        <TelecommunicationNumber>string</TelecommunicationNumber>
+        <!--Optional:-->
+        <InternationalDialingCode>3</InternationalDialingCode>
+        <!--Optional:-->
+        <UnreachableIndicator>false</UnreachableIndicator>
+      </TelephoneNumber>
+      <!--Optional:-->
+      <WebPageAddress>
+        <TelecommunicationAddress>string</TelecommunicationAddress>
+        <!--Optional:-->
+        <UnreachableIndicator>false</UnreachableIndicator>
+      </WebPageAddress>
+      <!--Optional:-->
+      <OperatingStatusText DNBCodeValue="100" DNBCodeTableNumber="3">string</OperatingStatusText>
+      <!--Zero or more repetitions:-->
+      <FamilyTreeMemberRole>
+        <!--Optional:-->
+        <FamilyTreeMemberRoleText DNBCodeValue="100" DNBCodeTableNumber="3">string</FamilyTreeMemberRoleText>
+      </FamilyTreeMemberRole>
+      <!--Optional:-->
+      <MarketabilityIndicator>false</MarketabilityIndicator>
+      <!--Optional:-->
+      <StandaloneOrganizationIndicator>true</StandaloneOrganizationIndicator>
+      <!--Optional:-->
+      <OrganizationIdentificationNumberDetail DNBCodeTableNumber="3" DNBCodeValue="100" TypeText="string">
+        <OrganizationIdentificationNumber>string</OrganizationIdentificationNumber>
+      </OrganizationIdentificationNumberDetail>
+      <!--Optional:-->
+      <MatchQualityInformation>
+        <!--Optional:-->
+        <ConfidenceCodeValue>3</ConfidenceCodeValue>
+        <!--Zero or more repetitions:-->
+        <MatchBasis>
+          <!--Optional:-->
+          <EndIndicator>true</EndIndicator>
+          <!--Optional:-->
+          <SubjectTypeText>Parent</SubjectTypeText>
+          <!--Optional:-->
+          <SeniorPrincipalIndicator>true</SeniorPrincipalIndicator>
+          <!--Optional:-->
+          <MatchBasisText DNBCodeValue="100" DNBCodeTableNumber="3">string</MatchBasisText>
+        </MatchBasis>
+        <!--Optional:-->
+        <MatchGradeText>string</MatchGradeText>
+        <!--Optional:-->
+        <MatchGradeComponentCount>3</MatchGradeComponentCount>
+        <!--Zero or more repetitions:-->
+        <MatchGradeComponent>
+          <MatchGradeComponentTypeText DNBCodeValue="100" DNBCodeTableNumber="3">string</MatchGradeComponentTypeText>
+          <!--Optional:-->
+          <MatchGradeComponentRating>s</MatchGradeComponentRating>
+          <!--Optional:-->
+          <MatchGradeComponentScore>1000.00</MatchGradeComponentScore>
+        </MatchGradeComponent>
+        <!--Optional:-->
+        <MatchDataProfileText>string</MatchDataProfileText>
+        <!--Optional:-->
+        <MatchDataProfileComponentCount>3</MatchDataProfileComponentCount>
+        <!--Zero or more repetitions:-->
+        <MatchDataProfileComponent>
+          <MatchDataProfileComponentTypeText DNBCodeValue="100" DNBCodeTableNumber="3">string</MatchDataProfileComponentTypeText>
+          <MatchDataProfileComponentValue>st</MatchDataProfileComponentValue>
+        </MatchDataProfileComponent>
+      </MatchQualityInformation>
+      <!--Optional:-->
+      <DisplaySequence>3</DisplaySequence>
+    </MatchCandidate>
+    <!--Optional:-->
+    <InquiryReferenceDetail>
+      <!--0 to 5 repetitions:-->
+      <CustomerReferenceText>string</CustomerReferenceText>
+      <!--Optional:-->
+      <CustomerBillingEndorsementText>string</CustomerBillingEndorsementText>
+    </InquiryReferenceDetail>
+  </MatchResponseDetail>
+</com:MatchResponse>
