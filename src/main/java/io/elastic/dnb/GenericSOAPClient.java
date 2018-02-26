@@ -62,20 +62,16 @@ public class GenericSOAPClient {
         }
 
         public static JAXBElement bindToJaxb(Class clazz, SOAPMessage soapResponse) throws XMLStreamException, SOAPException, JAXBException {
-            //Unmarshall XML and bind to JAXB:
+            //Unmarshall XML
             XMLInputFactory xif = XMLInputFactory.newFactory();
             XMLStreamReader xsr = xif.createXMLStreamReader(soapResponse.getSOAPPart().getContent());
             xsr.nextTag(); // Advance to Envelope tag
             xsr.nextTag(); // Advance to Body tag
             xsr.nextTag(); // Advance to MatchResponse tag
-//            System.out.println(xsr.getNamespaceContext().getNamespaceURI("com"));
 
             JAXBContext jc = JAXBContext.newInstance(clazz);
             Unmarshaller unmarshaller = jc.createUnmarshaller();
             JAXBElement je = unmarshaller.unmarshal(xsr, clazz);
-//            System.out.println(je.getValue());
-//            MatchResponse matchResponse = (MatchResponse) je.getValue();
-//            System.out.println(matchResponse.getTransactionResult().getResultID());
 
             return je;
         }
@@ -137,8 +133,8 @@ public class GenericSOAPClient {
 
             Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
 
-            JAXBContext jaxbContextTest = JAXBContext.newInstance(MatchRequest.class);
-            Marshaller marshaller = jaxbContextTest.createMarshaller();
+            JAXBContext jaxbContext = JAXBContext.newInstance(MatchRequest.class);
+            Marshaller marshaller = jaxbContext.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             StringWriter sw = new StringWriter();
             marshaller.marshal(soapObject, sw);

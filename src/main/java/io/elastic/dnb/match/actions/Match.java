@@ -14,16 +14,13 @@ import io.elastic.dnb.soap.client.SoapAction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.json.Json;
 import javax.json.JsonObject;
-import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPMessage;
-import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamReader;
 import java.io.IOException;
 import java.io.StringWriter;
 
@@ -34,22 +31,17 @@ public class Match implements Module {
     @Override
     public void execute(ExecutionParameters parameters) {
 
-
-        //Парсится норм. Дописать парсинг ответа и emitData
-
-
         JsonObject configuration = parameters.getConfiguration();
-        JsonObject jsonObject = null;
+        Message data = null;
+        JsonObject jsonDataObject = null;
 
         JsonObject body = parameters.getMessage().getBody();
-        logger.info(":::::" + body.toString());
+        logger.info("About to call DnB API. Request message: {}", body.toString());
         ObjectMapper mapper = new ObjectMapper();
 
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         try {
             MatchRequest matchRequest = mapper.readValue(body.toString(), MatchRequest.class);
-            logger.info("))))))))" + matchRequest.getMatchRequestDetail().getInquiryDetail().getSubjectName());
-
 
             SOAPMessage response = new GenericSOAPClient.Builder()
                     .setBodyObject(matchRequest)
@@ -61,59 +53,28 @@ public class Match implements Module {
 
             JAXBElement jaxbElement = new GenericSOAPClient.Builder().bindToJaxb(MatchResponse.class, response);
             MatchResponse matchResponse = (MatchResponse) jaxbElement.getValue();
+
             ObjectMapper responseMapper = new ObjectMapper();
             StringWriter sw = new StringWriter();
             responseMapper.writeValue(sw, matchResponse);
-            logger.info("===============" + sw);
-            jsonObject = JSON.parseObject(sw.toString());
+            jsonDataObject = JSON.parseObject(sw.toString());
 
-        } catch (IOException e) {
+            data = new Message.Builder().body(jsonDataObject).build();
 
-        } catch (SOAPException e) {
-            e.printStackTrace();
         } catch (JAXBException e) {
             throw new ClassCastException("Can't map JSON object to MatchRequest XML");
-        } catch (XMLStreamException e) {
+        } catch (IOException | XMLStreamException | SOAPException e) {
             e.printStackTrace();
+            data = (new Message.Builder())
+                    .body(Json.createObjectBuilder()
+                            .add("result", e.getMessage())
+                            .build())
+                    .build();
+            parameters.getEventEmitter().emitException(e);
         }
 
-        parameters.getEventEmitter().emitData(new Message.Builder().body(jsonObject).build());
+        parameters.getEventEmitter().emitData(data);
 
     }
 
-    public static void main(String[] args) {
-
-    }
-
-    private static void bindToJaxb(SOAPMessage soapResponse) throws XMLStreamException, SOAPException, JAXBException {
-        //Unmarshall XML and bind to JAXB:
-        XMLInputFactory xif = XMLInputFactory.newFactory();
-        XMLStreamReader xsr = xif.createXMLStreamReader(soapResponse.getSOAPPart().getContent());
-        xsr.nextTag(); // Advance to Envelope tag
-        xsr.nextTag(); // Advance to Body tag
-        xsr.nextTag(); // Advance to getNumberResponse tag
-        System.out.println(xsr.getNamespaceContext().getNamespaceURI("com"));
-
-        JAXBContext jc = JAXBContext.newInstance(MatchResponse.class);
-        Unmarshaller unmarshaller = jc.createUnmarshaller();
-        JAXBElement<MatchResponse> je = unmarshaller.unmarshal(xsr, MatchResponse.class);
-        System.out.println(je.getValue());
-        MatchResponse matchResponse = je.getValue();
-        System.out.println(matchResponse.getMatchResponseDetail().getMatchDataCriteriaText().getValue());
-    }
-
-    private static MatchRequest buildMatchRequest() {
-        MatchRequest matchRequest = new MatchRequest();
-        MatchRequestDetail matchRequestDetail = new MatchRequestDetail();
-        InquiryDetail inquiryDetail = new InquiryDetail();
-        inquiryDetail.setDUNSNumber("804735132");
-        matchRequestDetail.setInquiryDetail(inquiryDetail);
-        matchRequest.setMatchRequestDetail(matchRequestDetail);
-
-        MatchSpecification matchSpecification = new MatchSpecification();
-        matchSpecification.setMatchTypeText(MatchModeEnum.BASIC);
-        matchRequestDetail.setMatchSpecification(matchSpecification);
-
-        return matchRequest;
-    }
 }
