@@ -1,6 +1,5 @@
 package io.elastic.dnb;
 
-import com.dnb.services.match.*;
 import io.elastic.dnb.soap.client.EndpointUrl;
 import io.elastic.dnb.soap.client.SoapAction;
 import io.elastic.dnb.soap.client.WSPolicy;
@@ -125,7 +124,6 @@ public class GenericSOAPClient {
 
             soapMessage.saveChanges();
 
-            /* Print the request message, just for debugging purposes */
             logger.info("Request SOAP Message:");
             soapMessage.writeTo(System.out);
 
@@ -141,6 +139,7 @@ public class GenericSOAPClient {
 
             Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
 
+            //Dynamic creating of JAXB Instance
             JAXBContext jaxbContext = JAXBContext.newInstance(requestClass);
             Marshaller marshaller = jaxbContext.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
