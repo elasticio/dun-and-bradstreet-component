@@ -1,10 +1,7 @@
 
 package com.dnb.services.company;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -34,6 +31,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "CleanseAndStandardizeRequest", namespace = "http://services.dnb.com/CompanyServiceV2.0", propOrder = {
     "cleanseAndStandardizeRequestDetail"
 })
+@XmlRootElement(name = "CleanseAndStandardizeRequest", namespace = "http://services.dnb.com/CompanyServiceV2.0")
 public class CleanseAndStandardizeRequest
     extends Request
 {
