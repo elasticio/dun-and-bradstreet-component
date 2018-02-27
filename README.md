@@ -11,9 +11,12 @@ Access to the D&B Direct web services are secured by a **Username** and **Passwo
 ### Match
 On-Demand Entity Identification. Also known as Match. 
 
-Request JSON schema `schemas/json/Match.in.json`
+Request JSON schema `schemas/json/CompanyService/Match.in.json`
 
-Response JSON schema `schemas/json/Match.out.json`
+### Find Competitors
+Returns all the competitors for a given company. 
+
+Request JSON schema `schemas/json/EntityList/FindCompetitor.in.json`
 
 ## Triggers
 No triggers.

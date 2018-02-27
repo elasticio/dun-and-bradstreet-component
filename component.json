@@ -1,38 +1,38 @@
 {
-	"title": "Dun and Bradstreet",
-	"description": "Dun and Bradstreet - Master Data Hierarchy, Credit Check, MDR Database",
-	"language": "java",
-	"credentials": {
-		"fields": {
-			"username": {
-				"viewClass": "TextFieldView",
-				"label": "Username",
-				"required": true,
-				"placeholder": "Username"
-			},
-			"password": {
-				"viewClass": "TextFieldView",
-				"label": "Password",
-				"required": true,
-				"placeholder": "Password"
-			}
-		},
-		"verifier": "io.elastic.dnb.DnBCredentialsVerifier"
-	},
-	"actions": {
-		"match": {
-			"main": "io.elastic.dnb.match.actions.Match",
-            "title": "Match",
-            "metadata": {
-            	"in": "./schemas/json/CompanyService/Match.in.json",
-            }
-		},
-		"findCompetitors": {
-			"main": "io.elastic.dnb.entitylist.actions.FindCompetitor",
-            "title": "Find Competitors",
-            "metadata": {
-            	"in": "./schemas/json/EntityList/FindCompetitor.in.json",
-            }
-		}
-	}
+  "title": "Dun and Bradstreet",
+  "description": "Dun and Bradstreet - Master Data Hierarchy, Credit Check, MDR Database",
+  "language": "java",
+  "credentials": {
+    "fields": {
+      "username": {
+        "viewClass": "TextFieldView",
+        "label": "Username",
+        "required": true,
+        "placeholder": "Username"
+      },
+      "password": {
+        "viewClass": "TextFieldView",
+        "label": "Password",
+        "required": true,
+        "placeholder": "Password"
+      }
+    },
+    "verifier": "io.elastic.dnb.DnBCredentialsVerifier"
+  },
+  "actions": {
+    "match": {
+      "main": "io.elastic.dnb.match.actions.Match",
+      "title": "Match",
+      "metadata": {
+        "in": "./schemas/json/CompanyService/Match.in.json"
+      }
+    },
+    "findCompetitors": {
+      "main": "io.elastic.dnb.entitylist.actions.FindCompetitor",
+      "title": "Find Competitors",
+      "metadata": {
+        "in": "./schemas/json/EntityList/FindCompetitor.in.json"
+      }
+    }
+  }
 }
