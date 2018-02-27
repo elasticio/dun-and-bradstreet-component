@@ -1,0 +1,74 @@
+{
+  "type": "object",
+  "properties": {
+    "transactionDetail": {
+      "type": "object",
+      "properties": {
+        "applicationTransactionId": {
+          "type": "string"
+        },
+        "transactionTimestamp": {
+          "type": "string"
+        },
+        "submittingOfficeId": {
+          "type": "string"
+        }
+      }
+    },
+    "cleanseAndStandardizeRequestDetail": {
+      "type": "object",
+      "properties": {
+        "inquiryDetail": {
+          "type": "object",
+          "properties": {
+            "organizationName": {
+              "type": "string"
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "streetAddressLine": {
+                  "type": "object",
+                  "properties": {
+                    "lineText": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "primaryTownName": {
+                  "type": "string"
+                },
+                "countryIsoAlpha2Code": {
+                  "type": "string"
+                },
+                "countyName": {
+                  "type": "string"
+                },
+                "territoryName": {
+                  "type": "string"
+                },
+                "postalCode": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "inquiryReferenceDetail": {
+          "type": "object",
+          "properties": {
+            "customerReferenceText": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "customerBillingEndorsementText": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

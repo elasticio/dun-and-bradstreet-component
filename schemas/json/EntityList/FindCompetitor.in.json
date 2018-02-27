@@ -38,7 +38,10 @@
           "type": "object",
           "properties": {
             "customerReferenceText": {
-              "type": "string"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "customerBillingEndorsementText": {
               "type": "string"

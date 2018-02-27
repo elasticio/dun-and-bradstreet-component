@@ -1,0 +1,39 @@
+<com:CleanseAndStandardizeRequest ServiceVersionNumber="string" xmlns:com="http://services.dnb.com/CompanyServiceV2.0">
+  <!--Optional:-->
+  <TransactionDetail>
+    <!--Optional:-->
+    <ApplicationTransactionID>string</ApplicationTransactionID>
+    <!--Optional:-->
+    <TransactionTimestamp>2008-09-29T04:49:45</TransactionTimestamp>
+    <!--Optional:-->
+    <SubmittingOfficeID>string</SubmittingOfficeID>
+  </TransactionDetail>
+  <CleanseAndStandardizeRequestDetail>
+    <InquiryDetail>
+      <!--Optional:-->
+      <OrganizationName>string</OrganizationName>
+      <Address>
+        <!--0 to 2 repetitions:-->
+        <StreetAddressLine>
+          <LineText>string</LineText>
+        </StreetAddressLine>
+        <!--Optional:-->
+        <PrimaryTownName>string</PrimaryTownName>
+        <CountryISOAlpha2Code>st</CountryISOAlpha2Code>
+        <!--Optional:-->
+        <CountyName>string</CountyName>
+        <!--Optional:-->
+        <TerritoryName>string</TerritoryName>
+        <!--Optional:-->
+        <PostalCode>string</PostalCode>
+      </Address>
+    </InquiryDetail>
+    <!--Optional:-->
+    <InquiryReferenceDetail>
+      <!--0 to 5 repetitions:-->
+      <CustomerReferenceText>string</CustomerReferenceText>
+      <!--Optional:-->
+      <CustomerBillingEndorsementText>string</CustomerBillingEndorsementText>
+    </InquiryReferenceDetail>
+  </CleanseAndStandardizeRequestDetail>
+</com:CleanseAndStandardizeRequest>

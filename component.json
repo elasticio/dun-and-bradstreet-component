@@ -20,6 +20,13 @@
     "verifier": "io.elastic.dnb.DnBCredentialsVerifier"
   },
   "actions": {
+    "cleansAndStandardize": {
+      "main": "io.elastic.dnb.company.actions.CleansAndStandardize",
+      "title": "Cleans And Standardize",
+      "metadata": {
+        "in": "./schemas/json/CompanyService/CleansAndStandardize.in.json"
+      }
+    },
     "findCompetitors": {
       "main": "io.elastic.dnb.entitylist.actions.FindCompetitor",
       "title": "Find Competitor",
@@ -29,7 +36,7 @@
     },
     "getCleanseMatch": {
       "main": "io.elastic.dnb.company.actions.GetCleanseMatch",
-      "title": "Get Cleanse Match",
+      "title": "Match and Cleanse",
       "metadata": {
         "in": "./schemas/json/CompanyService/GetCleanseMatch.in.json"
       }
