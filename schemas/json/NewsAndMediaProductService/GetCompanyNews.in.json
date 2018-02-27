@@ -22,6 +22,7 @@
           "type": "object",
           "properties": {
             "dunsNumber": {
+              "required": true,
               "type": "string"
             },
             "countryIsoAlpha2Code": {
@@ -39,7 +40,7 @@
               "type": "string"
             },
             "tradeUpIndicator": {
-              "type": "string"
+              "type": "boolean"
             },
             "newsSpecification": {
               "type": "object",
@@ -51,14 +52,37 @@
                   "type": "string"
                 },
                 "categoryText": {
-                  "type": "string"
+                  "type": "array",
+                  "enum": [
+                    "Awards",
+                    "Bankruptcy",
+                    "Earnings Release",
+                    "Executive Activity",
+                    "Executive Announcement",
+                    "Executive Quote",
+                    "Expansion",
+                    "Financial News",
+                    "Funding",
+                    "Management Change",
+                    "Merger and Acquisition",
+                    "New Alliance",
+                    "New Product",
+                    "Reduction",
+                    "Regulation or Litigation",
+                    "Restructure",
+                    "Wins"
+                  ]
                 }
               }
             },
             "socialMediaSpecification": {
-              "type": "Array",
-              "items": {
-                "type": "string"
+              "type": "array",
+              "enum": [
+                "Youtube",
+                "Facebook",
+                "Twitter",
+                "Wikipedia"
+                ]
               }
             }
           }
@@ -67,10 +91,10 @@
           "type": "object",
           "properties": {
             "archiveProductOptOutIndicator": {
-              "type": "string"
+              "type": "boolean"
             },
             "extendArchivePeriodIndicator": {
-              "type": "string"
+              "type": "boolean"
             },
             "portfolioAssetContainerId": {
               "type": "string"

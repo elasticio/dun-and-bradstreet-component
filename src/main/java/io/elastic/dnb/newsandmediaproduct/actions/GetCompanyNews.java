@@ -25,9 +25,9 @@ import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
 import java.io.StringWriter;
 
-public class FindCompetitor implements Module {
+public class GetCompanyNews implements Module {
 
-    protected static final Logger logger = LoggerFactory.getLogger(FindCompetitor.class);
+    protected static final Logger logger = LoggerFactory.getLogger(GetCompanyNews.class);
 
     @Override
     public void execute(ExecutionParameters parameters) {
