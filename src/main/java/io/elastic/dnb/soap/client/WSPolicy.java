@@ -1,14 +1,24 @@
 package io.elastic.dnb.soap.client;
 
 import javax.xml.namespace.QName;
-import javax.xml.soap.*;
+import javax.xml.soap.SOAPMessage;
+import javax.xml.soap.SOAPElement;
+import javax.xml.soap.SOAPEnvelope;
+import javax.xml.soap.SOAPFactory;
+import javax.xml.soap.SOAPHeader;
+import javax.xml.soap.SOAPException;
+
 import java.security.GeneralSecurityException;
 
 public class WSPolicy {
 
+    private static final String WSS_TOKEN_URL = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText";
+    private static final String WSS_TOKEN_XSD = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd";
+    private static final String WSS_OASIS_XSD = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd";
+
     /**
      * Method to add WS Security header to SOAP Message
-     *
+     * <p>
      * <SOAP-ENV:Header>
      *   <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
      *     <wsse:UsernameToken xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="UsernameToken-2">
@@ -35,20 +45,20 @@ public class WSPolicy {
             SOAPEnvelope envelope = soapMessage.getSOAPPart().getEnvelope();
             SOAPFactory factory = SOAPFactory.newInstance();
             String prefix = "wsse";
-            String uri = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd";
+            String uri = WSS_TOKEN_XSD;
             SOAPElement securityElem =
                     factory.createElement("Security", prefix, uri);
             SOAPElement tokenElem =
                     factory.createElement("UsernameToken", prefix, uri);
             tokenElem.addAttribute(QName.valueOf("wsu:Id"), "UsernameToken-2");
-            tokenElem.addAttribute(QName.valueOf("xmlns:wsu"), "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd");
+            tokenElem.addAttribute(QName.valueOf("xmlns:wsu"), WSS_OASIS_XSD);
             SOAPElement userElem =
                     factory.createElement("Username", prefix, uri);
             userElem.addTextNode(login);
             SOAPElement pwdElem =
                     factory.createElement("Password", prefix, uri);
             pwdElem.addTextNode(password);
-            pwdElem.addAttribute(QName.valueOf("Type"), "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText");
+            pwdElem.addAttribute(QName.valueOf("Type"), WSS_TOKEN_URL);
             tokenElem.addChildElement(userElem);
             tokenElem.addChildElement(pwdElem);
             securityElem.addChildElement(tokenElem);
@@ -58,8 +68,7 @@ public class WSPolicy {
             }
             header = envelope.addHeader();
             header.addChildElement(securityElem);
-        }
-        catch(Exception e) {
+        } catch (SOAPException e) {
             e.printStackTrace();
         }
         return header;

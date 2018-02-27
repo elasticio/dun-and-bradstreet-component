@@ -24,8 +24,8 @@
 			"main": "io.elastic.dnb.match.actions.Match",
             "title": "Match",
             "metadata": {
-            	"in": "./schemas/json/Match.in.json",
-            	"out": "./schemas/json/Match.out.json"
+            	"in": "./schemas/json/CompanyService/Match.in.json",
+            	"out": "./schemas/json/CompanyService/Match.out.json"
             }
 		},
 		"findCompetitors": {

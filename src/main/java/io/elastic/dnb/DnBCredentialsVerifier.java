@@ -31,7 +31,13 @@ public class DnBCredentialsVerifier implements CredentialsVerifier {
         }
 
         try {
-            SOAPMessage response = new GenericSOAPClient.Builder().setBodyObject(buildEmptyMatchRequest()).setEndpointUrl(EndpointUrl.V5).setSoapAction(SoapAction.MATCH).setUsername(username).setPassword(password).call();
+            SOAPMessage response = new GenericSOAPClient.Builder()
+                                        .setBodyObject(buildEmptyMatchRequest())
+                                        .setEndpointUrl(EndpointUrl.V5)
+                                        .setSoapAction(SoapAction.MATCH)
+                                        .setUsername(username)
+                                        .setPassword(password)
+                                        .call();
             JAXBElement jaxbElement = new GenericSOAPClient.Builder().bindToJaxb(MatchResponse.class, response);
             MatchResponse matchResponse = (MatchResponse) jaxbElement.getValue();
 
@@ -47,10 +53,9 @@ public class DnBCredentialsVerifier implements CredentialsVerifier {
                 throw new InvalidCredentialsException(resultId + ":" + resultText);
             }
 
-        } catch (SOAPException e) {
+        } catch (SOAPException | JAXBException e) {
             e.printStackTrace();
-        } catch (JAXBException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Oops, there some SOAP exceptions. Check logs.");
         } catch (XMLStreamException e) {
             e.printStackTrace();
         }
