@@ -33,7 +33,7 @@ public class DnBCredentialsVerifier implements CredentialsVerifier {
         try {
             SOAPMessage response = new GenericSOAPClient.Builder()
                                         .setBodyObject(buildEmptyMatchRequest())
-                                        .setEndpointUrl(EndpointUrl.V5)
+                                        .setEndpointUrl(EndpointUrl.COMPANY_5_0)
                                         .setSoapAction(SoapAction.MATCH)
                                         .setUsername(username)
                                         .setPassword(password)
