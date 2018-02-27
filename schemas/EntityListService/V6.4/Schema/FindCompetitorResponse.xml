@@ -1,0 +1,119 @@
+<ent:FindCompetitorResponse ServiceVersionNumber="string" xmlns:ent="http://services.dnb.com/EntityListServiceV2.0">
+  <TransactionDetail>
+    <!--Optional:-->
+    <ApplicationTransactionID>string</ApplicationTransactionID>
+    <ServiceTransactionID>string</ServiceTransactionID>
+    <TransactionTimestamp>2008-09-29T04:49:45</TransactionTimestamp>
+  </TransactionDetail>
+  <TransactionResult>
+    <SeverityText>Fatal</SeverityText>
+    <ResultID>string</ResultID>
+    <!--Optional:-->
+    <ResultText>string</ResultText>
+    <!--Zero or more repetitions:-->
+    <ResultMessage>
+      <ResultDescription>string</ResultDescription>
+    </ResultMessage>
+  </TransactionResult>
+  <!--Optional:-->
+  <FindCompetitorResponseDetail>
+    <!--Zero or more repetitions:-->
+    <Competitor>
+      <DUNSNumber>string</DUNSNumber>
+      <OrganizationPrimaryName RegisteredNameIndicator="true">
+        <OrganizationName LanguageCode="100" WritingScriptISOAlpha4Code="stri">string</OrganizationName>
+      </OrganizationPrimaryName>
+      <!--Optional:-->
+      <PrimaryAddress>
+        <!--Zero or more repetitions:-->
+        <StreetAddressLine>
+          <LineText>string</LineText>
+        </StreetAddressLine>
+        <!--Optional:-->
+        <PrimaryTownName>string</PrimaryTownName>
+        <!--Optional:-->
+        <CountryISOAlpha2Code>st</CountryISOAlpha2Code>
+        <!--Optional:-->
+        <PostalCode>string</PostalCode>
+        <!--Optional:-->
+        <PostalCodeExtensionCode>string</PostalCodeExtensionCode>
+        <!--Optional:-->
+        <TerritoryOfficialName>string</TerritoryOfficialName>
+        <!--Optional:-->
+        <TerritoryAbbreviatedName>string</TerritoryAbbreviatedName>
+        <!--Optional:-->
+        <CountryOfficialName>string</CountryOfficialName>
+        <!--Optional:-->
+        <LatitudeMeasurement>1000.00</LatitudeMeasurement>
+        <!--Optional:-->
+        <LongitudeMeasurement>1000.00</LongitudeMeasurement>
+        <!--Optional:-->
+        <GeographicalPrecisionText DNBCodeValue="100" DNBCodeTableNumber="3">string</GeographicalPrecisionText>
+        <!--Optional:-->
+        <UndeliverableIndicator>true</UndeliverableIndicator>
+        <!--Zero or more repetitions:-->
+        <MetropolitanStatisticalAreaUSCensusCode>string</MetropolitanStatisticalAreaUSCensusCode>
+      </PrimaryAddress>
+      <!--Optional:-->
+      <GlobalUltimateDUNSNumber>string</GlobalUltimateDUNSNumber>
+      <!--Optional:-->
+      <ParentDUNSNumber>string</ParentDUNSNumber>
+      <!--Zero or more repetitions:-->
+      <SalesRevenueAmount CurrencyISOAlpha3Code="str" UnitOfSize="SingleUnits" ReliabilityText="string">1000.00</SalesRevenueAmount>
+      <!--Optional:-->
+      <TopCompetitorIndicator>false</TopCompetitorIndicator>
+    </Competitor>
+    <Competitor>
+      <DUNSNumber>string</DUNSNumber>
+      <OrganizationPrimaryName RegisteredNameIndicator="true">
+        <OrganizationName LanguageCode="100" WritingScriptISOAlpha4Code="stri">string</OrganizationName>
+      </OrganizationPrimaryName>
+      <!--Optional:-->
+      <PrimaryAddress>
+        <!--Zero or more repetitions:-->
+        <StreetAddressLine>
+          <LineText>string</LineText>
+        </StreetAddressLine>
+        <!--Optional:-->
+        <PrimaryTownName>string</PrimaryTownName>
+        <!--Optional:-->
+        <CountryISOAlpha2Code>st</CountryISOAlpha2Code>
+        <!--Optional:-->
+        <PostalCode>string</PostalCode>
+        <!--Optional:-->
+        <PostalCodeExtensionCode>string</PostalCodeExtensionCode>
+        <!--Optional:-->
+        <TerritoryOfficialName>string</TerritoryOfficialName>
+        <!--Optional:-->
+        <TerritoryAbbreviatedName>string</TerritoryAbbreviatedName>
+        <!--Optional:-->
+        <CountryOfficialName>string</CountryOfficialName>
+        <!--Optional:-->
+        <LatitudeMeasurement>1000.00</LatitudeMeasurement>
+        <!--Optional:-->
+        <LongitudeMeasurement>1000.00</LongitudeMeasurement>
+        <!--Optional:-->
+        <GeographicalPrecisionText DNBCodeValue="100" DNBCodeTableNumber="3">string</GeographicalPrecisionText>
+        <!--Optional:-->
+        <UndeliverableIndicator>true</UndeliverableIndicator>
+        <!--Zero or more repetitions:-->
+        <MetropolitanStatisticalAreaUSCensusCode>string</MetropolitanStatisticalAreaUSCensusCode>
+      </PrimaryAddress>
+      <!--Optional:-->
+      <GlobalUltimateDUNSNumber>string</GlobalUltimateDUNSNumber>
+      <!--Optional:-->
+      <ParentDUNSNumber>string</ParentDUNSNumber>
+      <!--Zero or more repetitions:-->
+      <SalesRevenueAmount CurrencyISOAlpha3Code="str" UnitOfSize="SingleUnits" ReliabilityText="string">1000.00</SalesRevenueAmount>
+      <!--Optional:-->
+      <TopCompetitorIndicator>false</TopCompetitorIndicator>
+    </Competitor>
+    <!--Optional:-->
+    <InquiryReferenceDetail>
+      <!--0 to 5 repetitions:-->
+      <CustomerReferenceText>string</CustomerReferenceText>
+      <!--Optional:-->
+      <CustomerBillingEndorsementText>string</CustomerBillingEndorsementText>
+    </InquiryReferenceDetail>
+  </FindCompetitorResponseDetail>
+</ent:FindCompetitorResponse>

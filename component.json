@@ -25,7 +25,6 @@
             "title": "Match",
             "metadata": {
             	"in": "./schemas/json/CompanyService/Match.in.json",
-            	"out": "./schemas/json/CompanyService/Match.out.json"
             }
 		},
 		"findCompetitors": {
@@ -33,7 +32,6 @@
             "title": "Find Competitors",
             "metadata": {
             	"in": "./schemas/json/EntityList/FindCompetitor.in.json",
-            	"out": "./schemas/json/EntityList/FindCompetitor.out.json"
             }
 		}
 	}

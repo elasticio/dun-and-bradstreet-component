@@ -1,1 +1,143 @@
-{}
+{
+  "type": "object",
+  "properties": {
+    "transactionDetail": {
+      "type": "object",
+      "properties": {
+        "applicationTransactionId": {
+          "type": "string"
+        },
+        "serviceTransactionId": {
+          "type": "string"
+        },
+        "transactionTimestamp": {
+          "type": "integer"
+        }
+      }
+    },
+    "transactionResult": {
+      "type": "object",
+      "properties": {
+        "severityText": {
+          "type": "string"
+        },
+        "resultId": {
+          "type": "string"
+        },
+        "resultText": {
+          "type": "string"
+        },
+        "resultMessage": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resultDescription": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "findCompetitorResponseDetail": {
+      "type": "object",
+      "properties": {
+        "competitor": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "dunsNumber": {
+                "type": "string"
+              },
+              "organizationPrimaryName": {
+                "type": "object",
+                "properties": {
+                  "organizationName": {
+                    "type": "string"
+                  }
+                }
+              },
+              "primaryAddress": {
+                "type": "object",
+                "properties": {
+                  "streetAddressLine": {
+                    "type": "object",
+                    "properties": {
+                      "lineText": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "primaryTownName": {
+                    "type": "string"
+                  },
+                  "countryIsoAlpha2Code": {
+                    "type": "string"
+                  },
+                  "postalCode": {
+                    "type": "string"
+                  },
+                  "postalCodeExtensionCode": {
+                    "type": "string"
+                  },
+                  "territoryOfficialName": {
+                    "type": "string"
+                  },
+                  "territoryAbbreviatedName": {
+                    "type": "string"
+                  },
+                  "countryOfficialName": {
+                    "type": "string"
+                  },
+                  "latitudeMeasurement": {
+                    "type": "string"
+                  },
+                  "longitudeMeasurement": {
+                    "type": "string"
+                  },
+                  "geographicalPrecisionText": {
+                    "type": "string"
+                  },
+                  "undeliverableIndicator": {
+                    "type": "string"
+                  },
+                  "metropolitanStatisticalAreaUsCensusCode": {
+                    "type": "string"
+                  }
+                }
+              },
+              "globalUltimateDunsNumber": {
+                "type": "string"
+              },
+              "parentDunsNumber": {
+                "type": "string"
+              },
+              "salesRevenueAmount": {
+                "type": "string"
+              },
+              "topCompetitorIndicator": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "inquiryReferenceDetail": {
+          "type": "object",
+          "properties": {
+            "customerReferenceText": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "customerBillingEndorsementText": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
