@@ -1,6 +1,6 @@
 package io.elastic.dnb.company.actions;
 
-import com.dnb.services.match.*;
+import com.dnb.services.company.*;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.elastic.api.ExecutionParameters;

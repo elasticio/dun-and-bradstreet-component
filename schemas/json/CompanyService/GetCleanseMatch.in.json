@@ -65,21 +65,7 @@
               }
             },
             "organizationIdentificationNumberDetail": {
-              "type": "object",
-              "properties": {
-                "@dnbCodeTableNumber": {
-                  "type": "string"
-                },
-                "@dnbCodeValue": {
-                  "type": "string"
-                },
-                "@typeText": {
-                  "type": "string"
-                },
-                "organizationIdentificationNumber": {
-                  "type": "string"
-                }
-              }
+              "type": "string"
             }
           }
         },

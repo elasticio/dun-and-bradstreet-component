@@ -1,6 +1,6 @@
 package io.elastic.dnb;
 
-import com.dnb.services.match.*;
+import com.dnb.services.company.*;
 import io.elastic.api.CredentialsVerifier;
 import io.elastic.api.InvalidCredentialsException;
 import io.elastic.dnb.soap.client.EndpointUrl;

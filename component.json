@@ -22,14 +22,14 @@
   "actions": {
     "findCompetitors": {
       "main": "io.elastic.dnb.entitylist.actions.FindCompetitor",
-      "title": "Find Competitors",
+      "title": "Find Competitor",
       "metadata": {
         "in": "./schemas/json/EntityList/FindCompetitor.in.json"
       }
     },
     "getCleanseMatch": {
       "main": "io.elastic.dnb.company.actions.GetCleanseMatch",
-      "title": "Get Company News",
+      "title": "Get Cleanse Match",
       "metadata": {
         "in": "./schemas/json/CompanyService/GetCleanseMatch.in.json"
       }

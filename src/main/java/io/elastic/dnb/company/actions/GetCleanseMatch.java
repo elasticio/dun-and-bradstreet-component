@@ -1,9 +1,9 @@
 package io.elastic.dnb.company.actions;
 
-import com.dnb.services.match.GetCleanseMatchRequest;
-import com.dnb.services.match.GetCleanseMatchResponse;
-import com.dnb.services.match.MatchRequest;
-import com.dnb.services.match.MatchResponse;
+import com.dnb.services.company.GetCleanseMatchRequest;
+import com.dnb.services.company.GetCleanseMatchResponse;
+import com.dnb.services.company.MatchRequest;
+import com.dnb.services.company.MatchResponse;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.elastic.api.ExecutionParameters;
