@@ -1,0 +1,117 @@
+{
+  "type": "object",
+  "properties": {
+    "transactionDetail": {
+      "type": "object",
+      "properties": {
+        "applicationTransactionId": {
+          "type": "string"
+        },
+        "transactionTimestamp": {
+          "type": "string"
+        },
+        "submittingOfficeId": {
+          "type": "string"
+        }
+      }
+    },
+    "orderProductRequestDetail": {
+      "type": "object",
+      "properties": {
+        "inquiryDetail": {
+          "type": "object",
+          "properties": {
+            "dunsNumber": {
+              "required": true,
+              "type": "string"
+            },
+            "countryIsoAlpha2Code": {
+              "type": "string"
+            }
+          }
+        },
+        "productSpecification": {
+          "type": "object",
+          "properties": {
+            "dnbProductId": {
+              "type": "string"
+            },
+            "languagePreferenceCode": {
+              "type": "string"
+            },
+            "tradeUpIndicator": {
+              "type": "boolean"
+            },
+            "newsSpecification": {
+              "type": "object",
+              "properties": {
+                "publishedFromDate": {
+                  "type": "string"
+                },
+                "publishedToDate": {
+                  "type": "string"
+                },
+                "categoryText": {
+                  "type": "array",
+                  "enum": [
+                    "Awards",
+                    "Bankruptcy",
+                    "Earnings Release",
+                    "Executive Activity",
+                    "Executive Announcement",
+                    "Executive Quote",
+                    "Expansion",
+                    "Financial News",
+                    "Funding",
+                    "Management Change",
+                    "Merger and Acquisition",
+                    "New Alliance",
+                    "New Product",
+                    "Reduction",
+                    "Regulation or Litigation",
+                    "Restructure",
+                    "Wins"
+                  ]
+                }
+              }
+            },
+            "socialMediaSpecification": {
+              "type": "array",
+              "enum": [
+                "Youtube",
+                "Facebook",
+                "Twitter",
+                "Wikipedia"
+              ]
+            }
+          }
+        },
+        "archiveDetail": {
+          "type": "object",
+          "properties": {
+            "archiveProductOptOutIndicator": {
+              "type": "boolean"
+            },
+            "extendArchivePeriodIndicator": {
+              "type": "boolean"
+            },
+            "portfolioAssetContainerId": {
+              "type": "string"
+            }
+          }
+        },
+        "inquiryReferenceDetail": {
+          "type": "object",
+          "properties": {
+            "customerReferenceText": {
+              "type": "string"
+            },
+            "customerBillingEndorsementText": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

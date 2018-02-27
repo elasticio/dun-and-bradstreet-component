@@ -46,7 +46,7 @@ public class Match implements Module {
             SOAPMessage response = new GenericSOAPClient.Builder()
                     .setRequestClass(MatchRequest.class)
                     .setBodyObject(matchRequest)
-                    .setEndpointUrl(EndpointUrl.V5)
+                    .setEndpointUrl(EndpointUrl.COMPANY_5_0)
                     .setSoapAction(SoapAction.MATCH)
                     .setUsername(Utils.getUsername(configuration))
                     .setPassword(Utils.getPassword(configuration))

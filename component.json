@@ -20,18 +20,32 @@
     "verifier": "io.elastic.dnb.DnBCredentialsVerifier"
   },
   "actions": {
-    "match": {
-      "main": "io.elastic.dnb.match.actions.Match",
-      "title": "Match",
-      "metadata": {
-        "in": "./schemas/json/CompanyService/Match.in.json"
-      }
-    },
     "findCompetitors": {
       "main": "io.elastic.dnb.entitylist.actions.FindCompetitor",
       "title": "Find Competitors",
       "metadata": {
         "in": "./schemas/json/EntityList/FindCompetitor.in.json"
+      }
+    },
+    "getCompanyNews": {
+      "main": "io.elastic.dnb.newsandmediaproduct.actions.GetCompanyNews",
+      "title": "Get Company News",
+      "metadata": {
+        "in": "./schemas/json/NewsAndMediaProductService/GetCompanyNews.in.json"
+      }
+    },
+    "getIndustryForStateProvince": {
+      "main": "io.elastic.dnb.entitylist.actions.FindCompetitor",
+      "title": "Get Industry for State Province",
+      "metadata": {
+        "in": "./schemas/json/EntityList/FindCompetitor.in.json"
+      }
+    },
+    "match": {
+      "main": "io.elastic.dnb.match.actions.Match",
+      "title": "Match",
+      "metadata": {
+        "in": "./schemas/json/CompanyService/Match.in.json"
       }
     }
   }

@@ -1,7 +1,7 @@
-package io.elastic.dnb.entitylist.actions;
+package io.elastic.dnb.newsandmediaproduct.actions;
 
-import com.dnb.services.entitylist.FindCompetitorRequest;
-import com.dnb.services.entitylist.FindCompetitorResponse;
+import com.dnb.services.newsandmediaproduct.OrderProductRequest;
+import com.dnb.services.newsandmediaproduct.OrderProductResponse;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.elastic.api.ExecutionParameters;
@@ -25,9 +25,9 @@ import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
 import java.io.StringWriter;
 
-public class FindCompetitor implements Module {
+public class GetCompanyNews implements Module {
 
-    protected static final Logger logger = LoggerFactory.getLogger(FindCompetitor.class);
+    protected static final Logger logger = LoggerFactory.getLogger(GetCompanyNews.class);
 
     @Override
     public void execute(ExecutionParameters parameters) {
@@ -42,23 +42,23 @@ public class FindCompetitor implements Module {
 
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         try {
-            FindCompetitorRequest findCompetitorRequest = mapper.readValue(body.toString(), FindCompetitorRequest.class);
+            OrderProductRequest orderProductRequest = mapper.readValue(body.toString(), OrderProductRequest.class);
 
             SOAPMessage response = new GenericSOAPClient.Builder()
-                    .setRequestClass(FindCompetitorRequest.class)
-                    .setBodyObject(findCompetitorRequest)
-                    .setEndpointUrl(EndpointUrl.ENTITY_LIST_6_4)
-                    .setSoapAction(SoapAction.FIND_COMPETITOR)
+                    .setRequestClass(OrderProductRequest.class)
+                    .setBodyObject(orderProductRequest)
+                    .setEndpointUrl(EndpointUrl.NEWS_AND_MEDIA_PRODUCT_3_0)
+                    .setSoapAction(SoapAction.NEWS_AND_MEDIA_PRODUCT)
                     .setUsername(Utils.getUsername(configuration))
                     .setPassword(Utils.getPassword(configuration))
                     .call();
 
-            JAXBElement jaxbElement = new GenericSOAPClient.Builder().bindToJaxb(FindCompetitorResponse.class, response);
-            FindCompetitorResponse findCompetitorResponse = (FindCompetitorResponse) jaxbElement.getValue();
+            JAXBElement jaxbElement = new GenericSOAPClient.Builder().bindToJaxb(OrderProductResponse.class, response);
+            OrderProductResponse orderProductResponse = (OrderProductResponse) jaxbElement.getValue();
 
             ObjectMapper responseMapper = new ObjectMapper();
             StringWriter sw = new StringWriter();
-            responseMapper.writeValue(sw, findCompetitorResponse);
+            responseMapper.writeValue(sw, orderProductResponse);
             jsonDataObject = JSON.parseObject(sw.toString());
 
             data = new Message.Builder().body(jsonDataObject).build();
