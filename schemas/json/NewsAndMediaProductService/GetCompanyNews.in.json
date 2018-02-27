@@ -85,30 +85,30 @@
               ]
             }
           }
-        }
-      },
-      "archiveDetail": {
-        "type": "object",
-        "properties": {
-          "archiveProductOptOutIndicator": {
-            "type": "boolean"
-          },
-          "extendArchivePeriodIndicator": {
-            "type": "boolean"
-          },
-          "portfolioAssetContainerId": {
-            "type": "string"
+        },
+        "archiveDetail": {
+          "type": "object",
+          "properties": {
+            "archiveProductOptOutIndicator": {
+              "type": "boolean"
+            },
+            "extendArchivePeriodIndicator": {
+              "type": "boolean"
+            },
+            "portfolioAssetContainerId": {
+              "type": "string"
+            }
           }
-        }
-      },
-      "inquiryReferenceDetail": {
-        "type": "object",
-        "properties": {
-          "customerReferenceText": {
-            "type": "string"
-          },
-          "customerBillingEndorsementText": {
-            "type": "string"
+        },
+        "inquiryReferenceDetail": {
+          "type": "object",
+          "properties": {
+            "customerReferenceText": {
+              "type": "string"
+            },
+            "customerBillingEndorsementText": {
+              "type": "string"
+            }
           }
         }
       }
