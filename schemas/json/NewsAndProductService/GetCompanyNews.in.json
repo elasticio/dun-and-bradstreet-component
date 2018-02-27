@@ -1,0 +1,94 @@
+{
+  "type": "object",
+  "properties": {
+    "transactionDetail": {
+      "type": "object",
+      "properties": {
+        "applicationTransactionId": {
+          "type": "string"
+        },
+        "transactionTimestamp": {
+          "type": "string"
+        },
+        "submittingOfficeId": {
+          "type": "string"
+        }
+      }
+    },
+    "orderProductRequestDetail": {
+      "type": "object",
+      "properties": {
+        "inquiryDetail": {
+          "type": "object",
+          "properties": {
+            "dunsNumber": {
+              "type": "string"
+            },
+            "countryIsoAlpha2Code": {
+              "type": "string"
+            }
+          }
+        },
+        "productSpecification": {
+          "type": "object",
+          "properties": {
+            "dnbProductId": {
+              "type": "string"
+            },
+            "languagePreferenceCode": {
+              "type": "string"
+            },
+            "tradeUpIndicator": {
+              "type": "string"
+            },
+            "newsSpecification": {
+              "type": "object",
+              "properties": {
+                "publishedFromDate": {
+                  "type": "string"
+                },
+                "publishedToDate": {
+                  "type": "string"
+                },
+                "categoryText": {
+                  "type": "string"
+                }
+              }
+            },
+            "socialMediaSpecification": {
+              "type": "Array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "archiveDetail": {
+          "type": "object",
+          "properties": {
+            "archiveProductOptOutIndicator": {
+              "type": "string"
+            },
+            "extendArchivePeriodIndicator": {
+              "type": "string"
+            },
+            "portfolioAssetContainerId": {
+              "type": "string"
+            }
+          }
+        },
+        "inquiryReferenceDetail": {
+          "type": "object",
+          "properties": {
+            "customerReferenceText": {
+              "type": "string"
+            },
+            "customerBillingEndorsementText": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
