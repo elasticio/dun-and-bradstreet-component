@@ -24,7 +24,7 @@
       "main": "io.elastic.dnb.company.actions.CleansAndStandardize",
       "title": "Cleans And Standardize",
       "metadata": {
-        "in": "./schemas/json/CompanyService/CleansAndStandardize.in.json"
+        "in": "./schemas/json/CompanyService/CleanseAndStandardize.in.json"
       }
     },
     "findCompetitors": {
