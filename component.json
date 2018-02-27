@@ -20,9 +20,9 @@
     "verifier": "io.elastic.dnb.DnBCredentialsVerifier"
   },
   "actions": {
-    "cleansAndStandardize": {
-      "main": "io.elastic.dnb.company.actions.CleansAndStandardize",
-      "title": "Cleans And Standardize",
+    "cleanseAndStandardize": {
+      "main": "io.elastic.dnb.company.actions.CleanseAndStandardize",
+      "title": "Cleanse And Standardize",
       "metadata": {
         "in": "./schemas/json/CompanyService/CleanseAndStandardize.in.json"
       }
