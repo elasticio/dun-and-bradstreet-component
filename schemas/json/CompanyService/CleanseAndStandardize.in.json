@@ -28,10 +28,13 @@
               "type": "object",
               "properties": {
                 "streetAddressLine": {
-                  "type": "object",
-                  "properties": {
-                    "lineText": {
-                      "type": "string"
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "lineText": {
+                        "type": "string"
+                      }
                     }
                   }
                 },
