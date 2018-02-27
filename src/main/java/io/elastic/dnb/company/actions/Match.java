@@ -1,4 +1,4 @@
-package io.elastic.dnb.match.actions;
+package io.elastic.dnb.company.actions;
 
 import com.dnb.services.match.*;
 import com.fasterxml.jackson.databind.MapperFeature;

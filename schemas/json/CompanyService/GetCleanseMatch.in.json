@@ -1,0 +1,133 @@
+{
+  "type": "object",
+  "properties": {
+    "transactionDetail": {
+      "type": "object",
+      "properties": {
+        "applicationTransactionId": {
+          "type": "string"
+        },
+        "transactionTimestamp": {
+          "type": "string"
+        },
+        "submittingOfficeId": {
+          "type": "string"
+        }
+      }
+    },
+    "getCleanseMatchRequestDetail": {
+      "type": "object",
+      "properties": {
+        "inquiryDetail": {
+          "required": true,
+          "type": "object",
+          "properties": {
+            "dunsNumber": {
+              "type": "string"
+            },
+            "subjectName": {
+              "type": "string"
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "streetAddressLine": {
+                  "type": "object",
+                  "properties": {
+                    "lineText": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "primaryTownName": {
+                  "type": "string"
+                },
+                "countryIsoAlpha2Code": {
+                  "type": "string"
+                },
+                "territoryName": {
+                  "type": "string"
+                },
+                "fullPostalCode": {
+                  "type": "string"
+                }
+              }
+            },
+            "telephoneNumber": {
+              "type": "object",
+              "properties": {
+                "telecommunicationNumber": {
+                  "type": "string"
+                },
+                "internationalDialingCode": {
+                  "type": "string"
+                }
+              }
+            },
+            "organizationIdentificationNumberDetail": {
+              "type": "object",
+              "properties": {
+                "@dnbCodeTableNumber": {
+                  "type": "string"
+                },
+                "@dnbCodeValue": {
+                  "type": "string"
+                },
+                "@typeText": {
+                  "type": "string"
+                },
+                "organizationIdentificationNumber": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "matchSpecification": {
+          "type": "object",
+          "properties": {
+            "candidateMaximumQuantity": {
+              "type": "string"
+            },
+            "confidenceLowerLevelThresholdValue": {
+              "type": "string"
+            },
+            "exclusionCriteria": {
+              "type": "object",
+              "properties": {
+                "exclusionDataDescription": {
+                  "type": "array",
+                  "enum": [
+                    "Exact Match",
+                    "Exclude Non HeadQuarters",
+                    "Exclude Non Marketable",
+                    "Exclude Out of Business",
+                    "Exclude Undeliverable",
+                    "Exclude Unreachable"
+                  ]
+                }
+              }
+            },
+            "orderReasonCode": {
+              "type": "string"
+            },
+            "includeCleansedAndStandardizedInformationIndicator": {
+              "type": "boolean"
+            }
+          }
+        },
+        "inquiryReferenceDetail": {
+          "type": "object",
+          "properties": {
+            "customerReferenceText": {
+              "type": "string"
+            },
+            "customerBillingEndorsementText": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -27,6 +27,13 @@
         "in": "./schemas/json/EntityList/FindCompetitor.in.json"
       }
     },
+    "getCleanseMatch": {
+      "main": "io.elastic.dnb.company.actions.GetCleanseMatch",
+      "title": "Get Company News",
+      "metadata": {
+        "in": "./schemas/json/CompanyService/GetCleanseMatch.in.json"
+      }
+    },
     "getCompanyNews": {
       "main": "io.elastic.dnb.newsandmediaproduct.actions.GetCompanyNews",
       "title": "Get Company News",
@@ -42,7 +49,7 @@
       }
     },
     "match": {
-      "main": "io.elastic.dnb.match.actions.Match",
+      "main": "io.elastic.dnb.company.actions.Match",
       "title": "Match",
       "metadata": {
         "in": "./schemas/json/CompanyService/Match.in.json"

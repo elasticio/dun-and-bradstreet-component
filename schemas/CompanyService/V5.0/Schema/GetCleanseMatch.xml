@@ -1,0 +1,66 @@
+<com:GetCleanseMatchRequest ServiceVersionNumber="string" xmlns:com="http://services.dnb.com/CompanyServiceV2.0">
+  <!--Optional:-->
+  <TransactionDetail>
+    <!--Optional:-->
+    <ApplicationTransactionID>string</ApplicationTransactionID>
+    <!--Optional:-->
+    <TransactionTimestamp>2008-09-29T04:49:45</TransactionTimestamp>
+    <!--Optional:-->
+    <SubmittingOfficeID>string</SubmittingOfficeID>
+  </TransactionDetail>
+  <GetCleanseMatchRequestDetail>
+    <InquiryDetail>
+      <!--Optional:-->
+      <DUNSNumber>string</DUNSNumber>
+      <!--Optional:-->
+      <SubjectName>string</SubjectName>
+      <!--Optional:-->
+      <Address>
+        <!--Zero or more repetitions:-->
+        <StreetAddressLine>
+          <LineText>string</LineText>
+        </StreetAddressLine>
+        <!--Optional:-->
+        <PrimaryTownName>string</PrimaryTownName>
+        <!--Optional:-->
+        <CountryISOAlpha2Code>st</CountryISOAlpha2Code>
+        <!--Optional:-->
+        <TerritoryName>string</TerritoryName>
+        <!--Optional:-->
+        <FullPostalCode>string</FullPostalCode>
+      </Address>
+      <!--Optional:-->
+      <TelephoneNumber>
+        <TelecommunicationNumber>string</TelecommunicationNumber>
+        <!--Optional:-->
+        <InternationalDialingCode>3</InternationalDialingCode>
+      </TelephoneNumber>
+      <!--Optional:-->
+      <OrganizationIdentificationNumberDetail DNBCodeTableNumber="3" DNBCodeValue="100" TypeText="string">
+        <OrganizationIdentificationNumber>string</OrganizationIdentificationNumber>
+      </OrganizationIdentificationNumberDetail>
+    </InquiryDetail>
+    <!--Optional:-->
+    <MatchSpecification>
+      <!--Optional:-->
+      <CandidateMaximumQuantity>3</CandidateMaximumQuantity>
+      <!--Optional:-->
+      <ConfidenceLowerLevelThresholdValue>3</ConfidenceLowerLevelThresholdValue>
+      <!--Zero or more repetitions:-->
+      <ExclusionCriteria>
+        <ExclusionDataDescription>Exclude Out of Business</ExclusionDataDescription>
+      </ExclusionCriteria>
+      <!--Optional:-->
+      <OrderReasonCode>100</OrderReasonCode>
+      <!--Optional:-->
+      <IncludeCleansedAndStandardizedInformationIndicator>true</IncludeCleansedAndStandardizedInformationIndicator>
+    </MatchSpecification>
+    <!--Optional:-->
+    <InquiryReferenceDetail>
+      <!--0 to 5 repetitions:-->
+      <CustomerReferenceText>string</CustomerReferenceText>
+      <!--Optional:-->
+      <CustomerBillingEndorsementText>string</CustomerBillingEndorsementText>
+    </InquiryReferenceDetail>
+  </GetCleanseMatchRequestDetail>
+</com:GetCleanseMatchRequest>
