@@ -44,8 +44,11 @@
           "type": "object",
           "properties": {
             "dnbProductId": {
-              "type": "string",
-              "required": true
+              "required": true,
+              "type": "array",
+              "enum": [
+                "CPTR"
+              ]
             },
             "dnbProductModuleId": {
               "type": "array",

@@ -6,8 +6,16 @@ Component exposes Dun &amp; Bradstreet API.
 
 ## Credentials
 Access to the D&B Direct web services are secured by a **Username** and **Password** combination. D&B will issue your organization a production username upon completion of the contract establishment process. This username will be sent to the email address designated on the contract, along with instructions for setting up the password. This process will also be followed for production trial requests.
- 
+
+**Note:** in some cases your developer account must be registered as US located one. As soon as some services are not available in other countries. 
 ## Actions
+### Business Information Report
+D&B’s Business Information Report is our most popular and widely used information product for determining a company's profitability, stability, viability, and payment performance. It is recognized within the credit management community as the standard for evaluating both new and existing credit relationships, particularly medium-to-high risk accounts. Information found in this report also supports general company research and decision-making in a range of other functions, such as marketing, underwriting, legal services, and purchasing.
+
+**`OrderCompanyReportRequest. OrderCompanyReportRequestDetail. ProductSpecification. DNBProductID` must be equal to `BIR`**
+
+Request JSON schema `schemas/json/Report/BusinessInformationReport.in.json`
+
 ### Cleanse and Standardize
 The D&B Direct API provides address standardization in two features: On-Demand Single Entity Resolution and On-Demand Address Cleanse & Update. The purpose of these features is to produce machine sortable mailing addresses that are optimized for accurate and quick delivery.
 
@@ -17,6 +25,8 @@ Request JSON schema `schemas/json/CompanyService/CleanseAndStandardize.in.json`
 
 ### Compact report
 Concise information for making decisions fast. Three years financial comparisons, D&B Rating and a 'maximum credit recommendation' are included to help you set credit limits. 
+
+**`OrderCompanyReportRequest. OrderCompanyReportRequestDetail. ProductSpecification. DNBProductID` must be equal to `CPTR`**
 
 Request JSON schema `schemas/json/Report/CompactReport.in.json`
 

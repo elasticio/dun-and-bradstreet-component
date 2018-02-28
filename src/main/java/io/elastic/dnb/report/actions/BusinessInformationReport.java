@@ -26,9 +26,9 @@ import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
 import java.io.StringWriter;
 
-public class CompactReport implements Module {
+public class BusinessInformationReport implements Module {
 
-    protected static final Logger logger = LoggerFactory.getLogger(CompactReport.class);
+    protected static final Logger logger = LoggerFactory.getLogger(BusinessInformationReport.class);
 
     @SuppressWarnings("Duplicates")
     @Override

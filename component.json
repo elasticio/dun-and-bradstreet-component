@@ -20,6 +20,13 @@
     "verifier": "io.elastic.dnb.DnBCredentialsVerifier"
   },
   "actions": {
+    "businessInformationReport": {
+      "main": "io.elastic.dnb.report.actions.BusinessInformationReport",
+      "title": "Business Information Report",
+      "metadata": {
+        "in": "./schemas/json/Report/BusinessInformationReport.in.json"
+      }
+    },
     "cleanseAndStandardize": {
       "main": "io.elastic.dnb.company.actions.CleanseAndStandardize",
       "title": "Cleanse And Standardize",
