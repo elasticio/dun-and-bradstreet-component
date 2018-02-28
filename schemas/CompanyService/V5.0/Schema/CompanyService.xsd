@@ -150,7 +150,7 @@ Records the details related to the  changes in the registration number status of
 	</xs:complexType>
 	<xs:complexType name="CleanseAndStandardizeInquiryDetail">
 		<xs:sequence>
-			<xs:element name="OrganizationName" type="cy:DNBStringType256" minOccurs="0">
+			<xs:element name="OrganizationName" type="xs:string" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>
 Text recording the name of the inquired organization by which it is known / identified.

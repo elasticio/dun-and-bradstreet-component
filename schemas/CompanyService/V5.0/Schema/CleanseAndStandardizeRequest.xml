@@ -1,4 +1,4 @@
-<com:CleanseAndStandardizeRequest ServiceVersionNumber="string" xmlns:com="http://services.dnb.com/CompanyServiceV2.0">
+<CleanseAndStandardizeRequest>
   <!--Optional:-->
   <TransactionDetail>
     <!--Optional:-->
@@ -15,7 +15,10 @@
       <Address>
         <!--0 to 2 repetitions:-->
         <StreetAddressLine>
-          <LineText>string</LineText>
+          <LineText>string1</LineText>
+        </StreetAddressLine>
+        <StreetAddressLine>
+          <LineText>string2</LineText>
         </StreetAddressLine>
         <!--Optional:-->
         <PrimaryTownName>string</PrimaryTownName>
@@ -31,9 +34,11 @@
     <!--Optional:-->
     <InquiryReferenceDetail>
       <!--0 to 5 repetitions:-->
-      <CustomerReferenceText>string</CustomerReferenceText>
+      <CustomerReferenceText>string3</CustomerReferenceText>
+      <CustomerReferenceText>string4</CustomerReferenceText>
+      <CustomerReferenceText>string5</CustomerReferenceText>
       <!--Optional:-->
       <CustomerBillingEndorsementText>string</CustomerBillingEndorsementText>
     </InquiryReferenceDetail>
   </CleanseAndStandardizeRequestDetail>
-</com:CleanseAndStandardizeRequest>
+</CleanseAndStandardizeRequest>

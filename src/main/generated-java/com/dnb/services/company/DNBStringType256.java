@@ -1,6 +1,5 @@
 
 package com.dnb.services.company;
-
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -11,9 +10,9 @@ import javax.xml.bind.annotation.XmlValue;
 
 /**
  * <p>Java class for DNBStringType256 complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="DNBStringType256">
  *   &lt;simpleContent>
@@ -30,8 +29,8 @@ import javax.xml.bind.annotation.XmlValue;
  *   &lt;/simpleContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "DNBStringType256", namespace = "http://services.dnb.com/CompanyServiceV2.0", propOrder = {
@@ -84,11 +83,11 @@ public class DNBStringType256 {
 
     /**
      * Sets the value of the languageCode property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public void setLanguageCode(BigInteger value) {
         this.languageCode = value;
@@ -96,11 +95,11 @@ public class DNBStringType256 {
 
     /**
      * Gets the value of the writingScriptISOAlpha4Code property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getWritingScriptISOAlpha4Code() {
         return writingScriptISOAlpha4Code;
@@ -108,11 +107,11 @@ public class DNBStringType256 {
 
     /**
      * Sets the value of the writingScriptISOAlpha4Code property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setWritingScriptISOAlpha4Code(String value) {
         this.writingScriptISOAlpha4Code = value;
