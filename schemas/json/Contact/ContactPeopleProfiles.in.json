@@ -22,6 +22,7 @@
           "type": "object",
           "properties": {
             "dunsNumber": {
+              "required": true,
               "type": "string"
             },
             "countryIsoAlpha2Code": {
@@ -41,6 +42,7 @@
           "type": "object",
           "properties": {
             "dnbProductId": {
+              "required": true,
               "type": "string"
             },
             "languagePreferenceCode": {
