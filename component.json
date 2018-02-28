@@ -55,6 +55,13 @@
         "in": "./schemas/json/Report/ComprehensiveReport.in.json"
       }
     },
+    "contactPeopleProfiles": {
+      "main": "io.elastic.dnb.contact.actions.ContactPeopleProfiles",
+      "title": "Contact/People Profiles",
+      "metadata": {
+        "in": "./schemas/json/Contact/ContactPeopleProfiles.in.json"
+      }
+    },
     "findCompetitors": {
       "main": "io.elastic.dnb.entitylist.actions.FindCompetitor",
       "title": "Find Competitor",
