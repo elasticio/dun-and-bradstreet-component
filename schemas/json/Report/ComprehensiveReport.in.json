@@ -1,0 +1,116 @@
+{
+  "type": "object",
+  "properties": {
+    "transactionDetail": {
+      "type": "object",
+      "properties": {
+        "applicationTransactionId": {
+          "type": "string"
+        },
+        "transactionTimestamp": {
+          "type": "string"
+        },
+        "submittingOfficeId": {
+          "type": "string"
+        }
+      }
+    },
+    "orderCompanyReportRequestDetail": {
+      "type": "object",
+      "properties": {
+        "inquiryDetail": {
+          "type": "object",
+          "properties": {
+            "dunsNumber": {
+              "type": "string"
+            },
+            "countryIsoAlpha2Code": {
+              "type": "string"
+            },
+            "organizationIdentificationNumberDetail": {
+              "type": "object",
+              "properties": {
+                "organizationIdentificationNumber": {
+                  "type": "string"
+                },
+                "organizationIdentificationNumberTypeCode": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "productSpecification": {
+          "type": "object",
+          "properties": {
+            "dnbProductId": {
+              "required": true,
+              "type": "array",
+              "enum": [
+                "COMPR"
+              ]
+            },
+            "dnbProductModuleId": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "mergeModuleAttachmentsIndicator": {
+              "type": "string"
+            },
+            "productFormatPreferenceCode": {
+              "type": "string"
+            },
+            "characterSetPreferenceCode": {
+              "type": "string"
+            },
+            "languagePreferenceCode": {
+              "type": "string"
+            },
+            "orderReasonCode": {
+              "type": "string"
+            },
+            "tradeUpIndicator": {
+              "type": "boolean"
+            },
+            "returnOnlyInDateDataIndicator": {
+              "type": "boolean"
+            },
+            "includeAttachmentIndicator": {
+              "type": "boolean"
+            }
+          }
+        },
+        "archiveDetail": {
+          "type": "object",
+          "properties": {
+            "archiveProductOptOutIndicator": {
+              "type": "boolean"
+            },
+            "extendArchivePeriodIndicator": {
+              "type": "boolean"
+            },
+            "portfolioAssetContainerId": {
+              "type": "string"
+            }
+          }
+        },
+        "inquiryReferenceDetail": {
+          "type": "object",
+          "properties": {
+            "customerReferenceText": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "customerBillingEndorsementText": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

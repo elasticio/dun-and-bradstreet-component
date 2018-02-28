@@ -41,6 +41,13 @@
         "in": "./schemas/json/Report/CompactReport.in.json"
       }
     },
+    "comprehensiveReport": {
+      "main": "io.elastic.dnb.report.actions.ComprehensiveReport",
+      "title": "Comprehensive Report",
+      "metadata": {
+        "in": "./schemas/json/Report/ComprehensiveReport.in.json"
+      }
+    },
     "findCompetitors": {
       "main": "io.elastic.dnb.entitylist.actions.FindCompetitor",
       "title": "Find Competitor",

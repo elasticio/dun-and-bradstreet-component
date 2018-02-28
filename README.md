@@ -30,6 +30,13 @@ Concise information for making decisions fast. Three years financial comparisons
 
 Request JSON schema `schemas/json/Report/CompactReport.in.json`
 
+### Comprehensive report
+D&B's Comprehensive Report is our most complete risk management report, designed to help you assess new and existing business relationships where the large-dollar and/or long-term nature of the commitment pose a significant risk or opportunity to your business. This report combines the background, payments and financial information from the Business Information Report with the power of D&B's predictive scores and ratings, helping you determine both the current profile and future outlook for an account.
+
+**`OrderCompanyReportRequest. OrderCompanyReportRequestDetail. ProductSpecification. DNBProductID` must be equal to `COMPR`**
+
+Request JSON schema `schemas/json/Report/ComprehensiveReport.in.json`
+
 ### Find Competitors
 Returns all the competitors for a given company. 
 
