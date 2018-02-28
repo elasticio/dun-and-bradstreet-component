@@ -22,7 +22,8 @@
           "type": "object",
           "properties": {
             "dunsNumber": {
-              "type": "string"
+              "type": "string",
+              "required": true
             },
             "countryIsoAlpha2Code": {
               "type": "string"
