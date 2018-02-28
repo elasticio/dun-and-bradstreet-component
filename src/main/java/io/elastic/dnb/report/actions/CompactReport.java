@@ -1,7 +1,5 @@
 package io.elastic.dnb.report.actions;
 
-import com.dnb.services.company.GetCleanseMatchRequest;
-import com.dnb.services.company.GetCleanseMatchResponse;
 import com.dnb.services.report.OrderCompanyReportRequest;
 import com.dnb.services.report.OrderCompanyReportResponse;
 import com.fasterxml.jackson.databind.DeserializationFeature;
