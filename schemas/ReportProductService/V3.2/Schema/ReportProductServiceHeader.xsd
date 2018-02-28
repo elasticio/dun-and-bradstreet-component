@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 2 (http://www.altova.com) by Aruntamil Pitchaimuthu (DUN & BRADSTREET) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rptprod="http://services.dnb.com/ReportProductServiceV2.0" targetNamespace="http://services.dnb.com/ReportProductServiceV2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0">
+	<xs:complexType name="AmountType">
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute name="CurrencyISOAlpha3Code" type="rptprod:CurrencyISOAlpha3Code"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="CreditCardPaymentRequestType">
+		<xs:sequence>
+			<xs:element name="MerchantID" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Merchant ID is the unique id created by DNB Finance team for each application.This ID is used to identify each application uniquely and will be available in the credit card statement of the user </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CreditCardTokenNumber">
+				<xs:annotation>
+					<xs:documentation>Masked 16 digit unique number for each credit card generated during the registration.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="16"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CreditCardTypeCode">
+				<xs:annotation>
+					<xs:documentation>Contains the DNB Scots code specifying what kind of credit card was used for ordering this product. 991- AMEX,992- Discover, 993- MasterCard, 994- Visa</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="rptprod:DNBCodeValueType">
+						<xs:enumeration value="991"/>
+						<xs:enumeration value="992"/>
+						<xs:enumeration value="993"/>
+						<xs:enumeration value="994"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TotalPayableAmount">
+				<xs:annotation>
+					<xs:documentation>Amount to be charged including taxes</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:restriction base="rptprod:AmountType">
+							<xs:totalDigits value="15"/>
+							<xs:fractionDigits value="2"/>
+							<xs:attribute name="CurrencyISOAlpha3Code" type="rptprod:CurrencyISOAlpha3Code"/>
+						</xs:restriction>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="TaxDetail" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="TaxTypeCode">
+							<xs:annotation>
+								<xs:documentation>Text that identifies the kind of the financial charge or levy imposed by the appropriate jurisdiction. Contains the DNB Scots Code value. 14110- TotalTax</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="rptprod:DNBCodeValueType">
+									<xs:enumeration value="14110"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="TaxAmount">
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:restriction base="rptprod:AmountType">
+										<xs:totalDigits value="15"/>
+										<xs:fractionDigits value="2"/>
+									</xs:restriction>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="TaxProductCategoryCodeText">
+							<xs:annotation>
+								<xs:documentation>A code identifying the grouping of products to which the product in this order item belong because they all share the same tax treatment</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="4"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AmountBeforeTax">
+				<xs:annotation>
+					<xs:documentation>Base Amount excluding taxes</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:restriction base="rptprod:AmountType">
+							<xs:totalDigits value="15"/>
+							<xs:fractionDigits value="2"/>
+						</xs:restriction>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CreditCardPaymentResponseType">
+		<xs:sequence>
+			<xs:element name="PaymentGatewayTransactionIdentificationDetail" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="PaymentGatewayTransactionID" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>Text containing the unique transaction ID for a particular payment</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="PaymentGatewaySystemID" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>Text containing the system ID which generated the transaction ID eg:CyberSource(ID=14147)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="CurrencyISOAlpha3Code">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DNBCodeValueType">
+		<xs:restriction base="xs:integer">
+			<xs:totalDigits value="7"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ReportProductServiceHeader">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="OrderCompanyReportServiceHeader" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>This aggregate contains the application specific (non-POA) elements used by D&amp;B applications while using the Order Company Report service.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Request" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>This aggregate contains the application specific (non-POA) elements in the Order Company Report Request </xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="CreditCardPaymentRequestDetail" type="rptprod:CreditCardPaymentRequestType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>This aggregate contains the request elements that are required for charging a credit card</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="UsageRequestDetail" type="rptprod:UsageRequestDetail" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>This aggregate contains the elements that are sent to BOPEEP</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Response" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>This aggregate contains the application specific (non-POA) elements in the Order Company Report Response</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="CreditCardPaymentResponseDetail" type="rptprod:CreditCardPaymentResponseType" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>This aggregate contains the response elements that are returned for a credit card payment transaction</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="UsageRequestDetail">
+		<xs:sequence>
+			<xs:element name="CustomerAddressDetail" type="rptprod:CustomerAddressDetail"/>
+			<xs:element name="CustomerTelecommunicationDetail">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="EmailAddress" type="rptprod:EmailAddressType">
+							<xs:annotation>
+								<xs:documentation>Text that specifies e-mail address of the person who ordered the D&amp;B product. </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OrderItemNumber">
+				<xs:annotation>
+					<xs:documentation>A number generated by eCommerce to uniquely identify each component of the charged transaction.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ShipToGEOREFID">
+				<xs:annotation>
+					<xs:documentation>The Geographical code assigned by Vertex identifying the physical location of the customer ordering this product, e.g, 310171070 for Jersey City, NJ.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="12"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ShipFromGEOREFID">
+				<xs:annotation>
+					<xs:documentation>The Geographical code assigned by Vertex identifying the physical location of the D&amp;B office from where products are shipped fulfilled, e.g, 310393310 for Berkeley Heights, NJ</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="12"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="HowHeardAboutCodeText" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A code that identifies how the D&amp;B customer learned of D&amp;B products or services, e.g., by word-of-mouth, through a promotion, a third party deal, direct mailing.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="4"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PromotionCodeText" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="128"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="StringBaseType256">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DNBStringType256">
+		<xs:simpleContent>
+			<xs:extension base="rptprod:StringBaseType256"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="TerritoryName">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="64"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="StreetAddressLine">
+		<xs:annotation>
+			<xs:documentation>
+An entry loop which can repeat multiple times to allow the recording of several street address lines of this address. This includes address line details prior to the Suburb or Town/City region address line. This includes the portion of the address lines which deal with the street address components, such as street name, street number, building name, estate name.
+         </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LineText">
+				<xs:annotation>
+					<xs:documentation>
+Text that records the street address components as it would be presented on an address label. This includes, but is not limited to, details such as street name, street number, building name, estate name.
+               </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="240"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="DisplaySequence" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+A number which may be used to define the order in which this street address line should be presented relative to  other street address lines where the lower the number the earlier the data is presented.
+               </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:totalDigits value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="PostalCode">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="16"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CountryISOAlpha2Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="2"/>
+			<xs:maxLength value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CustomerAddressDetail">
+		<xs:sequence>
+			<xs:element name="AddressTypeCode">
+				<xs:annotation>
+					<xs:documentation>Contains the DNB Scots Code value for Addresstype</xs:documentation>
+					<xs:documentation>1003-Registered Address</xs:documentation>
+					<xs:documentation>1114-Primary Address</xs:documentation>
+					<xs:documentation>1116-Mailing Address</xs:documentation>
+					<xs:documentation>3567-Mortgaged</xs:documentation>
+					<xs:documentation>5382-Delivery Address</xs:documentation>
+					<xs:documentation>5462-Residential Address</xs:documentation>
+					<xs:documentation>11693-Office or Work  Address</xs:documentation>
+					<xs:documentation>23566-Billing  Address</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="rptprod:DNBCodeValueType">
+						<xs:enumeration value="1003"/>
+						<xs:enumeration value="1114"/>
+						<xs:enumeration value="1116"/>
+						<xs:enumeration value="3567"/>
+						<xs:enumeration value="5382"/>
+						<xs:enumeration value="5462"/>
+						<xs:enumeration value="11693"/>
+						<xs:enumeration value="23566"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SubjectName" type="rptprod:DNBStringType256">
+				<xs:annotation>
+					<xs:documentation>The entire name of the subject where the subject is either an individual or an organization.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StreetAddressLine" type="rptprod:StreetAddressLine" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+An entry loop which can repeat multiple times to allow the recording of  several lines where each address line contains one or more named address elements. Examples of named address elements are Street Name, Street Number, Building Name, Estate Name. They are called &#8220;lines&#8221; because an addres can be divided into multiple lines. When there are multiple lines the sequence of the lines must be preserved.
+               </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PrimaryTownName">
+				<xs:annotation>
+					<xs:documentation>
+The name of the town or city recognized by the Postal Authority for delivering mail.
+               </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="64"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TerritoryName" type="rptprod:TerritoryName">
+				<xs:annotation>
+					<xs:documentation>Text that specifies the name or the shortened name of the locally governed area where the subject of the ordered product is located and that forms part of a centrally governed nation. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PostalCode" type="rptprod:PostalCode">
+				<xs:annotation>
+					<xs:documentation>An identifier used by the Postal Authority to identify a particular geographic location,</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CountryISOAlpha2Code" type="rptprod:CountryISOAlpha2Type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="EmailAddressType">
+		<xs:annotation>
+			<xs:documentation>
+Text recording the electronic mail address used by a subject by which the subject can transmit and or receive text messages, links, and files electronically, typically via a network, like the Internet.
+               </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="240"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

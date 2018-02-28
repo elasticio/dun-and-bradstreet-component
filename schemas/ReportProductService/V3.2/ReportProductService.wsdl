@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 2 (http://www.altova.com) by Hari (DUN & BRADSTREET) -->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://services.dnb.com/ReportProductServiceV2.0" xmlns:ns="http://services.dnb.com/ReportProductServiceV2.0" xmlns:ns1="http://services.dnb.com/TransactionFaultV2.0" name="ReportProductService" targetNamespace="http://services.dnb.com/ReportProductServiceV2.0">
+	<wsdl:documentation>Report Product Service WSDL Version 3.2</wsdl:documentation>
+	<wsdl:types>
+		<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified">
+			<xs:import namespace="http://services.dnb.com/ReportProductServiceV2.0" schemaLocation="Schema/ReportProductService.xsd"/>
+			<xs:import namespace="http://services.dnb.com/TransactionFaultV2.0" schemaLocation="Schema/TransactionFault.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="OrderCompanyReportRequest">
+		<wsdl:part name="parameter" element="tns:OrderCompanyReportRequest"/>
+	</wsdl:message>
+	<wsdl:message name="OrderCompanyReportResponse">
+		<wsdl:part name="parameter" element="tns:OrderCompanyReportResponse"/>
+	</wsdl:message>
+	<wsdl:message name="OrderCompanyPublicDocumentRequest">
+		<wsdl:part name="parameter" element="tns:OrderCompanyPublicDocumentRequest"/>
+	</wsdl:message>
+	<wsdl:message name="OrderCompanyPublicDocumentResponse">
+		<wsdl:part name="parameter" element="tns:OrderCompanyPublicDocumentResponse"/>
+	</wsdl:message>
+	<wsdl:message name="OrderCountryReportRequest">
+		<wsdl:part name="parameter" element="tns:OrderCountryReportRequest"/>
+	</wsdl:message>
+	<wsdl:message name="OrderCountryReportResponse">
+		<wsdl:part name="parameter" element="tns:OrderCountryReportResponse"/>
+	</wsdl:message>
+	<wsdl:message name="TransactionFault">
+		<wsdl:part name="parameter" element="ns1:TransactionResult"/>
+	</wsdl:message>
+	<wsdl:portType name="ReportProduct">
+		<wsdl:operation name="OrderCompanyReport">
+			<wsdl:input message="tns:OrderCompanyReportRequest"/>
+			<wsdl:output message="tns:OrderCompanyReportResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="OrderCompanyPublicDocument">
+			<wsdl:input message="tns:OrderCompanyPublicDocumentRequest"/>
+			<wsdl:output message="tns:OrderCompanyPublicDocumentResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="OrderCountryReport">
+			<wsdl:input message="tns:OrderCountryReportRequest"/>
+			<wsdl:output message="tns:OrderCountryReportResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ReportProductSoapBinding" type="tns:ReportProduct">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="OrderCompanyReport">
+			<soap:operation soapAction="http://services.dnb.com/ReportProductService/V3.2/OrderCompanyReport"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="OrderCompanyPublicDocument">
+			<soap:operation soapAction="http://services.dnb.com/ReportProductService/V3.2/OrderCompanyPublicDocument"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="OrderCountryReport">
+			<soap:operation soapAction="http://services.dnb.com/ReportProductService/V3.2/OrderCountryReport"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ReportProductService">
+		<wsdl:port name="ReportProductServiceEndPoint" binding="tns:ReportProductSoapBinding">
+			<soap:address location="https://direct.dnb.com/ReportProduct/V3.2"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

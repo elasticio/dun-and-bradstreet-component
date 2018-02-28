@@ -27,6 +27,13 @@
         "in": "./schemas/json/CompanyService/CleanseAndStandardize.in.json"
       }
     },
+    "compactReport": {
+      "main": "io.elastic.dnb.report.actions.CompactReport",
+      "title": "Compact Report",
+      "metadata": {
+        "in": "./schemas/json/Report/CompactReport.in.json"
+      }
+    },
     "findCompetitors": {
       "main": "io.elastic.dnb.entitylist.actions.FindCompetitor",
       "title": "Find Competitor",
