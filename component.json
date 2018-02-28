@@ -20,6 +20,13 @@
     "verifier": "io.elastic.dnb.DnBCredentialsVerifier"
   },
   "actions": {
+    "businessBackgroundReport": {
+      "main": "io.elastic.dnb.report.actions.BusinessBackgroundReport",
+      "title": "Business Background Report",
+      "metadata": {
+        "in": "./schemas/json/Report/BusinessBackgroundReport.in.json"
+      }
+    },
     "businessInformationReport": {
       "main": "io.elastic.dnb.report.actions.BusinessInformationReport",
       "title": "Business Information Report",

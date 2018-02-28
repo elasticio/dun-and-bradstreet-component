@@ -9,6 +9,13 @@ Access to the D&B Direct web services are secured by a **Username** and **Passwo
 
 **Note:** in some cases your developer account must be registered as US located one. As soon as some services are not available in other countries. 
 ## Actions
+### Business Background Report
+D&B's Business Background Report provides details about the operations of a company, its history, and business background of its management.
+
+**`OrderCompanyReportRequest. OrderCompanyReportRequestDetail. ProductSpecification. DNBProductID` must be equal to `BBR`**
+
+Request JSON schema `schemas/json/Report/BusinessBackgroundReport.in.json`
+
 ### Business Information Report
 D&B’s Business Information Report is our most popular and widely used information product for determining a company's profitability, stability, viability, and payment performance. It is recognized within the credit management community as the standard for evaluating both new and existing credit relationships, particularly medium-to-high risk accounts. Information found in this report also supports general company research and decision-making in a range of other functions, such as marketing, underwriting, legal services, and purchasing.
 
@@ -68,9 +75,13 @@ No triggers.
 ## Dun &amp; Bradstreet API links
 [Dun &amp; Bradstreet documentation](https://docs.dnb.com/direct/2.0/en-US/quick-soap-API)
 
+[Business Information Report documentation](https://docs.dnb.com/direct/2.0/en-US/report/latest/ordercompanyreport/bir-soap-API)
+
 [Cleanse and Standardize documentation](https://docs.dnb.com/direct/2.0/en-US/company/latest/standardize/soap-API)
 
 [Compact Report documentation](https://docs.dnb.com/direct/2.0/en-US/report/latest/ordercompanyreport/cmpct-soap-API)
+
+[Comprehensive Report documentation](https://docs.dnb.com/direct/2.0/en-US/report/latest/ordercompanyreport/cmprhnsv-soap-API)
 
 [GetCleanseMatch documentation](https://docs.dnb.com/direct/2.0/en-US/company/latest/getcleansematch/soap-API)
 
