@@ -8,6 +8,18 @@ Component exposes Dun &amp; Bradstreet API.
 Access to the D&B Direct web services are secured by a **Username** and **Password** combination. D&B will issue your organization a production username upon completion of the contract establishment process. This username will be sent to the email address designated on the contract, along with instructions for setting up the password. This process will also be followed for production trial requests.
  
 ## Actions
+### Cleanse and Standardize
+The D&B Direct API provides address standardization in two features: On-Demand Single Entity Resolution and On-Demand Address Cleanse & Update. The purpose of these features is to produce machine sortable mailing addresses that are optimized for accurate and quick delivery.
+
+The On-Demand Address Cleanse & Update feature only performs the address cleanup service. To locate a D-U-N-S Numbers while cleansing address records, refer to the On-Demand Single Entity Resolution feature.
+
+Request JSON schema `schemas/json/CompanyService/CleanseAndStandardize.in.json`
+
+### Compact report
+Concise information for making decisions fast. Three years financial comparisons, D&B Rating and a 'maximum credit recommendation' are included to help you set credit limits. 
+
+Request JSON schema `schemas/json/Report/CompactReport.in.json`
+
 ### Find Competitors
 Returns all the competitors for a given company. 
 
@@ -39,8 +51,13 @@ No triggers.
 ## Dun &amp; Bradstreet API links
 [Dun &amp; Bradstreet documentation](https://docs.dnb.com/direct/2.0/en-US/quick-soap-API)
 
-[GetCleanseMatch Request documentation](https://docs.dnb.com/direct/2.0/en-US/company/latest/getcleansematch/soap-API)
+[Cleanse and Standardize documentation](https://docs.dnb.com/direct/2.0/en-US/company/latest/standardize/soap-API)
 
-[Get Company News Request documentation](https://docs.dnb.com/direct/2.0/en-US/newsandmedia/latest/orderproduct/news-soap-API)
+[Compact Report documentation](https://docs.dnb.com/direct/2.0/en-US/report/latest/ordercompanyreport/cmpct-soap-API)
 
-[Match Request documentation](https://docs.dnb.com/direct/2.0/en-US/company/latest/match/soap-API)
+[GetCleanseMatch documentation](https://docs.dnb.com/direct/2.0/en-US/company/latest/getcleansematch/soap-API)
+
+[Get Company News documentation](https://docs.dnb.com/direct/2.0/en-US/newsandmedia/latest/orderproduct/news-soap-API)
+
+[Match documentation](https://docs.dnb.com/direct/2.0/en-US/company/latest/match/soap-API)
+
