@@ -31,38 +31,6 @@ public class CleanseAndStandardize implements Module {
     @Override
     public void execute(ExecutionParameters parameters) {
 
-//    public static void main(String[] args) {
-
-
-        String bodyString = "{\n" +
-                "\t\"cleanseAndStandardizeRequestDetail\": {\n" +
-                "\t\t\"inquiryDetail\": {\n" +
-                "\t\t    \"organizationName\": \"GORMAN MANUFACTURING COMPANY, INC.\",\n" +
-                "\t\t\t\"address\": {\n" +
-                "\t\t\t\t\"streetAddressLine\": {\n" +
-                "\t\t\t\t\t\"lineText\": \"492 KOLLER STREET\"\n" +
-                "\t\t\t\t},\n" +
-                "\t\t\t\t\"primaryTownName\": \"SAN FRANCISCO\",\n" +
-                "\t\t\t\t\"countryIsoAlpha2Code\": \"US \",\n" +
-                "\t\t\t\t\"countyName\": \"CA\",\n" +
-                "\t\t\t\t\"postalCode\": \"94110\"\n" +
-                "\t\t\t}\n" +
-                "\t\t},\n" +
-                "\t\t\"inquiryReferenceDetail\": {\n" +
-                "\t\t\t\"customerReferenceText\": [\n" +
-                "\t\t\t\t\"EnvironmentMonitoring\"\n" +
-                "\t\t\t],\n" +
-                "\t\t\t\"customerBillingEndorsementText\": \"EnvironmentMonitoring\"\n" +
-                "\t\t}\n" +
-                "\t}\n" +
-                "}";
-
-
-//        ObjectMapper objectMapper = new ObjectMapper();
-
-//        Reader reader = new StringReader(bodyString);
-
-
         JsonObject configuration = parameters.getConfiguration();
         Message data = null;
         JsonObject jsonDataObject = null;
@@ -71,23 +39,19 @@ public class CleanseAndStandardize implements Module {
         logger.info("About to call DnB API. Request message: {}", body.toString());
         ObjectMapper mapper = new ObjectMapper();
 
-//        mapper.enable(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT);
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         mapper.configure(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT, true);
         mapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
         try {
             CleanseAndStandardizeRequest cleanseAndStandardizeRequest = mapper.readValue(body.toString(), CleanseAndStandardizeRequest.class);
-//            CleanseAndStandardizeRequest cleanseAndStandardizeRequest = mapper.readValue(bodyString, CleanseAndStandardizeRequest.class);
 
             SOAPMessage response = new GenericSOAPClient.Builder()
                     .setRequestClass(CleanseAndStandardizeRequest.class)
                     .setBodyObject(cleanseAndStandardizeRequest)
                     .setEndpointUrl(EndpointUrl.COMPANY_5_0)
                     .setSoapAction(SoapAction.CLEANSE_AND_STANDARDIZE_MATCH)
-//                    .setUsername("P2000000C49DC06FDA0481EAD1AE30A9")
                     .setUsername(Utils.getUsername(configuration))
                     .setPassword(Utils.getPassword(configuration))
-//                    .setPassword("tcyt9ucg")
                     .call();
 
             JAXBElement jaxbElement = new GenericSOAPClient.Builder().bindToJaxb(CleanseAndStandardizeResponse.class, response);
@@ -117,5 +81,3 @@ public class CleanseAndStandardize implements Module {
     }
 
 }
-
-//{"cleanseAndStandardizeRequestDetail":{"inquiryReferenceDetail":{"customerBillingEndorsementText":"EnvironmentMonitoring","customerReferenceText":["EnvironmentMonitoring"},"inquiryDetail":{"address":{"streetAddressLine":{"lineText":"492 KOLLER STREET"}},"organizationName":"GORMAN MANUFACTURING COMPANY, INC."}},"transactionDetail":{"applicationTransactionId":"EnvironmentMonitoring"}}
