@@ -51,7 +51,7 @@ public class CompactReport implements Module {
                     .setRequestClass(OrderCompanyReportRequest.class)
                     .setBodyObject(orderCompanyReportRequest)
                     .setEndpointUrl(EndpointUrl.REPORT_PRODUCT)
-                    .setSoapAction(SoapAction.GET_CLEANSE_MATCH)
+                    .setSoapAction(SoapAction.REPORT_PRODUCT)
                     .setUsername(Utils.getUsername(configuration))
                     .setPassword(Utils.getPassword(configuration))
                     .call();
