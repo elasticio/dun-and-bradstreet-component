@@ -19,10 +19,6 @@
       "required": true,
       "type": "string"
     },
-    "PartnerUri": {
-      "required": true,
-      "type": "string"
-    },
     "ApplicationTransactionID": {
       "type": "string"
     },
