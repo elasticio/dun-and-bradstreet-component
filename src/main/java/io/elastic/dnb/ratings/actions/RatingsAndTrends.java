@@ -49,8 +49,6 @@ public class RatingsAndTrends implements Module {
         try {
             OrderProductRequest orderProductRequest = mapper.readValue(body.toString(), OrderProductRequest.class);
 
-            orderProductRequest.getOrderProductRequestDetail().getProductSpecification().setDNBProductID("RTNG_TRND");
-
             SOAPMessage response = new GenericSOAPClient.Builder()
                     .setRequestClass(OrderProductRequest.class)
                     .setBodyObject(orderProductRequest)
