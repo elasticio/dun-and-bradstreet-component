@@ -8,6 +8,7 @@ public enum SoapAction {
     GET_CLEANSE_MATCH("http://services.dnb.com/CompanyService/V5.0/GetCleanseMatch"),
     MATCH("http://services.dnb.com/CompanyService/V5.0/Match"),
     NEWS_AND_MEDIA_PRODUCT("http://services.dnb.com/NewsAndMediaProductService/V3.0/OrderProduct"),
+    RATINGS("http://services.dnb.com/AssessmentProductService/V5.0/OrderProduct"),
     REPORT_PRODUCT("http://services.dnb.com/ReportProductService/V3.2/OrderCompanyReport");
 
     private String soapActionValue;

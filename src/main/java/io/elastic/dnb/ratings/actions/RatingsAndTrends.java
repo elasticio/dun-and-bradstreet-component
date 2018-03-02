@@ -52,7 +52,7 @@ public class RatingsAndTrends implements Module {
             SOAPMessage response = new GenericSOAPClient.Builder()
                     .setRequestClass(OrderProductRequest.class)
                     .setBodyObject(orderProductRequest)
-                    .setEndpointUrl(EndpointUrl.REPORT_PRODUCT)
+                    .setEndpointUrl(EndpointUrl.RATINGS)
                     .setSoapAction(SoapAction.REPORT_PRODUCT)
                     .setUsername(Utils.getUsername(configuration))
                     .setPassword(Utils.getPassword(configuration))
