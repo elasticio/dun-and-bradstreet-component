@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "Target": {
+      "type": "array",
+      "required": true,
+      "enum": [
+        "email",
+        "twitter",
+        "linkedin",
+        "facebook"
+      ]
+    },
+    "TargetValue": {
+      "required": true,
+      "type": "string"
+    },
+    "PartnerIndentifier": {
+      "required": true,
+      "type": "string"
+    },
+    "PartnerUri": {
+      "required": true,
+      "type": "string"
+    },
+    "ApplicationTransactionID": {
+      "type": "string"
+    },
+    "ArchiveProductOptOutIndicator": {
+      "type": "boolean"
+    },
+    "ExtendArchivePeriodIndicator": {
+      "type": "boolean"
+    }
+  }
+}

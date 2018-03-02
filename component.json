@@ -56,10 +56,10 @@
       }
     },
     "contactPeopleProfiles": {
-      "main": "io.elastic.dnb.contact.actions.ContactPeopleProfiles",
+      "main": "io.elastic.dnb.people.actions.ContactPeopleProfiles",
       "title": "Contact/People Profiles",
       "metadata": {
-        "in": "./schemas/json/Contact/ContactPeopleProfiles.in.json"
+        "in": "./schemas/json/People/ContactPeopleProfiles.in.json"
       }
     },
     "findCompetitors": {
@@ -95,6 +95,13 @@
       "title": "Match",
       "metadata": {
         "in": "./schemas/json/CompanyService/Match.in.json"
+      }
+    },
+    "socialMediaProfiles": {
+      "main": "io.elastic.dnb.people.actions.SocialMediaProfiles",
+      "title": "Social Media Profiles",
+      "metadata": {
+        "in": "./schemas/json/People/SocialMediaProfiles.in.json"
       }
     }
   }
