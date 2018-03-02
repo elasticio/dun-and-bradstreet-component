@@ -70,7 +70,7 @@ public class GenericRESTClient {
         }
 
         public Builder appendPath(String path) {
-            baseUri.concat(path + "/");
+            baseUri += (path + "/");
             return this;
         }
 

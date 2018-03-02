@@ -15,7 +15,7 @@
       "required": true,
       "type": "string"
     },
-    "PartnerIndentifier": {
+    "PartnerIdentifier": {
       "required": true,
       "type": "string"
     },

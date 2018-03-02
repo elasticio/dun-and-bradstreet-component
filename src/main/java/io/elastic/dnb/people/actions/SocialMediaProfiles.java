@@ -28,7 +28,7 @@ public class SocialMediaProfiles implements Module {
         JsonObject body = parameters.getMessage().getBody();
         logger.info("About to call DnB API. Request message: {}", body.toString());
 
-        String partnerIndentifier = body.getString("PartnerIndentifier");
+        String partnerIndentifier = body.getString("PartnerIdentifier");
         String target = body.getString("Target");
         String targetValue = body.getString("TargetValue");
 
@@ -39,6 +39,7 @@ public class SocialMediaProfiles implements Module {
             responseJson = new GenericRESTClient.Builder()
                     .setBaseUri(BaseUri.SOCIAL_MEDIA_PROFILES.getBaseUriValue())
                     .appendPath(partnerIndentifier)
+                    .setTarget(target, targetValue)
                     .setAccept(MediaType.APPLICATION_JSON)
                     .setHttpMethod(HttpMethod.GET)
                     .setUsername("P200000E291E8762A114FBF95791A2BE")
