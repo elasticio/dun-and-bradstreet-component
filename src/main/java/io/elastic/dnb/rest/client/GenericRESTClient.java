@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.net.*;
+import java.util.Map;
+import java.util.HashMap;
 
 import javax.json.Json;
 import javax.json.JsonObject;
@@ -29,6 +31,11 @@ public class GenericRESTClient {
         private static String accept;
         private static String httpMethod;
         private static String authHttpMethod;
+
+        private static String target;
+        private static String targetValue;
+
+        private static Map<String, String> mapParameters;
 
         private static HttpURLConnection conn;
 
@@ -55,6 +62,16 @@ public class GenericRESTClient {
             return buildJsonObject(authToken)
                     .getJsonObject("AuthenticationDetail")
                     .getString("Token");
+        }
+
+        public Builder addParameters(String key, String value) {
+            mapParameters.put(key, value);
+            return this;
+        }
+
+        public Builder appendPath(String path) {
+            baseUri.concat(path + "/");
+            return this;
         }
 
         public Builder setUsername(String username) {
@@ -89,6 +106,12 @@ public class GenericRESTClient {
 
         public Builder setAuthHttpMethod(String authHttpMethod) {
             this.authHttpMethod = authHttpMethod;
+            return this;
+        }
+
+        public Builder setTarget(String target, String targetValue) {
+            this.target = target;
+            this.targetValue = targetValue;
             return this;
         }
 
@@ -133,7 +156,7 @@ public class GenericRESTClient {
         private static void getAuthToken() throws IOException {
 
             authToken = new GenericRESTClient.Builder()
-                    .setBaseAuthUri("https://direct.dnb.com/Authentication/V2.0/")
+                    .setBaseAuthUri(BaseUri.BASE_AUTH_URI.getBaseUriValue())
                     .setAuthHttpMethod(HttpMethod.POST)
                     .setUsername(username)
                     .setPassword(password)
@@ -144,7 +167,11 @@ public class GenericRESTClient {
 
         //Main Connection
         private static String getConnection() throws IOException, InterruptedException {
-            URL url = new URL(baseUri);
+
+            URL url = new URL(baseUri + "person?" + target + "=" + targetValue);
+
+            logger.info("About to open connection to {}", url.toString());
+
             conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod(httpMethod);
             conn.setRequestProperty("Accept", accept);

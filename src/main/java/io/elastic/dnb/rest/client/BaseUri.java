@@ -1,22 +1,18 @@
-package io.elastic.dnb.soap.client;
+package io.elastic.dnb.rest.client;
 
-public enum SoapAction {
+public enum BaseUri {
 
-    CLEANSE_AND_STANDARDIZE_MATCH("http://services.dnb.com/CompanyService/V5.0/CleanseAndStandardize"),
-    CONTACT_PRODUCT("http://services.dnb.com/ContactProductService/V4.0/OrderProduct"),
-    FIND_COMPETITOR("http://services.dnb.com/EntityListService/V6.4/FindCompetitor"),
-    GET_CLEANSE_MATCH("http://services.dnb.com/CompanyService/V5.0/GetCleanseMatch"),
-    MATCH("http://services.dnb.com/CompanyService/V5.0/Match"),
-    NEWS_AND_MEDIA_PRODUCT("http://services.dnb.com/NewsAndMediaProductService/V3.0/OrderProduct"),
-    REPORT_PRODUCT("http://services.dnb.com/ReportProductService/V3.2/OrderCompanyReport");
+    BASE_AUTH_URI("https://direct.dnb.com/Authentication/V2.0/"),
+    SOCIAL_MEDIA_PROFILES("https://direct.dnb.com/dataexchange/"),
+    PRODUCTS("https://direct.dnb.com/V2.2/organizations/804735132/products?CountryISOAlpha2Code=US");
 
-    private String soapActionValue;
+    private String baseUriValue;
 
-    public String getSoapActionValue() {
-        return this.soapActionValue;
+    public String getBaseUriValue() {
+        return this.baseUriValue;
     }
 
-    SoapAction(String soapActionValue) {
-        this.soapActionValue = soapActionValue;
+    BaseUri(String baseUriValue) {
+        this.baseUriValue = baseUriValue;
     }
 }

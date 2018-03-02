@@ -1,4 +1,4 @@
-package io.elastic.dnb.contact.actions;
+package io.elastic.dnb.people.actions;
 
 import com.dnb.services.contact.OrderProductRequest;
 import com.dnb.services.contact.OrderProductResponse;
