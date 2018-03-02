@@ -192,7 +192,7 @@ public class GenericRESTClient {
                 sb.append(output);
             }
 
-            logger.info("REST Response from server: {}", sb.toString());
+            logger.info("GenericRESTClient. REST Response from server: {}", sb.toString());
 
             conn.disconnect();
 
