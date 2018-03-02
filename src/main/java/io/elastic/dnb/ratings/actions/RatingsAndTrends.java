@@ -53,7 +53,7 @@ public class RatingsAndTrends implements Module {
                     .setRequestClass(OrderProductRequest.class)
                     .setBodyObject(orderProductRequest)
                     .setEndpointUrl(EndpointUrl.RATINGS)
-                    .setSoapAction(SoapAction.REPORT_PRODUCT)
+                    .setSoapAction(SoapAction.RATINGS)
                     .setUsername(Utils.getUsername(configuration))
                     .setPassword(Utils.getPassword(configuration))
                     .call();
