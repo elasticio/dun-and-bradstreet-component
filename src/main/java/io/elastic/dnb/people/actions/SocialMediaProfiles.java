@@ -23,22 +23,19 @@ public class SocialMediaProfiles implements Module {
 
         JsonObject configuration = parameters.getConfiguration();
         Message data = null;
-        JsonObject jsonDataObject = null;
 
         JsonObject body = parameters.getMessage().getBody();
         logger.info("About to call DnB API. Request message: {}", body.toString());
 
-        String partnerIndentifier = body.getString("PartnerIdentifier");
+        String partnerIdentifier = body.getString("PartnerIdentifier");
         String target = body.getString("Target");
         String targetValue = body.getString("TargetValue");
 
         JsonObject responseJson = null;
-        try
-
-        {
+        try {
             responseJson = new GenericRESTClient.Builder()
                     .setBaseUri(BaseUri.SOCIAL_MEDIA_PROFILES.getBaseUriValue())
-                    .appendPath(partnerIndentifier)
+                    .appendPath(partnerIdentifier)
                     .setTarget(target, targetValue)
                     .setAccept(MediaType.APPLICATION_JSON)
                     .setHttpMethod(HttpMethod.GET)
@@ -46,7 +43,7 @@ public class SocialMediaProfiles implements Module {
                     .setPassword("tcyt9ucg")
                     .call();
 
-            data = new Message.Builder().body(jsonDataObject).build();
+            data = new Message.Builder().body(responseJson).build();
 
         } catch (InterruptedException | IOException e) {
             e.printStackTrace();
@@ -60,6 +57,5 @@ public class SocialMediaProfiles implements Module {
 
         parameters.getEventEmitter().emitData(data);
 
-        System.out.println("response:" + responseJson.toString());
     }
 }
