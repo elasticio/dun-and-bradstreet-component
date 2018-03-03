@@ -48,6 +48,9 @@ public class RatingsAndTrends implements Module {
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         try {
             OrderProductRequest orderProductRequest = mapper.readValue(body.toString(), OrderProductRequest.class);
+            logger.info(orderProductRequest.getOrderProductRequestDetail().getProductSpecification().getDNBProductID();
+            orderProductRequest.getOrderProductRequestDetail().getProductSpecification().setDNBProductID("RTNG_TRND");
+            logger.info(orderProductRequest.getOrderProductRequestDetail().getProductSpecification().getDNBProductID());
 
             SOAPMessage response = new GenericSOAPClient.Builder()
                     .setRequestClass(OrderProductRequest.class)
