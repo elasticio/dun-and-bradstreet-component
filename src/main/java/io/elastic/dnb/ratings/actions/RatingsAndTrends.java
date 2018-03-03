@@ -2,6 +2,7 @@ package io.elastic.dnb.ratings.actions;
 
 import com.dnb.services.ratings.actions.OrderProductRequest;
 import com.dnb.services.ratings.actions.OrderProductResponse;
+import com.dnb.services.ratings.actions.ProductSpecification;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,6 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.json.Json;
+import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
@@ -29,6 +31,8 @@ import java.io.StringWriter;
 public class RatingsAndTrends implements Module {
 
     protected static final Logger logger = LoggerFactory.getLogger(RatingsAndTrends.class);
+
+
 
     @SuppressWarnings("Duplicates")
     @Override
@@ -48,6 +52,9 @@ public class RatingsAndTrends implements Module {
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         try {
             OrderProductRequest orderProductRequest = mapper.readValue(body.toString(), OrderProductRequest.class);
+            ProductSpecification productSpecification = new ProductSpecification();
+            productSpecification.setDNBProductID("RTNG_TRND");
+            orderProductRequest.getOrderProductRequestDetail().setProductSpecification(productSpecification);
             logger.info("+++++1" + orderProductRequest.getOrderProductRequestDetail().getProductSpecification().getDNBProductID());
             orderProductRequest.getOrderProductRequestDetail().getProductSpecification().setDNBProductID("RTNG_TRND");
             logger.info("+++++2" + orderProductRequest.getOrderProductRequestDetail().getProductSpecification().getDNBProductID());
