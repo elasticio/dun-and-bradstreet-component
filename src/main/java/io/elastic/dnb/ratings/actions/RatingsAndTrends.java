@@ -52,6 +52,7 @@ public class RatingsAndTrends implements Module {
         try {
             OrderProductRequest orderProductRequest = mapper.readValue(body.toString(), OrderProductRequest.class);
 
+            //DNBProductID MUST be equal to RTNG_TRND
             ProductSpecification productSpecification;
 
             if (orderProductRequest.getOrderProductRequestDetail().getProductSpecification() == null) {
@@ -61,9 +62,7 @@ public class RatingsAndTrends implements Module {
             }
             productSpecification.setDNBProductID("RTNG_TRND");
             orderProductRequest.getOrderProductRequestDetail().setProductSpecification(productSpecification);
-            logger.info("+++++1" + orderProductRequest.getOrderProductRequestDetail().getProductSpecification().getDNBProductID());
-            orderProductRequest.getOrderProductRequestDetail().getProductSpecification().setDNBProductID("RTNG_TRND");
-            logger.info("+++++2" + orderProductRequest.getOrderProductRequestDetail().getProductSpecification().getDNBProductID());
+//            orderProductRequest.getOrderProductRequestDetail().getProductSpecification().setDNBProductID("RTNG_TRND");
 
             SOAPMessage response = new GenericSOAPClient.Builder()
                     .setRequestClass(OrderProductRequest.class)

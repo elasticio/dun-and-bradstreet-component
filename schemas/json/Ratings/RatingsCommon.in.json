@@ -33,10 +33,7 @@
         "productSpecification": {
           "type": "object",
           "properties": {
-            "dnbProductId": {
-              "type": "string"
-            },
-            "languagePreferenceCode": {
+              "languagePreferenceCode": {
               "type": "string"
             },
             "characterSetPreferenceCode": {
