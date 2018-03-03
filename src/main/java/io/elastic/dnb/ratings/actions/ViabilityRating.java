@@ -18,7 +18,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.json.Json;
-import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
@@ -28,11 +27,11 @@ import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
 import java.io.StringWriter;
 
-public class RatingsAndTrends implements Module {
+public class ViabilityRating implements Module {
 
-    protected static final Logger logger = LoggerFactory.getLogger(RatingsAndTrends.class);
+    protected static final Logger logger = LoggerFactory.getLogger(ViabilityRating.class);
 
-    private static final String DNBPRODUCTID = "RTNG_TRND";
+    private static final String DNBPRODUCTID = "VIAB_RAT";
 
     @SuppressWarnings("Duplicates")
     @Override
@@ -52,7 +51,7 @@ public class RatingsAndTrends implements Module {
         try {
             OrderProductRequest orderProductRequest = mapper.readValue(body.toString(), OrderProductRequest.class);
 
-            //DNBProductID MUST be equal to RTNG_TRND
+            //DNBProductID MUST be equal to VIAB_RAT
             ProductSpecification productSpecification;
 
             if (orderProductRequest.getOrderProductRequestDetail().getProductSpecification() == null) {

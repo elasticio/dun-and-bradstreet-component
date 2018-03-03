@@ -117,6 +117,13 @@
       "metadata": {
         "in": "./schemas/json/Ratings/RatingsCommon.in.json"
       }
+    },
+    "viabilityRating": {
+      "main": "io.elastic.dnb.ratings.actions.ViabilityRating",
+      "title": "Viability Rating",
+      "metadata": {
+        "in": "./schemas/json/Ratings/RatingsCommon.in.json"
+      }
     }
   }
 }
