@@ -33,7 +33,6 @@ public class RatingsAndTrends implements Module {
     protected static final Logger logger = LoggerFactory.getLogger(RatingsAndTrends.class);
 
 
-
     @SuppressWarnings("Duplicates")
     @Override
     public void execute(ExecutionParameters parameters) {
@@ -52,7 +51,14 @@ public class RatingsAndTrends implements Module {
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         try {
             OrderProductRequest orderProductRequest = mapper.readValue(body.toString(), OrderProductRequest.class);
-            ProductSpecification productSpecification = new ProductSpecification();
+
+            ProductSpecification productSpecification;
+
+            if (orderProductRequest.getOrderProductRequestDetail().getProductSpecification() == null) {
+                productSpecification = new ProductSpecification();
+            } else {
+                productSpecification = orderProductRequest.getOrderProductRequestDetail().getProductSpecification();
+            }
             productSpecification.setDNBProductID("RTNG_TRND");
             orderProductRequest.getOrderProductRequestDetail().setProductSpecification(productSpecification);
             logger.info("+++++1" + orderProductRequest.getOrderProductRequestDetail().getProductSpecification().getDNBProductID());
