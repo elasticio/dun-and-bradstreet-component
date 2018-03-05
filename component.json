@@ -111,6 +111,13 @@
         "in": "./schemas/json/CompanyService/SmallBusinessMatch.in.json"
       }
     },
+    "smallBusinessRiskInsight": {
+      "main": "io.elastic.dnb.smallbusiness.actions.SmallBusinessRiskInsight",
+      "title": "Small Business Risk Insight",
+      "metadata": {
+        "in": "./schemas/json/SmallBusiness/SmallBusinessRiskInsight.in.json"
+      }
+    },
     "socialMediaProfiles": {
       "main": "io.elastic.dnb.people.actions.SocialMediaProfiles",
       "title": "Social Media Profiles",

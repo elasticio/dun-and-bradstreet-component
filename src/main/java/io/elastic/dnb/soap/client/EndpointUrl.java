@@ -7,7 +7,8 @@ public enum EndpointUrl {
     ENTITY_LIST_6_4("https://direct.dnb.com/EntityList/V6.4"),
     NEWS_AND_MEDIA_PRODUCT_3_0("https://direct.dnb.com/NewsAndMediaProduct/V3.0"),
     RATINGS("https://direct.dnb.com/AssessmentProduct/V5.0"),
-    REPORT_PRODUCT("https://direct.dnb.com/ReportProduct/V3.2");
+    REPORT_PRODUCT("https://direct.dnb.com/ReportProduct/V3.2"),
+    SMALL_BUSINESS_RISK_INSIGHT("https://direct.dnb.com/SBRIProduct/V3.2");
 
     private String endpointUrl;
 
