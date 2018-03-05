@@ -104,6 +104,13 @@
         "in": "./schemas/json/Ratings/RatingsCommon.in.json"
       }
     },
+    "smallBusinessMatch": {
+      "main": "io.elastic.dnb.company.actions.SmallBusinessMatch",
+      "title": "Match",
+      "metadata": {
+        "in": "./schemas/json/CompanyService/Match.in.json"
+      }
+    },
     "socialMediaProfiles": {
       "main": "io.elastic.dnb.people.actions.SocialMediaProfiles",
       "title": "Social Media Profiles",

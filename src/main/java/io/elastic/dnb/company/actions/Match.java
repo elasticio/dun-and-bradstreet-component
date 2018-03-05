@@ -28,6 +28,7 @@ public class Match implements Module {
 
     protected static final Logger logger = LoggerFactory.getLogger(Match.class);
 
+    @SuppressWarnings("Duplicates")
     @Override
     public void execute(ExecutionParameters parameters) {
 

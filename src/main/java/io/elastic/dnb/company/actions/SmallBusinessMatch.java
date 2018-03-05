@@ -1,9 +1,10 @@
 package io.elastic.dnb.company.actions;
 
-import com.dnb.services.company.GetCleanseMatchRequest;
-import com.dnb.services.company.GetCleanseMatchResponse;
+import com.dnb.services.company.MatchModeEnum;
 import com.dnb.services.company.MatchRequest;
 import com.dnb.services.company.MatchResponse;
+import com.dnb.services.company.MatchSpecification;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.elastic.api.ExecutionParameters;
@@ -27,9 +28,11 @@ import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
 import java.io.StringWriter;
 
-public class GetCleanseMatch implements Module {
+public class SmallBusinessMatch implements Module {
 
-    protected static final Logger logger = LoggerFactory.getLogger(GetCleanseMatch.class);
+    protected static final Logger logger = LoggerFactory.getLogger(SmallBusinessMatch.class);
+
+    private static final MatchModeEnum SMALL_BUSINESS_MATCH_MODE_ENUM = MatchModeEnum.SBRI;
 
     @SuppressWarnings("Duplicates")
     @Override
@@ -43,25 +46,38 @@ public class GetCleanseMatch implements Module {
         logger.info("About to call DnB API. Request message: {}", body.toString());
         ObjectMapper mapper = new ObjectMapper();
 
+        mapper.configure(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT, true);
+        mapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
+
         try {
-            GetCleanseMatchRequest getCleanseMatchRequest = mapper.readValue(body.toString(), GetCleanseMatchRequest.class);
+            MatchRequest matchRequest = mapper.readValue(body.toString(), MatchRequest.class);
 
             SOAPMessage response = new GenericSOAPClient.Builder()
-                    .setRequestClass(GetCleanseMatchRequest.class)
-                    .setBodyObject(getCleanseMatchRequest)
+                    .setRequestClass(MatchRequest.class)
+                    .setBodyObject(matchRequest)
                     .setEndpointUrl(EndpointUrl.COMPANY_5_0)
-                    .setSoapAction(SoapAction.GET_CLEANSE_MATCH)
+                    .setSoapAction(SoapAction.MATCH)
                     .setUsername(Utils.getUsername(configuration))
                     .setPassword(Utils.getPassword(configuration))
                     .call();
 
-            JAXBElement jaxbElement = new GenericSOAPClient.Builder().bindToJaxb(GetCleanseMatchResponse.class, response);
-            GetCleanseMatchResponse getCleanseMatchResponse = (GetCleanseMatchResponse) jaxbElement.getValue();
+            MatchSpecification matchSpecification;
+
+            if (matchRequest.getMatchRequestDetail().getMatchSpecification() == null) {
+                matchSpecification = new MatchSpecification();
+            } else {
+                matchSpecification = matchRequest.getMatchRequestDetail().getMatchSpecification();
+            }
+            matchSpecification.setMatchTypeText(SMALL_BUSINESS_MATCH_MODE_ENUM);
+            matchRequest.getMatchRequestDetail().setMatchSpecification(matchSpecification);
+
+            JAXBElement jaxbElement = new GenericSOAPClient.Builder().bindToJaxb(MatchResponse.class, response);
+            MatchResponse matchResponse = (MatchResponse) jaxbElement.getValue();
 
             ObjectMapper responseMapper = new ObjectMapper();
             StringWriter sw = new StringWriter();
-            responseMapper.writeValue(sw, getCleanseMatchResponse);
+            responseMapper.writeValue(sw, matchResponse);
             jsonDataObject = JSON.parseObject(sw.toString());
 
             data = new Message.Builder().body(jsonDataObject).build();

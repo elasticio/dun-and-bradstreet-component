@@ -28,6 +28,7 @@ public class CleanseAndStandardize implements Module {
 
     protected static final Logger logger = LoggerFactory.getLogger(CleanseAndStandardize.class);
 
+    @SuppressWarnings("Duplicates")
     @Override
     public void execute(ExecutionParameters parameters) {
 
