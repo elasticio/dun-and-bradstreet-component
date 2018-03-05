@@ -108,7 +108,7 @@
       "main": "io.elastic.dnb.company.actions.SmallBusinessMatch",
       "title": "Small Business Match",
       "metadata": {
-        "in": "./schemas/json/CompanyService/Match.in.json"
+        "in": "./schemas/json/CompanyService/SmallBusinessMatch.in.json"
       }
     },
     "socialMediaProfiles": {
