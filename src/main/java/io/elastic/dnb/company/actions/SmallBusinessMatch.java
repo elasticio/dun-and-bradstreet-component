@@ -53,15 +53,6 @@ public class SmallBusinessMatch implements Module {
         try {
             MatchRequest matchRequest = mapper.readValue(body.toString(), MatchRequest.class);
 
-            SOAPMessage response = new GenericSOAPClient.Builder()
-                    .setRequestClass(MatchRequest.class)
-                    .setBodyObject(matchRequest)
-                    .setEndpointUrl(EndpointUrl.COMPANY_5_0)
-                    .setSoapAction(SoapAction.MATCH)
-                    .setUsername(Utils.getUsername(configuration))
-                    .setPassword(Utils.getPassword(configuration))
-                    .call();
-
             MatchSpecification matchSpecification;
 
             if (matchRequest.getMatchRequestDetail().getMatchSpecification() == null) {
@@ -71,6 +62,15 @@ public class SmallBusinessMatch implements Module {
             }
             matchSpecification.setMatchTypeText(SMALL_BUSINESS_MATCH_MODE_ENUM);
             matchRequest.getMatchRequestDetail().setMatchSpecification(matchSpecification);
+
+            SOAPMessage response = new GenericSOAPClient.Builder()
+                    .setRequestClass(MatchRequest.class)
+                    .setBodyObject(matchRequest)
+                    .setEndpointUrl(EndpointUrl.COMPANY_5_0)
+                    .setSoapAction(SoapAction.MATCH)
+                    .setUsername(Utils.getUsername(configuration))
+                    .setPassword(Utils.getPassword(configuration))
+                    .call();
 
             JAXBElement jaxbElement = new GenericSOAPClient.Builder().bindToJaxb(MatchResponse.class, response);
             MatchResponse matchResponse = (MatchResponse) jaxbElement.getValue();

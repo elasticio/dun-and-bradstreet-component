@@ -106,7 +106,7 @@
     },
     "smallBusinessMatch": {
       "main": "io.elastic.dnb.company.actions.SmallBusinessMatch",
-      "title": "Match",
+      "title": "Small Business Match",
       "metadata": {
         "in": "./schemas/json/CompanyService/Match.in.json"
       }
