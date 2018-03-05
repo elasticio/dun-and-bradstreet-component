@@ -118,6 +118,13 @@
         "in": "./schemas/json/SmallBusiness/SmallBusinessRiskInsight.in.json"
       }
     },
+    "smallBusinessOwnerRiskProfile": {
+      "main": "io.elastic.dnb.smallbusiness.actions.OwnerRiskProfile",
+      "title": "Ratings and Trends",
+      "metadata": {
+        "in": "./schemas/json/SmallBusiness/OwnerRiskProfile.in.json"
+      }
+    },
     "socialMediaProfiles": {
       "main": "io.elastic.dnb.people.actions.SocialMediaProfiles",
       "title": "Social Media Profiles",
