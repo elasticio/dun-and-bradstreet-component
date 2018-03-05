@@ -120,7 +120,7 @@
     },
     "smallBusinessOwnerRiskProfile": {
       "main": "io.elastic.dnb.smallbusiness.actions.OwnerRiskProfile",
-      "title": "Ratings and Trends",
+      "title": "Owner Risk Profile",
       "metadata": {
         "in": "./schemas/json/SmallBusiness/OwnerRiskProfile.in.json"
       }
