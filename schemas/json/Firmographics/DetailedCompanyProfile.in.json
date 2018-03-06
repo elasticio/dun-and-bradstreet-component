@@ -59,19 +59,19 @@
               "type": "string"
             },
             "tradeUpIndicator": {
-              "type": "string"
+              "type": "boolean"
             },
             "currencyPreferenceIsoAlpha3Code": {
               "type": "string"
             },
             "returnOnlyInDateDataIndicator": {
-              "type": "string"
+              "type": "boolean"
             },
             "orderReasonCode": {
               "type": "string"
             },
             "returnConnectMailDataIndicator": {
-              "type": "string"
+              "type": "boolean"
             }
           }
         },
@@ -79,10 +79,10 @@
           "type": "object",
           "properties": {
             "archiveProductOptOutIndicator": {
-              "type": "string"
+              "type": "boolean"
             },
             "extendArchivePeriodIndicator": {
-              "type": "string"
+              "type": "boolean"
             },
             "portfolioAssetContainerId": {
               "type": "string"
