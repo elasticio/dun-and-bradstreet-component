@@ -5,6 +5,7 @@ public enum SoapAction {
     CLEANSE_AND_STANDARDIZE_MATCH("http://services.dnb.com/CompanyService/V5.0/CleanseAndStandardize"),
     CONTACT_PRODUCT("http://services.dnb.com/ContactProductService/V4.0/OrderProduct"),
     FIND_COMPETITOR("http://services.dnb.com/EntityListService/V6.4/FindCompetitor"),
+    FIRMOGRAPHICS("https://direct.dnb.com/FirmographicsProduct/V6.1/OrderProduct"),
     GET_CLEANSE_MATCH("http://services.dnb.com/CompanyService/V5.0/GetCleanseMatch"),
     MATCH("http://services.dnb.com/CompanyService/V5.0/Match"),
     NEWS_AND_MEDIA_PRODUCT("http://services.dnb.com/NewsAndMediaProductService/V3.0/OrderProduct"),

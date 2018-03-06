@@ -62,6 +62,13 @@
         "in": "./schemas/json/People/ContactPeopleProfiles.in.json"
       }
     },
+    "detailedCompanyProfile": {
+      "main": "io.elastic.dnb.firmographics.actions.DetailedCompanyProfile",
+      "title": "Detailed Company Profile",
+      "metadata": {
+        "in": "./schemas/json/Firmographics/DetailedCompanyProfile.in.json"
+      }
+    },
     "findCompetitors": {
       "main": "io.elastic.dnb.entitylist.actions.FindCompetitor",
       "title": "Find Competitor",

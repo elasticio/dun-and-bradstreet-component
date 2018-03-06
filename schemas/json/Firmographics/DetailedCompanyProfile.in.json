@@ -1,0 +1,109 @@
+{
+  "type": "object",
+  "properties": {
+    "transactionDetail": {
+      "type": "object",
+      "properties": {
+        "applicationTransactionId": {
+          "type": "string"
+        },
+        "transactionTimestamp": {
+          "type": "string"
+        },
+        "submittingOfficeId": {
+          "type": "string"
+        }
+      }
+    },
+    "orderProductRequestDetail": {
+      "type": "object",
+      "properties": {
+        "inquiryDetail": {
+          "type": "object",
+          "properties": {
+            "dunsNumber": {
+              "required": true,
+              "type": "string"
+            },
+            "countryIsoAlpha2Code": {
+              "type": "string"
+            },
+            "principalIdentificationNumberDetail": {
+              "type": "object",
+              "properties": {
+                "principalIdentificationNumber": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "productSpecification": {
+          "type": "object",
+          "properties": {
+            "dnbProductId": {
+              "required": true,
+              "type": "array",
+              "enum": [
+                "DCP_STD",
+                "DCP_PREM"
+              ]
+            },
+            "languagePreferenceCode": {
+              "type": "string"
+            },
+            "characterSetPreferenceCode": {
+              "type": "string"
+            },
+            "productFormatPreferenceCode": {
+              "type": "string"
+            },
+            "tradeUpIndicator": {
+              "type": "string"
+            },
+            "currencyPreferenceIsoAlpha3Code": {
+              "type": "string"
+            },
+            "returnOnlyInDateDataIndicator": {
+              "type": "string"
+            },
+            "orderReasonCode": {
+              "type": "string"
+            },
+            "returnConnectMailDataIndicator": {
+              "type": "string"
+            }
+          }
+        },
+        "archiveDetail": {
+          "type": "object",
+          "properties": {
+            "archiveProductOptOutIndicator": {
+              "type": "string"
+            },
+            "extendArchivePeriodIndicator": {
+              "type": "string"
+            },
+            "portfolioAssetContainerId": {
+              "type": "string"
+            }
+          }
+        },
+        "inquiryReferenceDetail": {
+          "type": "object",
+          "properties": {
+            "customerReferenceText": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "customerBillingEndorsementText": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
