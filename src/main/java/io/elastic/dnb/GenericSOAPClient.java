@@ -31,7 +31,8 @@ public class GenericSOAPClient {
         private SoapAction soapAction;
         private EndpointUrl endpointUrl;
 
-        private static final String NAMESPACE_COM_URI = "http://services.dnb.com/CompanyServiceV2.0";
+//        private static final String NAMESPACE_COM_URI = "http://services.dnb.com/CompanyServiceV2.0";
+        private static final String NAMESPACE_COM_URI = "http://services.dnb.com/FirmographicsProductServiceV2.0";
         private static final String NAMESPACE_COM = "com";
 
         public Builder setRequestClass(Class requestClass) {
