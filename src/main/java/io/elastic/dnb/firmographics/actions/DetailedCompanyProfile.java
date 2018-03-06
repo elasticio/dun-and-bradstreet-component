@@ -39,7 +39,7 @@ public class DetailedCompanyProfile implements Module {
         JsonObject jsonDataObject;
 
         JsonObject body = parameters.getMessage().getBody();
-        logger.info("About to call DnB API. Request message: {}", body.toString());
+        logger.info("About to call D&B API. Request message: {}", body.toString());
         ObjectMapper mapper = new ObjectMapper();
 
         mapper.configure(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT, true);
