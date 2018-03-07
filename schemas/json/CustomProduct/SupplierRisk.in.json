@@ -1,0 +1,821 @@
+{
+  "type": "object",
+  "properties": {
+    "OrderProductRequestDetail": {
+      "type": "object",
+      "properties": {
+        "InquiryDetail": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "DUNSNumber": {
+              "type": "string"
+            },
+            "SubjectID": {
+              "type": "string"
+            },
+            "CountryISOAlpha2Code": {
+              "type": "string"
+            },
+            "PrincipalIdentificationNumberDetail": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "PrincipalIdentificationNumber": {
+                    "type": "string"
+                  },
+                  "DNBCodeTableNumber": {
+                    "type": "integer"
+                  },
+                  "DNBCodeValue": {
+                    "type": "integer"
+                  },
+                  "TypeText": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "OrganizationIdentificationNumberDetail": {
+              "type": "object",
+              "properties": {
+                "OrganizationIdentificationNumber": {
+                  "type": "string",
+                  "required": true
+                },
+                "DNBCodeTableNumber": {
+                  "type": "integer"
+                },
+                "DNBCodeValue": {
+                  "type": "integer"
+                },
+                "TypeText": {
+                  "type": "string"
+                }
+              }
+            },
+            "FilingInquiryDetail": {
+              "type": "object",
+              "properties": {
+                "FilingOrganizationName": {
+                  "type": "string",
+                  "required": true
+                },
+                "FilingLocation": {
+                  "type": "object",
+                  "properties": {
+                    "TerritoryName": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "CountryISOAlpha2Code": {
+                      "type": "string",
+                      "required": true
+                    }
+                  }
+                },
+                "FilingDetail": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "FilingTypeCode": {
+                        "type": "integer",
+                        "required": true
+                      },
+                      "FilingRolePlayerTypeCode": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "FilingFromDate": {
+                        "type": "integer",
+                        "format": "utc-millisec"
+                      },
+                      "FilingToDate": {
+                        "type": "integer",
+                        "format": "utc-millisec"
+                      },
+                      "FilingStatusCode": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "IndustryCode": {
+              "type": "object",
+              "properties": {
+                "IndustryCode": {
+                  "type": "string",
+                  "required": true
+                },
+                "DNBCodeTableNumber": {
+                  "type": "integer"
+                },
+                "DNBCodeValue": {
+                  "type": "integer"
+                },
+                "TypeText": {
+                  "type": "string"
+                }
+              }
+            },
+            "Location": {
+              "type": "object",
+              "properties": {
+                "TerritoryName": {
+                  "type": "string"
+                },
+                "FullPostalCode": {
+                  "type": "string"
+                },
+                "ISOCountrySubDivisionCode": {
+                  "type": "string"
+                },
+                "CountyName": {
+                  "type": "string"
+                },
+                "FairIsaacOccupancyTypeValue": {
+                  "type": "string"
+                },
+                "AtAddressDuration": {
+                  "type": "string"
+                },
+                "PostalCode": {
+                  "type": "string"
+                },
+                "StreetAddressLine": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "LineText": {
+                        "type": "string",
+                        "required": true
+                      },
+                      "DisplaySequence": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                },
+                "PrimaryTownName": {
+                  "type": "string"
+                },
+                "CountryISOAlpha2Code": {
+                  "type": "string"
+                }
+              }
+            },
+            "PrincipalDetails": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "PrincipalName": {
+                    "type": "object",
+                    "properties": {
+                      "NamePrefix": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "NamePrefixText": {
+                              "type": "string"
+                            },
+                            "DisplaySequence": {
+                              "type": "integer"
+                            }
+                          }
+                        }
+                      },
+                      "FirstName": {
+                        "type": "string"
+                      },
+                      "MiddleName": {
+                        "type": "string"
+                      },
+                      "LastName": {
+                        "type": "string"
+                      },
+                      "LastNameFatherName": {
+                        "type": "string"
+                      },
+                      "LastNameMotherName": {
+                        "type": "string"
+                      },
+                      "FullName": {
+                        "type": "object",
+                        "properties": {
+                          "value": {
+                            "type": "string"
+                          },
+                          "FormatText": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "NameSuffix": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "NameSuffixText": {
+                              "type": "string"
+                            },
+                            "DisplaySequence": {
+                              "type": "integer"
+                            },
+                            "NameSuffixTypeText": {
+                              "type": "object",
+                              "properties": {
+                                "value": {
+                                  "type": "string"
+                                },
+                                "DNBCodeValue": {
+                                  "type": "integer"
+                                },
+                                "DNBCodeTableNumber": {
+                                  "type": "integer"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "SecondMiddleName": {
+                        "type": "string"
+                      },
+                      "LanguageCode": {
+                        "type": "integer"
+                      },
+                      "WritingScriptISOAlpha4Code": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "AlsoKnownByName": {
+                    "type": "string"
+                  },
+                  "PrincipalAddress": {
+                    "type": "string"
+                  },
+                  "PrincipalPreviousAddress": {
+                    "type": "string"
+                  },
+                  "BirthDate": {
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      },
+                      "DatePrecisionText": {
+                        "type": "string"
+                      },
+                      "DatePrecisionDNBCodeValue": {
+                        "type": "integer"
+                      },
+                      "DatePrecisionDNBCodeTableNumber": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "PrincipalIdentificationNumberDetail": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "TelephoneNumber": {
+                    "type": "object",
+                    "properties": {
+                      "TelecommunicationNumber": {
+                        "type": "string",
+                        "required": true
+                      },
+                      "InternationalDialingCode": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "PrincipalImportanceLevel": {
+                    "type": "integer"
+                  }
+                }
+              }
+            },
+            "QueueDetail": {
+              "type": "object",
+              "properties": {
+                "QueueName": {
+                  "type": "string",
+                  "required": true
+                },
+                "QueueID": {
+                  "type": "string",
+                  "required": true
+                }
+              }
+            },
+            "DivisionDetail": {
+              "type": "object",
+              "properties": {
+                "DivisionID": {
+                  "type": "string"
+                },
+                "DivisionName": {
+                  "type": "string"
+                },
+                "SubDivisionDetail": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "SubDivisionID": {
+                        "type": "string"
+                      },
+                      "SubDivisionName": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "SubjectName": {
+              "type": "string"
+            },
+            "PrimarySubjectID": {
+              "type": "string"
+            },
+            "SecondarySubjectID": {
+              "type": "string"
+            },
+            "OrganizationPrimaryName": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "OrganizationName": {
+                    "type": "object",
+                    "required": true,
+                    "properties": {
+                      "value": {
+                        "type": "string"
+                      },
+                      "LanguageCode": {
+                        "type": "integer"
+                      },
+                      "WritingScriptISOAlpha4Code": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "StartDate": {
+                    "type": "string"
+                  },
+                  "RenewalDate": {
+                    "type": "string"
+                  },
+                  "DisplaySequence": {
+                    "type": "integer"
+                  },
+                  "RegisteredNameIndicator": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            },
+            "OrganizationRegisteredName": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "OrganizationName": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "StartDate": {
+                    "type": "object"
+                  },
+                  "RenewalDate": {
+                    "type": "string"
+                  },
+                  "DisplaySequence": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ProductSpecification": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "DNBProductID": {
+              "type": "string"
+            },
+            "LanguagePreferenceCode": {
+              "type": "integer"
+            },
+            "CharacterSetPreferenceCode": {
+              "type": "integer"
+            },
+            "ProductFormatPreferenceCode": {
+              "type": "integer"
+            },
+            "ExcludeBranchesIndicator": {
+              "type": "boolean"
+            },
+            "TradeUpIndicator": {
+              "type": "boolean"
+            },
+            "CurrencyPreferenceISOAlpha3Code": {
+              "type": "string"
+            },
+            "ReturnOnlyInDateDataIndicator": {
+              "type": "boolean"
+            },
+            "OrderReasonCode": {
+              "type": "integer"
+            },
+            "ReturnConnectMailDataIndicator": {
+              "type": "boolean"
+            },
+            "DataTopicSpecification": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "DataTopicName": {
+                    "type": "string",
+                    "enum": [
+                      "ActivitiesAndOperations",
+                      "Assessment",
+                      "Banking",
+                      "EmployeeFigures",
+                      "Financial",
+                      "FinancialAssetArticle",
+                      "IndustryCode",
+                      "Linkage",
+                      "OrganizationDetail",
+                      "OrganizationName",
+                      "PrincipalsAndManagement",
+                      "RegisteredDetail",
+                      "SocioEconomicIdentification",
+                      "Telecommunication",
+                      "ThirdPartyAssessment"
+                    ]
+                  }
+                }
+              }
+            },
+            "NewsSpecification": {
+              "type": "object",
+              "properties": {
+                "PublishedFromDate": {
+                  "type": "integer",
+                  "format": "utc-millisec"
+                },
+                "PublishedToDate": {
+                  "type": "integer",
+                  "format": "utc-millisec"
+                },
+                "CategoryText": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "Executive Activity",
+                      "Management Change",
+                      "Awards",
+                      "Bankruptcy",
+                      "Expansion",
+                      "Funding",
+                      "Reduction",
+                      "Restructure",
+                      "Wins",
+                      "Earnings Release",
+                      "Executive Announcement",
+                      "Executive Quote",
+                      "Financial News",
+                      "Merger and Acquisition",
+                      "New Alliance",
+                      "New Product",
+                      "Regulation or Litigation"
+                    ]
+                  }
+                }
+              }
+            },
+            "SocialMediaSpecification": {
+              "type": "object",
+              "properties": {
+                "SocialMediaPlatformName": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "Facebook",
+                      "Twitter",
+                      "Wikipedia",
+                      "Youtube"
+                    ]
+                  }
+                }
+              }
+            },
+            "ProfileChapterName": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "BusinessChallenges",
+                  "CallPreparationQuestions",
+                  "ExecutiveInsight",
+                  "FinancialInformation",
+                  "GlossaryOfAcronyms",
+                  "IndustryForecast",
+                  "IndustryIndicators",
+                  "IndustryOverview",
+                  "IndustryWebsites",
+                  "QuarterlyIndustryUpdate",
+                  "TrendsAndOpportunities",
+                  "All",
+                  "FastFacts"
+                ]
+              }
+            },
+            "RequestedOrganizationChildLinkageSpecification": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "FamilyTreeMemberRoleCode": {
+                    "type": "integer"
+                  },
+                  "GeographicalScopeCode": {
+                    "type": "integer"
+                  },
+                  "LinkageMaximumQuantity": {
+                    "type": "integer"
+                  }
+                }
+              }
+            },
+            "LinkedOrganizationLocationSpecification": {
+              "type": "object",
+              "properties": {
+                "CountryISOAlpha2Code": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "TerritoryName": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "PrimaryTownName": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "InclusionCriteria": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "InclusionDataDescription": {
+                    "type": "string",
+                    "enum": [
+                      "IncludeIncompleteData",
+                      "IncludeNonMarketableSubject",
+                      "IncludeUndeliverableAddressSubject"
+                    ]
+                  }
+                }
+              }
+            },
+            "RequestedOrganizationChildLevelMaximumQuantity": {
+              "type": "integer"
+            }
+          }
+        },
+        "ShareholderSpecification": {
+          "type": "object",
+          "properties": {
+            "ShareHoldingPercentageValue": {
+              "type": "string"
+            },
+            "IncludeUndisclosedShareHoldingPercentageIndicator": {
+              "type": "boolean"
+            },
+            "IncludeDUNSNumberedShareholdersOnlyIndicator": {
+              "type": "boolean"
+            },
+            "IncludeNonDUNSNumberedShareholdersOnlyIndicator": {
+              "type": "boolean"
+            },
+            "ReturnFromTopCount": {
+              "type": "integer"
+            },
+            "ReturnFromBottomCount": {
+              "type": "integer"
+            },
+            "DisplayStartSequenceNumber": {
+              "type": "integer"
+            },
+            "PerPageMaximumQuantity": {
+              "type": "integer"
+            }
+          }
+        },
+        "CreditDecisionSpecification": {
+          "type": "object",
+          "properties": {
+            "RiskPolicyRuleName": {
+              "type": "string"
+            },
+            "RiskPolicyRuleVersionNumber": {
+              "type": "string"
+            },
+            "CreditAssessmentAmount": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "number"
+                },
+                "CurrencyISOAlpha3Code": {
+                  "type": "string"
+                },
+                "UnitOfSize": {
+                  "type": "string",
+                  "enum": [
+                    "SingleUnits",
+                    "Tens",
+                    "Hundred",
+                    "Thousand",
+                    "Million",
+                    "Billion",
+                    "Trillion",
+                    "Quadrillion",
+                    "Quintillion",
+                    "Sextillion",
+                    "Septillion",
+                    "Octillion",
+                    "Nonillion",
+                    "Decillion"
+                  ]
+                },
+                "ReliabilityText": {
+                  "type": "string"
+                }
+              }
+            },
+            "OutstandingBalanceAmount": {
+              "type": "string"
+            },
+            "AdditionalDecisionParameter": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ParameterDescription": {
+                    "type": "string"
+                  },
+                  "ParameterValue": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "DetailedTradeInformationSpecification": {
+          "type": "object",
+          "properties": {
+            "IncludeHeadquartesAndBranchesIndicator": {
+              "type": "boolean"
+            },
+            "TradeInformationPeriod": {
+              "type": "string"
+            }
+          }
+        },
+        "CreditBureauSpecification": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "CreditBureauName": {
+                "type": "string",
+                "required": true
+              },
+              "SubscriberNumber": {
+                "type": "string",
+                "required": true
+              },
+              "SubscriberPasswordText": {
+                "type": "string"
+              },
+              "PermissiblePurposeValue": {
+                "type": "string",
+                "required": true
+              },
+              "EndUserName": {
+                "type": "string"
+              },
+              "PrimaryCreditBureauToContactIndicator": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "CustomScoreSpecification": {
+          "type": "object",
+          "properties": {
+            "CustomScoreParameters": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "ArchiveDetail": {
+          "type": "object",
+          "properties": {
+            "ArchiveProductOptOutIndicator": {
+              "type": "boolean"
+            },
+            "ExtendArchivePeriodIndicator": {
+              "type": "boolean"
+            },
+            "PortfolioAssetContainerID": {
+              "type": "integer"
+            }
+          }
+        },
+        "InquiryReferenceDetail": {
+          "type": "object",
+          "properties": {
+            "CustomerReferenceText": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "CustomerBillingEndorsementText": {
+              "type": "string"
+            },
+            "PrincipalReferenceText": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string"
+                  },
+                  "PrincipalImportanceLevel": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "TransactionDetail": {
+      "type": "object",
+      "properties": {
+        "ApplicationTransactionID": {
+          "type": "string"
+        },
+        "TransactionTimestamp": {
+          "type": "integer",
+          "format": "utc-millisec"
+        },
+        "SubmittingOfficeID": {
+          "type": "string"
+        }
+      }
+    },
+    "ServiceVersionNumber": {
+      "type": "string"
+    }
+  }
+}

@@ -153,6 +153,13 @@
         "in": "./schemas/json/Ratings/RatingsCommon.in.json"
       }
     },
+    "supplierRisk": {
+      "main": "io.elastic.dnb.customproduct.actions.SupplierRisk",
+      "title": "Supplier Risk",
+      "metadata": {
+        "in": "./schemas/json/CustomProduct/SupplierRisk.in.json"
+      }
+    },
     "viabilityRating": {
       "main": "io.elastic.dnb.ratings.actions.ViabilityRating",
       "title": "Viability Rating",
