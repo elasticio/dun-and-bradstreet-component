@@ -1,0 +1,754 @@
+{
+  "type": "object",
+  "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequest",
+  "properties": {
+    "FindCompanyRequestDetail": {
+      "type": "object",
+      "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequestDetail",
+      "required": true,
+      "properties": {
+        "InquiryDetail": {
+          "type": "object",
+          "id": "urn:jsonschema:com:dnb:services:entitylist:SearchInquiryDetail",
+          "required": true,
+          "properties": {
+            "DUNSNumber": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "OrganizationName": {
+              "type": "string"
+            },
+            "WebPageAddress": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "id": "urn:jsonschema:com:dnb:services:entitylist:SearchWebPageAddressType",
+                "properties": {
+                  "TelecommunicationAddress": {
+                    "type": "string",
+                    "required": true
+                  }
+                }
+              }
+            },
+            "Location": {
+              "type": "object",
+              "id": "urn:jsonschema:com:dnb:services:entitylist:SearchLocation",
+              "properties": {
+                "Address": {
+                  "type": "object",
+                  "id": "urn:jsonschema:com:dnb:services:entitylist:SearchBaseAddressType",
+                  "properties": {
+                    "StreetAddressLine": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "id": "urn:jsonschema:com:dnb:services:entitylist:StreetAddressLine",
+                        "properties": {
+                          "LineText": {
+                            "type": "string",
+                            "required": true
+                          }
+                        }
+                      }
+                    },
+                    "PrimaryTownName": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "MetropolitanStatisticalAreaUSCensusCode": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "CountyGEOREFID": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "TerritoryName": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "PostalCode": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "PostalCodeRange": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "id": "urn:jsonschema:com:dnb:services:entitylist:SearchBaseAddressType:PostalCodeRange",
+                        "properties": {
+                          "PostalCodeLowRangeValue": {
+                            "type": "string"
+                          },
+                          "PostalCodeHighRangeValue": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "CountryISOAlpha2Code": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "CountryGroupGEOREFID": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "RadiusDetail": {
+                  "type": "object",
+                  "id": "urn:jsonschema:com:dnb:services:entitylist:RadiusSearchDetail",
+                  "properties": {
+                    "PostalCode": {
+                      "type": "string"
+                    },
+                    "CountryISOAlpha2Code": {
+                      "type": "string"
+                    },
+                    "RadiusMeasurement": {
+                      "type": "number",
+                      "required": true
+                    },
+                    "RadiusMeasurementUnitCode": {
+                      "type": "integer",
+                      "required": true
+                    },
+                    "LatitudeMeasurement": {
+                      "type": "number"
+                    },
+                    "LongitudeMeasurement": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "TelephoneNumber": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "id": "urn:jsonschema:com:dnb:services:entitylist:SearchTelephoneNumber",
+                    "properties": {
+                      "AreaCodeNumber": {
+                        "type": "string",
+                        "required": true
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "FamilyTreeMemberRole": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "id": "urn:jsonschema:com:dnb:services:entitylist:FamilyTreeMemberRoleCodeType",
+                "properties": {
+                  "FamilyTreeMemberRoleCode": {
+                    "type": "integer",
+                    "required": true
+                  }
+                }
+              }
+            },
+            "StandaloneOrganizationIndicator": {
+              "type": "boolean"
+            },
+            "IndustryCodeDetail": {
+              "type": "object",
+              "id": "urn:jsonschema:com:dnb:services:entitylist:SearchIndustryCodeType",
+              "properties": {
+                "IndustryCode": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "IndustryCodeLowRangeValue": {
+                  "type": "string"
+                },
+                "IndustryCodeHighRangeValue": {
+                  "type": "string"
+                },
+                "PrimaryIndustryCodeOnlyIndicator": {
+                  "type": "boolean"
+                },
+                "DNBCodeTableNumber": {
+                  "type": "integer"
+                },
+                "DNBCodeValue": {
+                  "type": "integer"
+                },
+                "TypeText": {
+                  "type": "string"
+                }
+              }
+            },
+            "LegalFormDetail": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "id": "urn:jsonschema:com:dnb:services:entitylist:LegalFormDetailsCodeType",
+                "properties": {
+                  "LegalFormCode": {
+                    "type": "integer",
+                    "required": true
+                  }
+                }
+              }
+            },
+            "ControlOwnershipTypeCode": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "ControlOwnershipFromYear": {
+              "type": "string"
+            },
+            "ControlOwnershipToYear": {
+              "type": "string"
+            },
+            "OrganizationStartFromYear": {
+              "type": "string"
+            },
+            "OrganizationStartToYear": {
+              "type": "string"
+            },
+            "MarketingRiskClassCode": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "GlobalUltimateDUNSNumber": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "FiscalPeriodEndMonth": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "utc-millisec"
+              }
+            },
+            "AuditorID": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "id": "urn:jsonschema:com:dnb:services:entitylist:TypeTextStringType",
+                "properties": {
+                  "value": {
+                    "type": "string"
+                  },
+                  "TypeText": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "UnderwriterID": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:dnb:services:entitylist:TypeTextStringType"
+              }
+            },
+            "DUNSNumberLowRangeValue": {
+              "type": "string"
+            },
+            "DUNSNumberHighRangeValue": {
+              "type": "string"
+            },
+            "SalesLowRangeAmount": {
+              "type": "object",
+              "id": "urn:jsonschema:com:dnb:services:entitylist:AmountType",
+              "properties": {
+                "value": {
+                  "type": "number"
+                },
+                "CurrencyISOAlpha3Code": {
+                  "type": "string"
+                },
+                "UnitOfSize": {
+                  "type": "string",
+                  "enum": [
+                    "SingleUnits",
+                    "Tens",
+                    "Hundred",
+                    "Thousand",
+                    "Million",
+                    "Billion",
+                    "Trillion",
+                    "Quadrillion",
+                    "Quintillion",
+                    "Sextillion",
+                    "Septillion",
+                    "Octillion",
+                    "Nonillion",
+                    "Decillion"
+                  ]
+                },
+                "ReliabilityText": {
+                  "type": "string"
+                }
+              }
+            },
+            "SalesHighRangeAmount": {
+              "type": "object",
+              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+            },
+            "TotalAssetLowRangeAmount": {
+              "type": "object",
+              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+            },
+            "TotalAssetHighRangeAmount": {
+              "type": "object",
+              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+            },
+            "MarketCapitalizationLowRangeAmount": {
+              "type": "object",
+              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+            },
+            "MarketCapitalizationHighRangeAmount": {
+              "type": "object",
+              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+            },
+            "NetIncomeLowRangeAmount": {
+              "type": "object",
+              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+            },
+            "NetIncomeHighRangeAmount": {
+              "type": "object",
+              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+            },
+            "NetIncomeGrowthLowRangePercentage": {
+              "type": "number"
+            },
+            "NetIncomeGrowthHighRangePercentage": {
+              "type": "number"
+            },
+            "IndividualEntityEmployeeLowRangeQuantity": {
+              "type": "integer"
+            },
+            "IndividualEntityEmployeeHighRangeQuantity": {
+              "type": "integer"
+            },
+            "ConsolidatedEmployeeLowRangeQuantity": {
+              "type": "integer"
+            },
+            "ConsolidatedEmployeeHighRangeQuantity": {
+              "type": "integer"
+            },
+            "ConsolidatedEmployeesGrowthLowRangePercentage": {
+              "type": "number"
+            },
+            "ConsolidatedEmployeesGrowthHighRangePercentage": {
+              "type": "number"
+            },
+            "SalesGrowthLowRangePercentage": {
+              "type": "number"
+            },
+            "SalesGrowthHighRangePercentage": {
+              "type": "number"
+            },
+            "PremisesAreaDetail": {
+              "type": "object",
+              "id": "urn:jsonschema:com:dnb:services:entitylist:PremisesAreaDetail",
+              "properties": {
+                "PremisesAreaLowRangeMeasurement": {
+                  "type": "integer"
+                },
+                "PremisesAreaHighRangeMeasurement": {
+                  "type": "integer"
+                },
+                "OccupancyCode": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            },
+            "PubliclyTradedCompanyIndicator": {
+              "type": "boolean"
+            },
+            "UpwardFamilyMemberPubliclyTradedCompanyIndicator": {
+              "type": "boolean"
+            },
+            "StockExchangeNameCode": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "StockExchangeTickerName": {
+              "type": "string"
+            },
+            "InitialPublicOfferingFilingFromDate": {
+              "type": "integer",
+              "format": "utc-millisec"
+            },
+            "InitialPublicOfferingFilingToDate": {
+              "type": "integer",
+              "format": "utc-millisec"
+            },
+            "InitialPublicOfferingTradingFromDate": {
+              "type": "integer",
+              "format": "utc-millisec"
+            },
+            "InitialPublicOfferingTradingToDate": {
+              "type": "integer",
+              "format": "utc-millisec"
+            },
+            "InitialPublicOfferingLowRangeAmount": {
+              "type": "object",
+              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+            },
+            "InitialPublicOfferingHighRangeAmount": {
+              "type": "object",
+              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+            },
+            "InitialPublicOfferingShareValueLowRangeAmount": {
+              "type": "object",
+              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+            },
+            "InitialPublicOfferingShareValueHighRangeAmount": {
+              "type": "object",
+              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+            },
+            "ThirdPartyAssessmentTypeCode": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "SocioEconomicIdentification": {
+              "type": "object",
+              "id": "urn:jsonschema:com:dnb:services:entitylist:SearchInquirySocioEconomicType",
+              "properties": {
+                "MinorityOwnedIndicator": {
+                  "type": "boolean"
+                },
+                "FemaleOwnedIndicator": {
+                  "type": "boolean"
+                },
+                "EthnicClassificationCode": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            },
+            "KeywordText": {
+              "type": "string"
+            },
+            "OrganizationIdentificationNumberDetail": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "id": "urn:jsonschema:com:dnb:services:entitylist:OrganizationIdentificationNumberSimpleType",
+                "properties": {
+                  "OrganizationIdentificationNumber": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "TypeText": {
+                    "type": "string"
+                  },
+                  "DNBCodeValue": {
+                    "type": "integer"
+                  },
+                  "DNBCodeTableNumber": {
+                    "type": "integer"
+                  }
+                }
+              }
+            },
+            "FranchisingIndicator": {
+              "type": "boolean"
+            },
+            "ImportIndicator": {
+              "type": "boolean"
+            },
+            "ExportIndicator": {
+              "type": "boolean"
+            },
+            "ManufacturingIndicator": {
+              "type": "boolean"
+            }
+          }
+        },
+        "FindSpecification": {
+          "type": "object",
+          "id": "urn:jsonschema:com:dnb:services:entitylist:SearchCompanySpecification",
+          "properties": {
+            "InclusionCriteria": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "id": "urn:jsonschema:com:dnb:services:entitylist:InclusionCriteria",
+                "properties": {
+                  "InclusionDataDescription": {
+                    "type": "string",
+                    "enum": [
+                      "IncludeUndeliverableAddressSubject",
+                      "IncludeOutofBusiness",
+                      "IncludeIncompleteData",
+                      "IncludeNonMarketableOnly",
+                      "IncludeNonMarketable",
+                      "IncludeDelisted"
+                    ]
+                  }
+                }
+              }
+            },
+            "KeywordScopeText": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "OrganizationName",
+                  "StockExchangeTickerName"
+                ]
+              }
+            },
+            "SortBasisText": {
+              "type": "string",
+              "enum": [
+                "ConsolidatedEmployeeQuantity",
+                "CountryISOAlpha2Code",
+                "DUNSNumber",
+                "FamilyTreeMemberRole",
+                "OrganizationPrimaryName",
+                "PostalCode",
+                "PostalCodeExtensionCode",
+                "PrimaryTownName",
+                "SalesRevenueAmount",
+                "StandaloneOrganizationIndicator",
+                "StreetAddressLine",
+                "TelephoneNumber",
+                "TerritoryAbbreviatedName",
+                "TerritoryOfficialName",
+                "TradeStyleName",
+                "Relevancy",
+                "MarketabilityIndicator"
+              ]
+            },
+            "ExactLocationFindIndicator": {
+              "type": "boolean"
+            },
+            "SortDirectionText": {
+              "type": "string",
+              "enum": [
+                "Ascending",
+                "Descending"
+              ]
+            },
+            "CandidateMaximumQuantity": {
+              "type": "integer"
+            },
+            "CandidatePerPageMaximumQuantity": {
+              "type": "integer"
+            },
+            "CandidateDisplayStartSequenceNumber": {
+              "type": "integer"
+            },
+            "SearchModeDescription": {
+              "type": "string",
+              "enum": [
+                "Basic",
+                "Advanced",
+                "EmailLookup"
+              ]
+            }
+          }
+        },
+        "NavigatorSpecification": {
+          "type": "object",
+          "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequestDetail:NavigatorSpecification",
+          "properties": {
+            "ReturnSalesNavigatorIndicator": {
+              "type": "boolean"
+            },
+            "SalesNavigatorSpecification": {
+              "type": "object",
+              "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequestDetail:NavigatorSpecification:SalesNavigatorSpecification",
+              "properties": {
+                "SalesNavigatorRange": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequestDetail:NavigatorSpecification:SalesNavigatorSpecification:SalesNavigatorRange",
+                    "properties": {
+                      "SalesNavigatorLowRangeAmount": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+                      },
+                      "SalesNavigatorHighRangeAmount": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "ReturnConsolidatedEmployeeQuantityNavigatorIndicator": {
+              "type": "boolean"
+            },
+            "ConsolidatedEmployeeQuantityNavigatorSpecification": {
+              "type": "object",
+              "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequestDetail:NavigatorSpecification:ConsolidatedEmployeeQuantityNavigatorSpecification",
+              "properties": {
+                "ConsolidatedEmployeeNavigatorQuantityRange": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequestDetail:NavigatorSpecification:ConsolidatedEmployeeQuantityNavigatorSpecification:ConsolidatedEmployeeNavigatorQuantityRange",
+                    "properties": {
+                      "ConsolidatedEmployeeNavigatorLowRangeQuantity": {
+                        "type": "integer"
+                      },
+                      "ConsolidatedEmployeeNavigatorHighRangeQuantity": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "ReturnIndividualEmployeeQuantityNavigatorIndicator": {
+              "type": "boolean"
+            },
+            "IndividualEmployeeQuantityNavigatorSpecification": {
+              "type": "object",
+              "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequestDetail:NavigatorSpecification:IndividualEmployeeQuantityNavigatorSpecification",
+              "properties": {
+                "IndividualEmployeeNavigatorRange": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequestDetail:NavigatorSpecification:IndividualEmployeeQuantityNavigatorSpecification:IndividualEmployeeNavigatorRange",
+                    "properties": {
+                      "IndividualEmployeeNavigatorLowRangeQuantity": {
+                        "type": "integer"
+                      },
+                      "IndividualEmployeeNavigatorHighRangeQuantity": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "ReturnLocationNavigatorIndicator": {
+              "type": "boolean"
+            },
+            "LocationNavigatorSpecification": {
+              "type": "object",
+              "id": "urn:jsonschema:com:dnb:services:entitylist:LocationNavigatorSpecificationType",
+              "properties": {
+                "LocationNavigatorType": {
+                  "type": "array",
+                  "required": true,
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "Country",
+                      "Territory"
+                    ]
+                  }
+                }
+              }
+            },
+            "ReturnIndustryNavigatorIndicator": {
+              "type": "boolean"
+            },
+            "IndustryNavigatorSpecification": {
+              "type": "object",
+              "id": "urn:jsonschema:com:dnb:services:entitylist:IndustryNavigatorSpecificationType",
+              "properties": {
+                "IndustryTypeCode": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              }
+            },
+            "ReturnFamilyTreeMemberRoleNavigatorIndicator": {
+              "type": "boolean"
+            },
+            "ReturnStandaloneOrganizationNavigatorIndicator": {
+              "type": "boolean"
+            },
+            "ReturnControlOwnershipTypeNavigatorIndicator": {
+              "type": "boolean"
+            },
+            "ReturnUpwardFamilyMemberPubliclyTradedCompanyNavigator": {
+              "type": "boolean"
+            },
+            "ReturnPubliclyTradedCompanyNavigator": {
+              "type": "boolean"
+            }
+          }
+        },
+        "InquiryReferenceDetail": {
+          "type": "object",
+          "id": "urn:jsonschema:com:dnb:services:entitylist:InquiryReferenceDetail",
+          "properties": {
+            "CustomerReferenceText": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "CustomerBillingEndorsementText": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "TransactionDetail": {
+      "type": "object",
+      "id": "urn:jsonschema:com:dnb:services:entitylist:RequestTransactionDetail",
+      "properties": {
+        "ApplicationTransactionID": {
+          "type": "string"
+        },
+        "TransactionTimestamp": {
+          "type": "integer",
+          "format": "utc-millisec"
+        },
+        "SubmittingOfficeID": {
+          "type": "string"
+        }
+      }
+    },
+    "ServiceVersionNumber": {
+      "type": "string"
+    }
+  }
+}
