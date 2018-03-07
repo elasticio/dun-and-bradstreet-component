@@ -112,7 +112,7 @@
       }
     },
     "searchBuildAListCompany": {
-      "main": "io.elastic.dnb.ratings.actions.SearchBuildAListCompany",
+      "main": "io.elastic.dnb.entitylist.actions.SearchBuildAListCompany",
       "title": "Search & Build-a-List - Company",
       "metadata": {
         "in": "./schemas/json/EntityList/LocateCompany.in.json"
