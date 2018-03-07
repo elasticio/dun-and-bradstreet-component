@@ -1,15 +1,12 @@
 {
   "type": "object",
-  "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequest",
   "properties": {
     "FindCompanyRequestDetail": {
       "type": "object",
-      "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequestDetail",
       "required": true,
       "properties": {
         "InquiryDetail": {
           "type": "object",
-          "id": "urn:jsonschema:com:dnb:services:entitylist:SearchInquiryDetail",
           "required": true,
           "properties": {
             "DUNSNumber": {
@@ -25,7 +22,6 @@
               "type": "array",
               "items": {
                 "type": "object",
-                "id": "urn:jsonschema:com:dnb:services:entitylist:SearchWebPageAddressType",
                 "properties": {
                   "TelecommunicationAddress": {
                     "type": "string",
@@ -36,17 +32,14 @@
             },
             "Location": {
               "type": "object",
-              "id": "urn:jsonschema:com:dnb:services:entitylist:SearchLocation",
               "properties": {
                 "Address": {
                   "type": "object",
-                  "id": "urn:jsonschema:com:dnb:services:entitylist:SearchBaseAddressType",
                   "properties": {
                     "StreetAddressLine": {
                       "type": "array",
                       "items": {
                         "type": "object",
-                        "id": "urn:jsonschema:com:dnb:services:entitylist:StreetAddressLine",
                         "properties": {
                           "LineText": {
                             "type": "string",
@@ -89,7 +82,6 @@
                       "type": "array",
                       "items": {
                         "type": "object",
-                        "id": "urn:jsonschema:com:dnb:services:entitylist:SearchBaseAddressType:PostalCodeRange",
                         "properties": {
                           "PostalCodeLowRangeValue": {
                             "type": "string"
@@ -116,7 +108,6 @@
                 },
                 "RadiusDetail": {
                   "type": "object",
-                  "id": "urn:jsonschema:com:dnb:services:entitylist:RadiusSearchDetail",
                   "properties": {
                     "PostalCode": {
                       "type": "string"
@@ -144,7 +135,6 @@
                   "type": "array",
                   "items": {
                     "type": "object",
-                    "id": "urn:jsonschema:com:dnb:services:entitylist:SearchTelephoneNumber",
                     "properties": {
                       "AreaCodeNumber": {
                         "type": "string",
@@ -159,7 +149,6 @@
               "type": "array",
               "items": {
                 "type": "object",
-                "id": "urn:jsonschema:com:dnb:services:entitylist:FamilyTreeMemberRoleCodeType",
                 "properties": {
                   "FamilyTreeMemberRoleCode": {
                     "type": "integer",
@@ -173,7 +162,6 @@
             },
             "IndustryCodeDetail": {
               "type": "object",
-              "id": "urn:jsonschema:com:dnb:services:entitylist:SearchIndustryCodeType",
               "properties": {
                 "IndustryCode": {
                   "type": "array",
@@ -205,7 +193,6 @@
               "type": "array",
               "items": {
                 "type": "object",
-                "id": "urn:jsonschema:com:dnb:services:entitylist:LegalFormDetailsCodeType",
                 "properties": {
                   "LegalFormCode": {
                     "type": "integer",
@@ -255,7 +242,6 @@
               "type": "array",
               "items": {
                 "type": "object",
-                "id": "urn:jsonschema:com:dnb:services:entitylist:TypeTextStringType",
                 "properties": {
                   "value": {
                     "type": "string"
@@ -281,7 +267,6 @@
             },
             "SalesLowRangeAmount": {
               "type": "object",
-              "id": "urn:jsonschema:com:dnb:services:entitylist:AmountType",
               "properties": {
                 "value": {
                   "type": "number"
@@ -373,7 +358,6 @@
             },
             "PremisesAreaDetail": {
               "type": "object",
-              "id": "urn:jsonschema:com:dnb:services:entitylist:PremisesAreaDetail",
               "properties": {
                 "PremisesAreaLowRangeMeasurement": {
                   "type": "integer"
@@ -444,7 +428,6 @@
             },
             "SocioEconomicIdentification": {
               "type": "object",
-              "id": "urn:jsonschema:com:dnb:services:entitylist:SearchInquirySocioEconomicType",
               "properties": {
                 "MinorityOwnedIndicator": {
                   "type": "boolean"
@@ -467,7 +450,6 @@
               "type": "array",
               "items": {
                 "type": "object",
-                "id": "urn:jsonschema:com:dnb:services:entitylist:OrganizationIdentificationNumberSimpleType",
                 "properties": {
                   "OrganizationIdentificationNumber": {
                     "type": "string",
@@ -501,13 +483,11 @@
         },
         "FindSpecification": {
           "type": "object",
-          "id": "urn:jsonschema:com:dnb:services:entitylist:SearchCompanySpecification",
           "properties": {
             "InclusionCriteria": {
               "type": "array",
               "items": {
                 "type": "object",
-                "id": "urn:jsonschema:com:dnb:services:entitylist:InclusionCriteria",
                 "properties": {
                   "InclusionDataDescription": {
                     "type": "string",
@@ -586,20 +566,17 @@
         },
         "NavigatorSpecification": {
           "type": "object",
-          "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequestDetail:NavigatorSpecification",
           "properties": {
             "ReturnSalesNavigatorIndicator": {
               "type": "boolean"
             },
             "SalesNavigatorSpecification": {
               "type": "object",
-              "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequestDetail:NavigatorSpecification:SalesNavigatorSpecification",
               "properties": {
                 "SalesNavigatorRange": {
                   "type": "array",
                   "items": {
                     "type": "object",
-                    "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequestDetail:NavigatorSpecification:SalesNavigatorSpecification:SalesNavigatorRange",
                     "properties": {
                       "SalesNavigatorLowRangeAmount": {
                         "type": "object",
@@ -619,13 +596,11 @@
             },
             "ConsolidatedEmployeeQuantityNavigatorSpecification": {
               "type": "object",
-              "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequestDetail:NavigatorSpecification:ConsolidatedEmployeeQuantityNavigatorSpecification",
               "properties": {
                 "ConsolidatedEmployeeNavigatorQuantityRange": {
                   "type": "array",
                   "items": {
                     "type": "object",
-                    "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequestDetail:NavigatorSpecification:ConsolidatedEmployeeQuantityNavigatorSpecification:ConsolidatedEmployeeNavigatorQuantityRange",
                     "properties": {
                       "ConsolidatedEmployeeNavigatorLowRangeQuantity": {
                         "type": "integer"
@@ -643,13 +618,11 @@
             },
             "IndividualEmployeeQuantityNavigatorSpecification": {
               "type": "object",
-              "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequestDetail:NavigatorSpecification:IndividualEmployeeQuantityNavigatorSpecification",
               "properties": {
                 "IndividualEmployeeNavigatorRange": {
                   "type": "array",
                   "items": {
                     "type": "object",
-                    "id": "urn:jsonschema:com:dnb:services:entitylist:FindCompanyRequestDetail:NavigatorSpecification:IndividualEmployeeQuantityNavigatorSpecification:IndividualEmployeeNavigatorRange",
                     "properties": {
                       "IndividualEmployeeNavigatorLowRangeQuantity": {
                         "type": "integer"
@@ -667,7 +640,6 @@
             },
             "LocationNavigatorSpecification": {
               "type": "object",
-              "id": "urn:jsonschema:com:dnb:services:entitylist:LocationNavigatorSpecificationType",
               "properties": {
                 "LocationNavigatorType": {
                   "type": "array",
@@ -687,7 +659,6 @@
             },
             "IndustryNavigatorSpecification": {
               "type": "object",
-              "id": "urn:jsonschema:com:dnb:services:entitylist:IndustryNavigatorSpecificationType",
               "properties": {
                 "IndustryTypeCode": {
                   "type": "array",
@@ -716,7 +687,6 @@
         },
         "InquiryReferenceDetail": {
           "type": "object",
-          "id": "urn:jsonschema:com:dnb:services:entitylist:InquiryReferenceDetail",
           "properties": {
             "CustomerReferenceText": {
               "type": "array",
@@ -733,7 +703,6 @@
     },
     "TransactionDetail": {
       "type": "object",
-      "id": "urn:jsonschema:com:dnb:services:entitylist:RequestTransactionDetail",
       "properties": {
         "ApplicationTransactionID": {
           "type": "string"
