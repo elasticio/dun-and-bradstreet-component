@@ -1,9 +1,30 @@
 package io.elastic.dnb;
 
+import com.dnb.services.entitylist.FindCompanyRequest;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.AnnotationIntrospector;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.TypeFactory;
+import com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector;
+import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
+import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
+import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator;
+import com.fasterxml.jackson.module.jsonSchema.factories.SchemaFactoryWrapper;
+
 import javax.json.JsonObject;
 import javax.json.JsonString;
 
 public class Utils {
+
+    public static ObjectMapper createJaxbObjectMapper() {
+        final ObjectMapper mapper = new ObjectMapper();
+        final TypeFactory typeFactory = TypeFactory.defaultInstance();
+        final AnnotationIntrospector introspector = new JaxbAnnotationIntrospector(typeFactory);
+        mapper.getDeserializationConfig().with(introspector);
+        mapper.getSerializationConfig().with(introspector);
+        return mapper;
+    }
 
     public static final String getConfigParam(final JsonObject config, final String key) {
         final JsonString value = config.getJsonString(key);
@@ -23,5 +44,30 @@ public class Utils {
         return Utils.getConfigParam(config, AppConstants.PASSWORD_CONFIG_NAME);
     }
 
+    /**
+     * Helper main method to convert JAXB class into Json schema. To convert it just call this method
+     * and pass .class to it. Then copy and paste the output to the *.in.json file
+     *
+     * @param args
+     * @throws JsonProcessingException
+     */
+    public static void main(String[] args) throws JsonProcessingException {
+
+        convertXsdToJson(FindCompanyRequest.class);
+    }
+
+    private static void convertXsdToJson(Class clazz) throws JsonProcessingException {
+        ObjectMapper objectMapper = Utils.createJaxbObjectMapper();
+
+        //To force mapper to include JAXB annotated properties in Json schema
+        objectMapper.registerModule(new JaxbAnnotationModule());
+        SchemaFactoryWrapper visitor = new SchemaFactoryWrapper();
+        objectMapper.acceptJsonFormatVisitor(objectMapper.constructType(clazz), visitor);
+
+        JsonSchema inputSchema = visitor.finalSchema();
+        String schemaString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(inputSchema);
+
+        System.out.println(schemaString);
+    }
 
 }

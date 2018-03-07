@@ -1,8 +1,7 @@
-package io.elastic.dnb.ratings.actions;
+package io.elastic.dnb.entitylist.actions;
 
-import com.dnb.services.ratings.actions.OrderProductRequest;
-import com.dnb.services.ratings.actions.OrderProductResponse;
-import com.dnb.services.ratings.actions.ProductSpecification;
+import com.dnb.services.entitylist.FindCompanyRequest;
+import com.dnb.services.entitylist.FindCompanyResponse;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -27,11 +26,9 @@ import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
 import java.io.StringWriter;
 
-public class ViabilityRating implements Module {
+public class SearchBuildAListCompany implements Module {
 
-    protected static final Logger logger = LoggerFactory.getLogger(ViabilityRating.class);
-
-    private static final String DNBPRODUCTID = "VIAB_RAT";
+    protected static final Logger logger = LoggerFactory.getLogger(SearchBuildAListCompany.class);
 
     @SuppressWarnings("Duplicates")
     @Override
@@ -48,36 +45,24 @@ public class ViabilityRating implements Module {
         mapper.configure(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT, true);
         mapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
-
         try {
-            OrderProductRequest orderProductRequest = mapper.readValue(body.toString(), OrderProductRequest.class);
-
-            //DNBProductID MUST be equal to VIAB_RAT
-            ProductSpecification productSpecification;
-
-            if (orderProductRequest.getOrderProductRequestDetail().getProductSpecification() == null) {
-                productSpecification = new ProductSpecification();
-            } else {
-                productSpecification = orderProductRequest.getOrderProductRequestDetail().getProductSpecification();
-            }
-            productSpecification.setDNBProductID(DNBPRODUCTID);
-            orderProductRequest.getOrderProductRequestDetail().setProductSpecification(productSpecification);
+            FindCompanyRequest findCompanyRequest = mapper.readValue(body.toString(), FindCompanyRequest.class);
 
             SOAPMessage response = new GenericSOAPClient.Builder()
-                    .setRequestClass(OrderProductRequest.class)
-                    .setBodyObject(orderProductRequest)
-                    .setEndpointUrl(EndpointUrl.RATINGS)
-                    .setSoapAction(SoapAction.RATINGS)
+                    .setRequestClass(FindCompanyRequest.class)
+                    .setBodyObject(findCompanyRequest)
+                    .setEndpointUrl(EndpointUrl.ENTITY_LIST_6_4)
+                    .setSoapAction(SoapAction.FIND_COMPANY)
                     .setUsername(Utils.getUsername(configuration))
                     .setPassword(Utils.getPassword(configuration))
                     .call();
 
-            JAXBElement jaxbElement = new GenericSOAPClient.Builder().bindToJaxb(OrderProductResponse.class, response);
-            OrderProductResponse orderProductResponse = (OrderProductResponse) jaxbElement.getValue();
+            JAXBElement jaxbElement = new GenericSOAPClient.Builder().bindToJaxb(FindCompanyResponse.class, response);
+            FindCompanyResponse findCompanyResponse = (FindCompanyResponse) jaxbElement.getValue();
 
             ObjectMapper responseMapper = new ObjectMapper();
             StringWriter sw = new StringWriter();
-            responseMapper.writeValue(sw, orderProductResponse);
+            responseMapper.writeValue(sw, findCompanyResponse);
             jsonDataObject = JSON.parseObject(sw.toString());
 
             data = new Message.Builder().body(jsonDataObject).build();

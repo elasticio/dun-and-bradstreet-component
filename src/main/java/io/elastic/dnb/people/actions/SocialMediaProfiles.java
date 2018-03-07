@@ -22,7 +22,7 @@ public class SocialMediaProfiles implements Module {
     public void execute(ExecutionParameters parameters) {
 
         JsonObject configuration = parameters.getConfiguration();
-        Message data = null;
+        Message data;
 
         JsonObject body = parameters.getMessage().getBody();
         logger.info("About to call DnB API. Request message: {}", body.toString());

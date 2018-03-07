@@ -111,6 +111,13 @@
         "in": "./schemas/json/Ratings/RatingsCommon.in.json"
       }
     },
+    "searchBuildAListCompany": {
+      "main": "io.elastic.dnb.ratings.actions.SearchBuildAListCompany",
+      "title": "Search & Build-a-List - Company",
+      "metadata": {
+        "in": "./schemas/json/EntityList/LocateCompany.in.json"
+      }
+    },
     "smallBusinessMatch": {
       "main": "io.elastic.dnb.company.actions.SmallBusinessMatch",
       "title": "Small Business Match",
