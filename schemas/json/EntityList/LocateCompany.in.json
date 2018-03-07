@@ -255,8 +255,7 @@
             "UnderwriterID": {
               "type": "array",
               "items": {
-                "type": "object",
-                "$ref": "urn:jsonschema:com:dnb:services:entitylist:TypeTextStringType"
+                "type": "object"
               }
             },
             "DUNSNumberLowRangeValue": {
@@ -299,32 +298,25 @@
               }
             },
             "SalesHighRangeAmount": {
-              "type": "object",
-              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+              "type": "object"
             },
             "TotalAssetLowRangeAmount": {
-              "type": "object",
-              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+              "type": "object"
             },
             "TotalAssetHighRangeAmount": {
-              "type": "object",
-              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+              "type": "object"
             },
             "MarketCapitalizationLowRangeAmount": {
-              "type": "object",
-              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+              "type": "object"
             },
             "MarketCapitalizationHighRangeAmount": {
-              "type": "object",
-              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+              "type": "object"
             },
             "NetIncomeLowRangeAmount": {
-              "type": "object",
-              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+              "type": "object"
             },
             "NetIncomeHighRangeAmount": {
-              "type": "object",
-              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+              "type": "object"
             },
             "NetIncomeGrowthLowRangePercentage": {
               "type": "number"
@@ -405,20 +397,16 @@
               "format": "utc-millisec"
             },
             "InitialPublicOfferingLowRangeAmount": {
-              "type": "object",
-              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+              "type": "object"
             },
             "InitialPublicOfferingHighRangeAmount": {
-              "type": "object",
-              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+              "type": "object"
             },
             "InitialPublicOfferingShareValueLowRangeAmount": {
-              "type": "object",
-              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+              "type": "object"
             },
             "InitialPublicOfferingShareValueHighRangeAmount": {
-              "type": "object",
-              "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+              "type": "object"
             },
             "ThirdPartyAssessmentTypeCode": {
               "type": "array",
@@ -579,12 +567,10 @@
                     "type": "object",
                     "properties": {
                       "SalesNavigatorLowRangeAmount": {
-                        "type": "object",
-                        "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+                        "type": "object"
                       },
                       "SalesNavigatorHighRangeAmount": {
-                        "type": "object",
-                        "$ref": "urn:jsonschema:com:dnb:services:entitylist:AmountType"
+                        "type": "object"
                       }
                     }
                   }
