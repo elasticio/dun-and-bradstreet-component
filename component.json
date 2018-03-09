@@ -97,6 +97,13 @@
         "in": "./schemas/json/EntityList/FindCompetitor.in.json"
       }
     },
+    "knowYourVendor": {
+      "main": "io.elastic.dnb.customproduct.actions.KnowYourVendor",
+      "title": "Know Your Vendor",
+      "metadata": {
+        "in": "./schemas/json/CustomProduct/KnowYourVendor.in.json"
+      }
+    },
     "match": {
       "main": "io.elastic.dnb.company.actions.Match",
       "title": "Match",

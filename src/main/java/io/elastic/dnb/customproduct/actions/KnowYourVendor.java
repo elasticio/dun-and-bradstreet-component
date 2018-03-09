@@ -27,11 +27,11 @@ import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
 import java.io.StringWriter;
 
-public class SupplierRisk implements Module {
+public class KnowYourVendor implements Module {
 
-    protected static final Logger logger = LoggerFactory.getLogger(SupplierRisk.class);
+    protected static final Logger logger = LoggerFactory.getLogger(KnowYourVendor.class);
 
-    private static final String DNBPRODUCTID = "SR_GLB";
+    private static final String DNBPRODUCTID = "SR_SLJ";
 
     @SuppressWarnings("Duplicates")
     @Override
@@ -51,7 +51,7 @@ public class SupplierRisk implements Module {
         try {
             OrderProductRequest orderProductRequest = mapper.readValue(body.toString(), OrderProductRequest.class);
 
-            //DNBProductID MUST be equal to SR_GLB
+            //DNBProductID MUST be equal to SR_SLJ
             ProductSpecification productSpecification;
 
             if (orderProductRequest.getOrderProductRequestDetail().getProductSpecification() == null) {
