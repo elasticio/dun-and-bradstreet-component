@@ -132,18 +132,18 @@
         "in": "./schemas/json/CompanyService/SmallBusinessMatch.in.json"
       }
     },
+    "smallBusinessOwnerRiskProfile": {
+      "main": "io.elastic.dnb.smallbusiness.actions.OwnerRiskProfile",
+      "title": "Small Business Owner Risk Profile",
+      "metadata": {
+        "in": "./schemas/json/SmallBusiness/OwnerRiskProfile.in.json"
+      }
+    },
     "smallBusinessRiskInsight": {
       "main": "io.elastic.dnb.smallbusiness.actions.SmallBusinessRiskInsight",
       "title": "Small Business Risk Insight",
       "metadata": {
         "in": "./schemas/json/SmallBusiness/SmallBusinessRiskInsight.in.json"
-      }
-    },
-    "smallBusinessOwnerRiskProfile": {
-      "main": "io.elastic.dnb.smallbusiness.actions.OwnerRiskProfile",
-      "title": "Owner Risk Profile",
-      "metadata": {
-        "in": "./schemas/json/SmallBusiness/OwnerRiskProfile.in.json"
       }
     },
     "socialMediaProfiles": {
