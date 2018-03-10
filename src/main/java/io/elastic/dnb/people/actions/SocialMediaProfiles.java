@@ -3,6 +3,7 @@ package io.elastic.dnb.people.actions;
 import io.elastic.api.ExecutionParameters;
 import io.elastic.api.Message;
 import io.elastic.api.Module;
+import io.elastic.dnb.Utils;
 import io.elastic.dnb.rest.client.BaseUri;
 import io.elastic.dnb.rest.client.GenericRESTClient;
 import org.slf4j.Logger;
@@ -31,7 +32,7 @@ public class SocialMediaProfiles implements Module {
         String target = body.getString("Target");
         String targetValue = body.getString("TargetValue");
 
-        JsonObject responseJson = null;
+        JsonObject responseJson;
         try {
             responseJson = new GenericRESTClient.Builder()
                     .setBaseUri(BaseUri.SOCIAL_MEDIA_PROFILES.getBaseUriValue())
@@ -39,8 +40,8 @@ public class SocialMediaProfiles implements Module {
                     .setTarget(target, targetValue)
                     .setAccept(MediaType.APPLICATION_JSON)
                     .setHttpMethod(HttpMethod.GET)
-                    .setUsername("P200000E291E8762A114FBF95791A2BE")
-                    .setPassword("tcyt9ucg")
+                    .setUsername(Utils.getUsername(configuration))
+                    .setPassword(Utils.getPassword(configuration))
                     .call();
 
             data = new Message.Builder().body(responseJson).build();

@@ -39,8 +39,8 @@ public class SmallBusinessMatch implements Module {
     public void execute(ExecutionParameters parameters) {
 
         JsonObject configuration = parameters.getConfiguration();
-        Message data = null;
-        JsonObject jsonDataObject = null;
+        Message data;
+        JsonObject jsonDataObject;
 
         JsonObject body = parameters.getMessage().getBody();
         logger.info("About to call DnB API. Request message: {}", body.toString());

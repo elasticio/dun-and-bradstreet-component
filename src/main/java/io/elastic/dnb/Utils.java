@@ -27,7 +27,7 @@ public class Utils {
         return mapper;
     }
 
-    public static final String getConfigParam(final JsonObject config, final String key) {
+    public static String getConfigParam(final JsonObject config, final String key) {
         final JsonString value = config.getJsonString(key);
 
         if (value == null) {
