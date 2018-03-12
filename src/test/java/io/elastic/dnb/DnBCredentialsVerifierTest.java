@@ -1,12 +1,11 @@
 package io.elastic.dnb;
 
+import io.elastic.api.InvalidCredentialsException;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import javax.json.Json;
 import javax.json.JsonObject;
-
-import static org.junit.Assert.assertTrue;
 
 public class DnBCredentialsVerifierTest {
 
@@ -15,13 +14,15 @@ public class DnBCredentialsVerifierTest {
     @BeforeClass
     public static void initTest() {
         config = Json.createObjectBuilder()
-                .add(AppConstants.USERNAME_CONFIG_NAME, "test-username")
-                .add(AppConstants.PASSWORD_CONFIG_NAME, "test-password")
+                .add("accountName", "My Dun and Bradstreet credentials")
+                .add("username", "")
+                .add("password", "")
                 .build();
     }
 
-    @Test
-    public void getUsername() {
-        assertTrue(Utils.getUsername(config).length() > 0);
+    @Test(expected = InvalidCredentialsException.class)
+    public void throwExceptionIfEmptyCredentials() throws InvalidCredentialsException {
+        DnBCredentialsVerifier verifier = new DnBCredentialsVerifier();
+        verifier.verify(config);
     }
 }
