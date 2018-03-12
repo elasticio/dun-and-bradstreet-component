@@ -22,7 +22,6 @@ public class DnBCredentialsVerifier implements CredentialsVerifier {
 
     @Override
     public void verify(final JsonObject configuration) throws InvalidCredentialsException {
-        logger.info(configuration.toString());
         final String username = Utils.getConfigParam(configuration, AppConstants.USERNAME_CONFIG_NAME);
         logger.info("Got username = {}", username);
 
