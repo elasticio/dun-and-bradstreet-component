@@ -78,9 +78,8 @@ public class GenericSOAPClient {
 
             JAXBContext jc = JAXBContext.newInstance(clazz);
             Unmarshaller unmarshaller = jc.createUnmarshaller();
-            JAXBElement je = unmarshaller.unmarshal(xsr, clazz);
 
-            return je;
+            return unmarshaller.unmarshal(xsr, clazz);
         }
 
         /**

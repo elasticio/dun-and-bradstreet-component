@@ -38,15 +38,15 @@ public class CleanseAndStandardize implements Module {
         Message data;
         JsonObject jsonDataObject;
 
-        JsonObject body = parameters.getMessage().getBody();
-        logger.info("About to call DnB API. Request message: {}", body.toString());
+        String bodyString = parameters.getMessage().getBody().toString();
+        logger.info("About to call DnB API. Request message: {0}", bodyString);
         ObjectMapper mapper = new ObjectMapper();
 
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         mapper.configure(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT, true);
         mapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
         try {
-            CleanseAndStandardizeRequest cleanseAndStandardizeRequest = mapper.readValue(body.toString(), CleanseAndStandardizeRequest.class);
+            CleanseAndStandardizeRequest cleanseAndStandardizeRequest = mapper.readValue(bodyString, CleanseAndStandardizeRequest.class);
 
             SOAPMessage response = new GenericSOAPClient.Builder()
                     .setRequestClass(CleanseAndStandardizeRequest.class)
