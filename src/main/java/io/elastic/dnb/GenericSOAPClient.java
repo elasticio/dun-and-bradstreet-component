@@ -2,7 +2,7 @@ package io.elastic.dnb;
 
 import io.elastic.dnb.soap.client.EndpointUrl;
 import io.elastic.dnb.soap.client.SoapAction;
-import io.elastic.dnb.soap.client.WSPolicy;
+import io.elastic.dnb.soap.client.WSPolicyUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -117,7 +117,7 @@ public class GenericSOAPClient {
             SOAPMessage soapMessage = messageFactory.createMessage();
 
             createSoapEnvelope(bodyObject, soapMessage);
-            WSPolicy.addWSSEHeader(soapMessage, username, password);
+            WSPolicyUtil.addWSSEHeader(soapMessage, username, password);
 
             MimeHeaders headers = soapMessage.getMimeHeaders();
             headers.addHeader("SOAPAction", soapAction);
