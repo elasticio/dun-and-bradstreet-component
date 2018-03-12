@@ -1,69 +1,27 @@
 package io.elastic.dnb;
 
-import com.dnb.services.company.MatchRequest;
-import com.dnb.services.company.MatchResponse;
-import io.elastic.api.CredentialsVerifier;
-import io.elastic.api.InvalidCredentialsException;
-import io.elastic.dnb.soap.client.EndpointUrl;
-import io.elastic.dnb.soap.client.SoapAction;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
+import javax.json.Json;
 import javax.json.JsonObject;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
-import javax.xml.soap.SOAPException;
-import javax.xml.soap.SOAPMessage;
-import javax.xml.stream.XMLStreamException;
 
-public class DnBCredentialsVerifier implements CredentialsVerifier {
+import static org.junit.Assert.assertTrue;
 
-    private static final Logger logger = LoggerFactory.getLogger(CredentialsVerifier.class);
+public class DnBCredentialsVerifierTest {
 
-    @Override
-    public void verify(final JsonObject configuration) throws InvalidCredentialsException {
-        final String username = Utils.getConfigParam(configuration, AppConstants.USERNAME_CONFIG_NAME);
-        logger.info("Got username = {}", username);
+    private static JsonObject config;
 
-        final String password = Utils.getConfigParam(configuration, AppConstants.PASSWORD_CONFIG_NAME);
-
-        if (username.isEmpty() || password.isEmpty()) {
-            throw new InvalidCredentialsException("Username and Password can not be empty");
-        }
-
-        try {
-            final SOAPMessage response = new GenericSOAPClient.Builder()
-                                        .setRequestClass(MatchRequest.class)
-                                        .setBodyObject(buildEmptyMatchRequest())
-                                        .setEndpointUrl(EndpointUrl.COMPANY_5_0)
-                                        .setSoapAction(SoapAction.MATCH)
-                                        .setUsername(Utils.getUsername(configuration))
-                                        .setPassword(Utils.getPassword(configuration))
-                                        .call();
-            final JAXBElement jaxbElement = new GenericSOAPClient.Builder().bindToJaxb(MatchResponse.class, response);
-            final MatchResponse matchResponse = (MatchResponse) jaxbElement.getValue();
-
-            //Codes of errors:
-            //https://docs.dnb.com/direct/2.0/en-US/response-codes
-            final String resultId = matchResponse.getTransactionResult().getResultID();
-            logger.info("Got response. ResultID = {}", resultId);
-            final String resultText = matchResponse.getTransactionResult().getResultID();
-            logger.info("Got response. ResultText = {}", resultText);
-
-            //SC001-SC014 - codes of user credentials error
-            if (resultId.contains("SC")) {
-                throw new InvalidCredentialsException(resultId + ":" + resultText);
-            }
-
-        } catch (SOAPException | JAXBException e) {
-            logger.error("Oops!", e);
-            throw new RuntimeException("Oops, there some SOAP exceptions. Check logs.");
-        } catch (XMLStreamException e) {
-            logger.error("Oops!", e);
-        }
+    @BeforeClass
+    public static void initTest() {
+        config = Json.createObjectBuilder()
+                .add(AppConstants.USERNAME_CONFIG_NAME, "test-username")
+                .add(AppConstants.PASSWORD_CONFIG_NAME, "test-password")
+                .build();
     }
 
-    private static MatchRequest buildEmptyMatchRequest() {
-        return new MatchRequest();
+    @Test
+    public void getUsername() {
+        assertTrue(Utils.getUsername(config).length() > 0);
     }
 }

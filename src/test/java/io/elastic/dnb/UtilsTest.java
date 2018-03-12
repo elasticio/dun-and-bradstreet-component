@@ -18,7 +18,6 @@ public class UtilsTest {
                 .add(AppConstants.USERNAME_CONFIG_NAME, "test-username")
                 .add(AppConstants.PASSWORD_CONFIG_NAME, "test-password")
                 .build();
-
     }
 
     @Test
