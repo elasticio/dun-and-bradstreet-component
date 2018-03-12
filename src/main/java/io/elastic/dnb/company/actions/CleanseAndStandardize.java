@@ -2,7 +2,9 @@ package io.elastic.dnb.company.actions;
 
 import com.dnb.services.company.CleanseAndStandardizeRequest;
 import com.dnb.services.company.CleanseAndStandardizeResponse;
-import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.MapperFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.elastic.api.ExecutionParameters;
 import io.elastic.api.JSON;
 import io.elastic.api.Message;
@@ -30,7 +32,7 @@ public class CleanseAndStandardize implements Module {
 
     @SuppressWarnings("Duplicates")
     @Override
-    public void execute(ExecutionParameters parameters) {
+    public void execute(final ExecutionParameters parameters) {
 
         JsonObject configuration = parameters.getConfiguration();
         Message data;
@@ -66,9 +68,10 @@ public class CleanseAndStandardize implements Module {
             data = new Message.Builder().body(jsonDataObject).build();
 
         } catch (JAXBException e) {
+            logger.error("Oops!", e);
             throw new ClassCastException("Can't map JSON object to MatchRequest XML");
         } catch (IOException | XMLStreamException | SOAPException e) {
-            e.printStackTrace();
+            logger.error("Oops!", e);
             data = (new Message.Builder())
                     .body(Json.createObjectBuilder()
                             .add("result", e.getMessage())

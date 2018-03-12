@@ -18,7 +18,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.json.Json;
-import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
@@ -36,7 +35,7 @@ public class RatingsAndTrends implements Module {
 
     @SuppressWarnings("Duplicates")
     @Override
-    public void execute(ExecutionParameters parameters) {
+    public void execute(final ExecutionParameters parameters) {
 
         JsonObject configuration = parameters.getConfiguration();
         Message data;
@@ -83,9 +82,10 @@ public class RatingsAndTrends implements Module {
             data = new Message.Builder().body(jsonDataObject).build();
 
         } catch (JAXBException e) {
+            logger.error("Oops!", e);
             throw new ClassCastException("Can't map JSON object to MatchRequest XML");
         } catch (IOException | XMLStreamException | SOAPException e) {
-            e.printStackTrace();
+            logger.error("Oops!", e);
             data = (new Message.Builder())
                     .body(Json.createObjectBuilder()
                             .add("result", e.getMessage())

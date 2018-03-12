@@ -14,7 +14,7 @@ public enum EndpointUrl {
 
     private String endpointUrl;
 
-    EndpointUrl(String endpointUrl) {
+    EndpointUrl(final String endpointUrl) {
         this.endpointUrl = endpointUrl;
     }
 

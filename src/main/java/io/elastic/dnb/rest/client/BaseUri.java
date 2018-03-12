@@ -11,7 +11,7 @@ public enum BaseUri {
         return this.baseUriValue;
     }
 
-    BaseUri(String baseUriValue) {
+    BaseUri(final String baseUriValue) {
         this.baseUriValue = baseUriValue;
     }
 }

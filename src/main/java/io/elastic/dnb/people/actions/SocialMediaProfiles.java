@@ -20,7 +20,7 @@ public class SocialMediaProfiles implements Module {
     protected static final Logger logger = LoggerFactory.getLogger(io.elastic.dnb.people.actions.ContactPeopleProfiles.class);
 
     @Override
-    public void execute(ExecutionParameters parameters) {
+    public void execute(final ExecutionParameters parameters) {
 
         JsonObject configuration = parameters.getConfiguration();
         Message data;
@@ -47,7 +47,7 @@ public class SocialMediaProfiles implements Module {
             data = new Message.Builder().body(responseJson).build();
 
         } catch (InterruptedException | IOException e) {
-            e.printStackTrace();
+            logger.error("Oops!", e);
             data = (new Message.Builder())
                     .body(Json.createObjectBuilder()
                             .add("result", e.getMessage())

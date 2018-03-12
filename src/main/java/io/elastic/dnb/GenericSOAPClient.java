@@ -34,32 +34,32 @@ public class GenericSOAPClient {
         private static final String NAMESPACE_COM_URI = "http://services.dnb.com/CompanyServiceV2.0";
         private static final String NAMESPACE_COM = "com";
 
-        public Builder setRequestClass(Class requestClass) {
+        public Builder setRequestClass(final Class requestClass) {
             this.requestClass = requestClass;
             return this;
         }
 
-        public Builder setBodyObject(T bodyObject) {
+        public Builder setBodyObject(final T bodyObject) {
             this.bodyObject = bodyObject;
             return this;
         }
 
-        public Builder setUsername(String username) {
+        public Builder setUsername(final String username) {
             this.username = username;
             return this;
         }
 
-        public Builder setPassword(String password) {
+        public Builder setPassword(final String password) {
             this.password = password;
             return this;
         }
 
-        public Builder setSoapAction(SoapAction soapAction) {
+        public Builder setSoapAction(final SoapAction soapAction) {
             this.soapAction = soapAction;
             return this;
         }
 
-        public Builder setEndpointUrl(EndpointUrl endpointUrl) {
+        public Builder setEndpointUrl(final EndpointUrl endpointUrl) {
             this.endpointUrl = endpointUrl;
             return this;
         }
@@ -68,7 +68,7 @@ public class GenericSOAPClient {
             return callSoapWebService(endpointUrl.getEndpointUrl(), soapAction.getSoapActionValue());
         }
 
-        public static JAXBElement bindToJaxb(Class clazz, SOAPMessage soapResponse) throws XMLStreamException, SOAPException, JAXBException {
+        public static JAXBElement bindToJaxb(final Class clazz, final SOAPMessage soapResponse) throws XMLStreamException, SOAPException, JAXBException {
             //Unmarshall XML
             XMLInputFactory xif = XMLInputFactory.newFactory();
             XMLStreamReader xsr = xif.createXMLStreamReader(soapResponse.getSOAPPart().getContent());
@@ -89,7 +89,7 @@ public class GenericSOAPClient {
          * @param soapEndpointUrl
          * @param soapAction
          */
-        private SOAPMessage callSoapWebService(String soapEndpointUrl, String soapAction) {
+        private SOAPMessage callSoapWebService(final String soapEndpointUrl, final String soapAction) {
             SOAPMessage soapResponse = null;
             try {
                 SOAPConnectionFactory soapConnectionFactory = SOAPConnectionFactory.newInstance();
@@ -106,13 +106,12 @@ public class GenericSOAPClient {
                 soapConnection.close();
             } catch (Exception e) {
                 logger.error("\nError occurred while sending SOAP Request to Server!\nMake sure you have the correct endpoint URL and SOAPAction!\n");
-                e.printStackTrace();
             }
 
             return soapResponse;
         }
 
-        private SOAPMessage createSOAPRequest(String soapAction) throws Exception {
+        private SOAPMessage createSOAPRequest(final String soapAction) throws Exception {
             MessageFactory messageFactory = MessageFactory.newInstance();
             SOAPMessage soapMessage = messageFactory.createMessage();
 
@@ -130,7 +129,7 @@ public class GenericSOAPClient {
             return soapMessage;
         }
 
-        private void createSoapEnvelope(T soapObject, SOAPMessage soapMessage) throws SOAPException, ParserConfigurationException, JAXBException {
+        private void createSoapEnvelope(final T soapObject, final SOAPMessage soapMessage) throws SOAPException, ParserConfigurationException, JAXBException {
             SOAPPart soapPart = soapMessage.getSOAPPart();
 
             // SOAP Envelope

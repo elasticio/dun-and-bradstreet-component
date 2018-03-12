@@ -1,6 +1,7 @@
 package io.elastic.dnb;
 
-import com.dnb.services.company.*;
+import com.dnb.services.company.MatchRequest;
+import com.dnb.services.company.MatchResponse;
 import io.elastic.api.CredentialsVerifier;
 import io.elastic.api.InvalidCredentialsException;
 import io.elastic.dnb.soap.client.EndpointUrl;
@@ -20,7 +21,7 @@ public class DnBCredentialsVerifier implements CredentialsVerifier {
     private static final Logger logger = LoggerFactory.getLogger(CredentialsVerifier.class);
 
     @Override
-    public void verify(JsonObject configuration) throws InvalidCredentialsException {
+    public void verify(final JsonObject configuration) throws InvalidCredentialsException {
         final String username = Utils.getConfigParam(configuration, AppConstants.USERNAME_CONFIG_NAME);
         logger.info("Got username = {}", username);
 
@@ -31,7 +32,7 @@ public class DnBCredentialsVerifier implements CredentialsVerifier {
         }
 
         try {
-            SOAPMessage response = new GenericSOAPClient.Builder()
+            final SOAPMessage response = new GenericSOAPClient.Builder()
                                         .setRequestClass(MatchRequest.class)
                                         .setBodyObject(buildEmptyMatchRequest())
                                         .setEndpointUrl(EndpointUrl.COMPANY_5_0)
@@ -39,14 +40,14 @@ public class DnBCredentialsVerifier implements CredentialsVerifier {
                                         .setUsername(Utils.getUsername(configuration))
                                         .setPassword(Utils.getPassword(configuration))
                                         .call();
-            JAXBElement jaxbElement = new GenericSOAPClient.Builder().bindToJaxb(MatchResponse.class, response);
-            MatchResponse matchResponse = (MatchResponse) jaxbElement.getValue();
+            final JAXBElement jaxbElement = new GenericSOAPClient.Builder().bindToJaxb(MatchResponse.class, response);
+            final MatchResponse matchResponse = (MatchResponse) jaxbElement.getValue();
 
             //Codes of errors:
             //https://docs.dnb.com/direct/2.0/en-US/response-codes
-            String resultId = matchResponse.getTransactionResult().getResultID();
+            final String resultId = matchResponse.getTransactionResult().getResultID();
             logger.info("Got response. ResultID = {}", resultId);
-            String resultText = matchResponse.getTransactionResult().getResultID();
+            final String resultText = matchResponse.getTransactionResult().getResultID();
             logger.info("Got response. ResultText = {}", resultText);
 
             //SC001-SC014 - codes of user credentials error
@@ -55,10 +56,10 @@ public class DnBCredentialsVerifier implements CredentialsVerifier {
             }
 
         } catch (SOAPException | JAXBException e) {
-            e.printStackTrace();
+            logger.error("Oops!", e);
             throw new RuntimeException("Oops, there some SOAP exceptions. Check logs.");
         } catch (XMLStreamException e) {
-            e.printStackTrace();
+            logger.error("Oops!", e);
         }
     }
 

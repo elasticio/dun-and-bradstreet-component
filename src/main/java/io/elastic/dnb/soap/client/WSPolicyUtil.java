@@ -1,5 +1,8 @@
 package io.elastic.dnb.soap.client;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPMessage;
 import javax.xml.soap.SOAPElement;
@@ -11,6 +14,8 @@ import javax.xml.soap.SOAPException;
 import java.security.GeneralSecurityException;
 
 public class WSPolicyUtil {
+
+    protected static final Logger logger = LoggerFactory.getLogger(WSPolicyUtil.class);
 
     //Private constructor to prevent instantiation. Since utility classes should not be instantiated
     private WSPolicyUtil() {}
@@ -34,7 +39,7 @@ public class WSPolicyUtil {
      * @param soapMessage
      * @return
      */
-    public static SOAPHeader addWSSEHeader(SOAPMessage soapMessage, String login, String password) throws GeneralSecurityException {
+    public static SOAPHeader addWSSEHeader(final SOAPMessage soapMessage, final String login, final String password) throws GeneralSecurityException {
 
         if (login == null || login.isEmpty()) {
             throw new GeneralSecurityException("Login and password can not be empty");
@@ -72,7 +77,7 @@ public class WSPolicyUtil {
             header = envelope.addHeader();
             header.addChildElement(securityElem);
         } catch (SOAPException e) {
-            e.printStackTrace();
+            logger.error("Oops!", e);
         }
         return header;
     }

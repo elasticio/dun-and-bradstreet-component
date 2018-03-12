@@ -21,7 +21,7 @@ public enum SoapAction {
         return this.soapActionValue;
     }
 
-    SoapAction(String soapActionValue) {
+    SoapAction(final String soapActionValue) {
         this.soapActionValue = soapActionValue;
     }
 }

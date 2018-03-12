@@ -7,9 +7,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringReader;
-import java.net.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Map;
-import java.util.HashMap;
 
 import javax.json.Json;
 import javax.json.JsonObject;
@@ -141,11 +141,12 @@ public class GenericRESTClient {
             StringBuilder sb = new StringBuilder();
             String output;
 
-            BufferedReader br = new BufferedReader(new InputStreamReader(
-                    (conn.getInputStream())));
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(
+                    (conn.getInputStream())))) {
 
-            while ((output = br.readLine()) != null) {
-                sb.append(output);
+                while ((output = br.readLine()) != null) {
+                    sb.append(output);
+                }
             }
 
             conn.disconnect();
@@ -185,11 +186,12 @@ public class GenericRESTClient {
             StringBuilder sb = new StringBuilder();
             String output;
 
-            BufferedReader br = new BufferedReader(new InputStreamReader(
-                    (conn.getInputStream())));
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(
+                    (conn.getInputStream())))) {
 
-            while ((output = br.readLine()) != null) {
-                sb.append(output);
+                while ((output = br.readLine()) != null) {
+                    sb.append(output);
+                }
             }
 
             logger.info("GenericRESTClient. REST Response from server: {}", sb.toString());

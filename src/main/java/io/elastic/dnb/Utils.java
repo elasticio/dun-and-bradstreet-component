@@ -1,16 +1,13 @@
 package io.elastic.dnb;
 
 import com.dnb.services.customproduct.OrderProductRequest;
-import com.dnb.services.entitylist.FindCompanyRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.AnnotationIntrospector;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 import com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector;
 import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
-import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator;
 import com.fasterxml.jackson.module.jsonSchema.factories.SchemaFactoryWrapper;
 
 import javax.json.JsonObject;
@@ -61,7 +58,7 @@ public class Utils {
         convertXsdToJson(OrderProductRequest.class);
     }
 
-    private static void convertXsdToJson(Class clazz) throws JsonProcessingException {
+    private static void convertXsdToJson(final Class clazz) throws JsonProcessingException {
         ObjectMapper objectMapper = Utils.createJaxbObjectMapper();
 
         //To force mapper to include JAXB annotated properties in Json schema

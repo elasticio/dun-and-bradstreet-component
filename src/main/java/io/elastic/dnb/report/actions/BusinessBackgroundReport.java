@@ -32,7 +32,7 @@ public class BusinessBackgroundReport implements Module {
 
     @SuppressWarnings("Duplicates")
     @Override
-    public void execute(ExecutionParameters parameters) {
+    public void execute(final ExecutionParameters parameters) {
 
         JsonObject configuration = parameters.getConfiguration();
         Message data;
@@ -68,9 +68,10 @@ public class BusinessBackgroundReport implements Module {
             data = new Message.Builder().body(jsonDataObject).build();
 
         } catch (JAXBException e) {
+            logger.error("Oops!", e);
             throw new ClassCastException("Can't map JSON object to MatchRequest XML");
         } catch (IOException | XMLStreamException | SOAPException e) {
-            e.printStackTrace();
+            logger.error("Oops!", e);
             data = (new Message.Builder())
                     .body(Json.createObjectBuilder()
                             .add("result", e.getMessage())
