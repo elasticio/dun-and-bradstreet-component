@@ -18,6 +18,9 @@ import javax.json.JsonString;
 
 public class Utils {
 
+    //Private constructor to prevent instantiation. Since utility classes should not be instantiated
+    private Utils() {}
+
     public static ObjectMapper createJaxbObjectMapper() {
         final ObjectMapper mapper = new ObjectMapper();
         final TypeFactory typeFactory = TypeFactory.defaultInstance();
@@ -46,7 +49,8 @@ public class Utils {
     }
 
     /**
-     * Helper main method to convert JAXB class into Json schema. To convert it just call this method
+     * Helper main method to convert JAXB class into Json schema.
+     * To convert it just call this method
      * and pass .class to it. Then copy and paste the output to the *.in.json file
      *
      * @param args

@@ -10,7 +10,10 @@ import javax.xml.soap.SOAPException;
 
 import java.security.GeneralSecurityException;
 
-public class WSPolicy {
+public class WSPolicyUtil {
+
+    //Private constructor to prevent instantiation. Since utility classes should not be instantiated
+    private WSPolicyUtil() {}
 
     private static final String WSS_TOKEN_URL = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText";
     private static final String WSS_TOKEN_XSD = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd";
