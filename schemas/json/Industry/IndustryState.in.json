@@ -1,0 +1,124 @@
+{
+  "type": "object",
+  "properties": {
+    "OrderProductRequestDetail": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "InquiryDetail": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "IndustryCode": {
+              "type": "object",
+              "properties": {
+                "IndustryCode": {
+                  "type": "string",
+                  "required": true
+                },
+                "DNBCodeTableNumber": {
+                  "type": "integer"
+                },
+                "DNBCodeValue": {
+                  "type": "integer"
+                },
+                "TypeText": {
+                  "type": "string"
+                }
+              }
+            },
+            "Location": {
+              "type": "object",
+              "properties": {
+                "ISOCountrySubDivisionCode": {
+                  "type": "string",
+                  "required": true
+                }
+              }
+            }
+          }
+        },
+        "ProductSpecification": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "DNBProductID": {
+              "type": "string",
+              "required": true
+            },
+            "LanguagePreferenceCode": {
+              "type": "integer"
+            },
+            "ProfileChapterName": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "IndustryOverview",
+                  "QuarterlyIndustryUpdate",
+                  "BusinessChallenges",
+                  "TrendsAndOpportunities",
+                  "ExecutiveInsight",
+                  "CallPreparationQuestions",
+                  "FinancialInformation",
+                  "IndustryForecast",
+                  "IndustryWebsites",
+                  "GlossaryOfAcronyms",
+                  "IndustryIndicators",
+                  "FastFacts",
+                  "All"
+                ]
+              }
+            }
+          }
+        },
+        "ArchiveDetail": {
+          "type": "object",
+          "properties": {
+            "ArchiveProductOptOutIndicator": {
+              "type": "boolean"
+            },
+            "ExtendArchivePeriodIndicator": {
+              "type": "boolean"
+            },
+            "PortfolioAssetContainerID": {
+              "type": "integer"
+            }
+          }
+        },
+        "InquiryReferenceDetail": {
+          "type": "object",
+          "properties": {
+            "CustomerReferenceText": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "CustomerBillingEndorsementText": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "TransactionDetail": {
+      "type": "object",
+      "properties": {
+        "ApplicationTransactionID": {
+          "type": "string"
+        },
+        "TransactionTimestamp": {
+          "type": "integer",
+          "format": "utc-millisec"
+        },
+        "SubmittingOfficeID": {
+          "type": "string"
+        }
+      }
+    },
+    "ServiceVersionNumber": {
+      "type": "string"
+    }
+  }
+}

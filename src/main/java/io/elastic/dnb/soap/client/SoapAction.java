@@ -9,6 +9,7 @@ public enum SoapAction {
     FIRMOGRAPHICS("http://services.dnb.com/FirmographicsProductService/V6.1/OrderProduct"),
     FIND_COMPANY("http://services.dnb.com/EntityListService/V6.4/FindCompany"),
     GET_CLEANSE_MATCH("http://services.dnb.com/CompanyService/V5.0/GetCleanseMatch"),
+    INDUSTRY_PRODUCT("http://services.dnb.com/IndustryProductService/V4.0/OrderProduct"),
     MATCH("http://services.dnb.com/CompanyService/V5.0/Match"),
     NEWS_AND_MEDIA_PRODUCT("http://services.dnb.com/NewsAndMediaProductService/V3.0/OrderProduct"),
     RATINGS("http://services.dnb.com/AssessmentProductService/V5.0/OrderProduct"),

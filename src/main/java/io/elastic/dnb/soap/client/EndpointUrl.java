@@ -7,6 +7,7 @@ public enum EndpointUrl {
     CUSTOM_PRODUCT("https://direct.dnb.com/CustomProduct/V3.1"),
     ENTITY_LIST_6_4("https://direct.dnb.com/EntityList/V6.4"),
     FIRMOGRAPHICS("https://direct.dnb.com/FirmographicsProduct/V6.1"),
+    INDUSTRY_PRODUCT("https://direct.dnb.com/IndustryProduct/V4.0"),
     NEWS_AND_MEDIA_PRODUCT_3_0("https://direct.dnb.com/NewsAndMediaProduct/V3.0"),
     RATINGS("https://direct.dnb.com/AssessmentProduct/V5.0"),
     REPORT_PRODUCT("https://direct.dnb.com/ReportProduct/V3.2"),
