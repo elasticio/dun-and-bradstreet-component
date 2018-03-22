@@ -71,7 +71,7 @@
     },
     "findCompetitors": {
       "main": "io.elastic.dnb.entitylist.actions.FindCompetitor",
-      "title": "Find Competitor",
+      "title": "Find Competitors",
       "metadata": {
         "in": "./schemas/json/EntityList/FindCompetitor.in.json"
       }
