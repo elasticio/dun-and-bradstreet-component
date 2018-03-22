@@ -1,6 +1,7 @@
 package io.elastic.dnb;
 
 import com.dnb.services.customproduct.OrderProductRequest;
+import com.dnb.services.entitylist.FindCompetitorRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.AnnotationIntrospector;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -55,7 +56,7 @@ public class Utils {
      */
     public static void main(String[] args) throws JsonProcessingException {
 
-        convertXsdToJson(OrderProductRequest.class);
+        convertXsdToJson(FindCompetitorRequest.class);
     }
 
     private static void convertXsdToJson(final Class clazz) throws JsonProcessingException {

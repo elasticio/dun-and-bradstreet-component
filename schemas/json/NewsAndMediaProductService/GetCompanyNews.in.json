@@ -20,9 +20,9 @@
       "properties": {
         "inquiryDetail": {
           "type": "object",
+          "required": true,
           "properties": {
             "dunsNumber": {
-              "required": true,
               "type": "string"
             },
             "countryIsoAlpha2Code": {
@@ -32,6 +32,7 @@
         },
         "productSpecification": {
           "type": "object",
+          "required": true,
           "properties": {
             "dnbProductId": {
               "type": "string"

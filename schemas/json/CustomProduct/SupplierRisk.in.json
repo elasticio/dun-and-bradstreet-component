@@ -41,8 +41,7 @@
               "type": "object",
               "properties": {
                 "OrganizationIdentificationNumber": {
-                  "type": "string",
-                  "required": true
+                  "type": "string"
                 },
                 "DNBCodeTableNumber": {
                   "type": "integer"

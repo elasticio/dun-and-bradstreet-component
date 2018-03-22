@@ -20,6 +20,7 @@
       "properties": {
         "inquiryDetail": {
           "type": "object",
+          "required": true,
           "properties": {
             "dunsNumber": {
               "required": true,
@@ -40,6 +41,7 @@
         },
         "productSpecification": {
           "type": "object",
+          "required": true,
           "properties": {
             "dnbProductId": {
               "required": true,

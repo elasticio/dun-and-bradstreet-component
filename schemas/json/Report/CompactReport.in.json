@@ -17,9 +17,11 @@
     },
     "orderCompanyReportRequestDetail": {
       "type": "object",
+      "required": true,
       "properties": {
         "inquiryDetail": {
           "type": "object",
+          "required": true,
           "properties": {
             "dunsNumber": {
               "type": "string"
@@ -42,6 +44,7 @@
         },
         "productSpecification": {
           "type": "object",
+          "required": true,
           "properties": {
             "dnbProductId": {
               "required": true,

@@ -20,10 +20,10 @@
       "properties": {
         "inquiryDetail": {
           "type": "object",
+          "required": true,
           "properties": {
             "dunsNumber": {
-              "type": "string",
-              "required": true
+              "type": "string"
             },
             "subjectId": {
               "type": "string"
@@ -35,6 +35,7 @@
         },
         "productSpecification": {
           "type": "object",
+          "required": true,
           "properties": {
             "dnbProductId": {
               "type": "string"

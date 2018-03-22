@@ -17,13 +17,14 @@
     },
     "MatchRequestDetail": {
       "type": "object",
+      "required": true,
       "properties": {
         "InquiryDetail": {
           "type": "object",
+          "required": true,
           "properties": {
             "DUNSNumber": {
-              "type": "string",
-              "required": true
+              "type": "string"
             },
             "SubjectName": {
               "type": "string"
@@ -35,7 +36,8 @@
                   "type": "object",
                   "properties": {
                     "LineText": {
-                      "type": "string"
+                      "type": "string",
+                      "required": true
                     }
                   }
                 },
@@ -57,7 +59,8 @@
               "type": "object",
               "properties": {
                 "TelecommunicationNumber": {
-                  "type": "string"
+                  "type": "string",
+                  "required": true
                 },
                 "InternationalDialingCode": {
                   "type": "string"
@@ -68,7 +71,8 @@
               "type": "object",
               "properties": {
                 "OrganizationIdentificationNumber": {
-                  "type": "string"
+                  "type": "string",
+                  "required": true
                 }
               }
             }

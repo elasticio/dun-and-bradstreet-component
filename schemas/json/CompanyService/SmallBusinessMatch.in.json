@@ -17,13 +17,14 @@
     },
     "MatchRequestDetail": {
       "type": "object",
+      "required": true,
       "properties": {
         "InquiryDetail": {
           "type": "object",
+          "required": true,
           "properties": {
             "DUNSNumber": {
-              "type": "string",
-              "required": true
+              "type": "string"
             },
             "SubjectName": {
               "type": "string"

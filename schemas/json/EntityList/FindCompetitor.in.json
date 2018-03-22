@@ -1,54 +1,61 @@
 {
   "type": "object",
   "properties": {
-    "transactionDetail": {
+    "FindCompetitorRequestDetail": {
       "type": "object",
+      "required": true,
       "properties": {
-        "applicationTransactionID": {
-          "type": "string"
-        },
-        "transactionTimestamp": {
-          "type": "string"
-        },
-        "submittingOfficeID": {
-          "type": "string"
-        }
-      }
-    },
-    "findCompetitorRequestDetail": {
-      "type": "object",
-      "properties": {
-        "inquiryDetail": {
+        "InquiryDetail": {
           "type": "object",
+          "required": true,
           "properties": {
-            "dunsnumber": {
-              "type": "string"
+            "DUNSNumber": {
+              "type": "string",
+              "required": true
             }
           }
         },
-        "findCompetitorSpecification": {
+        "FindCompetitorSpecification": {
           "type": "object",
           "properties": {
-            "returnOnlyTopCompetitorIndicator": {
+            "ReturnOnlyTopCompetitorIndicator": {
               "type": "boolean"
             }
           }
         },
-        "inquiryReferenceDetail": {
+        "InquiryReferenceDetail": {
           "type": "object",
           "properties": {
-            "customerReferenceText": {
+            "CustomerReferenceText": {
               "type": "array",
               "items": {
                 "type": "string"
               }
             },
-            "customerBillingEndorsementText": {
+            "CustomerBillingEndorsementText": {
               "type": "string"
             }
           }
         }
       }
+    },
+    "TransactionDetail": {
+      "type": "object",
+      "properties": {
+        "ApplicationTransactionID": {
+          "type": "string"
+        },
+        "TransactionTimestamp": {
+          "type": "integer",
+          "format": "utc-millisec"
+        },
+        "SubmittingOfficeID": {
+          "type": "string"
+        }
+      }
+    },
+    "ServiceVersionNumber": {
+      "type": "string"
     }
   }
 }

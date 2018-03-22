@@ -90,13 +90,6 @@
         "in": "./schemas/json/NewsAndMediaProductService/GetCompanyNews.in.json"
       }
     },
-    "getIndustryForStateProvince": {
-      "main": "io.elastic.dnb.industry.actions.IndustryState",
-      "title": "Research - State/Province",
-      "metadata": {
-        "in": "./schemas/json/Industry/IndustryState.in.json"
-      }
-    },
     "knowYourVendor": {
       "main": "io.elastic.dnb.customproduct.actions.KnowYourVendor",
       "title": "Know Your Vendor",
@@ -116,6 +109,13 @@
       "title": "Ratings and Trends",
       "metadata": {
         "in": "./schemas/json/Ratings/RatingsCommon.in.json"
+      }
+    },
+    "getIndustryForStateProvince": {
+      "main": "io.elastic.dnb.industry.actions.IndustryState",
+      "title": "Research - State/Province",
+      "metadata": {
+        "in": "./schemas/json/Industry/IndustryState.in.json"
       }
     },
     "searchBuildAListCompany": {

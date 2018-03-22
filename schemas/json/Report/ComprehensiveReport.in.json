@@ -20,6 +20,7 @@
       "properties": {
         "inquiryDetail": {
           "type": "object",
+          "required": true,
           "properties": {
             "dunsNumber": {
               "type": "string"
