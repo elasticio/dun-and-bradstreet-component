@@ -255,7 +255,7 @@
             "UnderwriterID": {
               "type": "array",
               "items": {
-                "type": "object"
+                "type": "string"
               }
             },
             "DUNSNumberLowRangeValue": {
@@ -298,25 +298,25 @@
               }
             },
             "SalesHighRangeAmount": {
-              "type": "object"
+              "type": "string"
             },
             "TotalAssetLowRangeAmount": {
-              "type": "object"
+              "type": "string"
             },
             "TotalAssetHighRangeAmount": {
-              "type": "object"
+              "type": "string"
             },
             "MarketCapitalizationLowRangeAmount": {
-              "type": "object"
+              "type": "string"
             },
             "MarketCapitalizationHighRangeAmount": {
-              "type": "object"
+              "type": "string"
             },
             "NetIncomeLowRangeAmount": {
-              "type": "object"
+              "type": "string"
             },
             "NetIncomeHighRangeAmount": {
-              "type": "object"
+              "type": "string"
             },
             "NetIncomeGrowthLowRangePercentage": {
               "type": "number"
@@ -397,16 +397,16 @@
               "format": "utc-millisec"
             },
             "InitialPublicOfferingLowRangeAmount": {
-              "type": "object"
+              "type": "string"
             },
             "InitialPublicOfferingHighRangeAmount": {
-              "type": "object"
+              "type": "string"
             },
             "InitialPublicOfferingShareValueLowRangeAmount": {
-              "type": "object"
+              "type": "string"
             },
             "InitialPublicOfferingShareValueHighRangeAmount": {
-              "type": "object"
+              "type": "string"
             },
             "ThirdPartyAssessmentTypeCode": {
               "type": "array",
@@ -567,10 +567,10 @@
                     "type": "object",
                     "properties": {
                       "SalesNavigatorLowRangeAmount": {
-                        "type": "object"
+                        "type": "string"
                       },
                       "SalesNavigatorHighRangeAmount": {
-                        "type": "object"
+                        "type": "string"
                       }
                     }
                   }
