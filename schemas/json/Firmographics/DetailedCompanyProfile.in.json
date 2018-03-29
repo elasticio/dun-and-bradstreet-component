@@ -1,111 +1,97 @@
 {
-  "type": "object",
-  "properties": {
-    "transactionDetail": {
-      "type": "object",
-      "properties": {
-        "applicationTransactionId": {
-          "type": "string"
+  "type" : "object",
+  "properties" : {
+    "OrderProductRequestDetail" : {
+      "type" : "object",
+      "properties" : {
+        "InquiryDetail" : {
+          "type" : "object",
+          "required" : true,
+          "properties" : {
+            "DUNSNumber" : {
+              "type" : "string",
+              "required" : true
+            },
+            "CountryISOAlpha2Code" : {
+              "type" : "string"
+            }
+          }
         },
-        "transactionTimestamp": {
-          "type": "string"
+        "ProductSpecification" : {
+          "type" : "object",
+          "required" : true,
+          "properties" : {
+            "DNBProductID" : {
+              "type" : "string",
+              "required" : true
+            },
+            "LanguagePreferenceCode" : {
+              "type" : "integer"
+            },
+            "CharacterSetPreferenceCode" : {
+              "type" : "integer"
+            },
+            "TradeUpIndicator" : {
+              "type" : "boolean"
+            },
+            "ReturnOnlyInDateDataIndicator" : {
+              "type" : "boolean"
+            },
+            "OrderReasonCode" : {
+              "type" : "integer"
+            },
+            "ReturnTransferredToDUNSIndicator" : {
+              "type" : "boolean"
+            }
+          }
         },
-        "submittingOfficeId": {
-          "type": "string"
+        "ArchiveDetail" : {
+          "type" : "object",
+          "properties" : {
+            "ArchiveProductOptOutIndicator" : {
+              "type" : "boolean"
+            },
+            "ExtendArchivePeriodIndicator" : {
+              "type" : "boolean"
+            },
+            "PortfolioAssetContainerID" : {
+              "type" : "integer"
+            }
+          }
+        },
+        "InquiryReferenceDetail" : {
+          "type" : "object",
+          "properties" : {
+            "CustomerReferenceText" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              }
+            },
+            "CustomerBillingEndorsementText" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "TransactionDetail" : {
+      "type" : "object",
+      "properties" : {
+        "ApplicationTransactionID" : {
+          "type" : "string"
+        },
+        "TransactionTimestamp" : {
+          "type" : "integer",
+          "format" : "utc-millisec"
+        },
+        "SubmittingOfficeID" : {
+          "type" : "string"
         }
       }
     },
-    "orderProductRequestDetail": {
-      "type": "object",
-      "required": true,
-      "properties": {
-        "inquiryDetail": {
-          "type": "object",
-          "required": true,
-          "properties": {
-            "dunsNumber": {
-              "type": "string"
-            },
-            "countryIsoAlpha2Code": {
-              "type": "string"
-            },
-            "principalIdentificationNumberDetail": {
-              "type": "object",
-              "properties": {
-                "principalIdentificationNumber": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        },
-        "productSpecification": {
-          "type": "object",
-          "required": true,
-          "properties": {
-            "dnbProductId": {
-              "required": true,
-              "type": "array",
-              "enum": [
-                "DCP_STD",
-                "DCP_PREM"
-              ]
-            },
-            "languagePreferenceCode": {
-              "type": "string"
-            },
-            "characterSetPreferenceCode": {
-              "type": "string"
-            },
-            "productFormatPreferenceCode": {
-              "type": "string"
-            },
-            "tradeUpIndicator": {
-              "type": "boolean"
-            },
-            "currencyPreferenceIsoAlpha3Code": {
-              "type": "string"
-            },
-            "returnOnlyInDateDataIndicator": {
-              "type": "boolean"
-            },
-            "orderReasonCode": {
-              "type": "string"
-            },
-            "returnConnectMailDataIndicator": {
-              "type": "boolean"
-            }
-          }
-        },
-        "archiveDetail": {
-          "type": "object",
-          "properties": {
-            "archiveProductOptOutIndicator": {
-              "type": "boolean"
-            },
-            "extendArchivePeriodIndicator": {
-              "type": "boolean"
-            },
-            "portfolioAssetContainerId": {
-              "type": "string"
-            }
-          }
-        },
-        "inquiryReferenceDetail": {
-          "type": "object",
-          "properties": {
-            "customerReferenceText": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "customerBillingEndorsementText": {
-              "type": "string"
-            }
-          }
-        }
-      }
+    "ServiceVersionNumber" : {
+      "type" : "string"
     }
   }
 }
