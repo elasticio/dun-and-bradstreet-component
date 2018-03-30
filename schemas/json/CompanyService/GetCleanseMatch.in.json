@@ -36,8 +36,7 @@
                   "type": "object",
                   "properties": {
                     "lineText": {
-                      "type": "string",
-                      "required": true
+                      "type": "string"
                     }
                   }
                 },
@@ -68,11 +67,9 @@
             },
             "organizationIdentificationNumberDetail": {
               "type": "string",
-              "required": true,
               "properties": {
                 "OrganizationIdentificationNumber": {
-                  "type": "string",
-                  "required": true
+                  "type": "string"
                 }
               }
             }
@@ -92,7 +89,6 @@
               "properties": {
                 "exclusionDataDescription": {
                   "type": "array",
-                  "required": true,
                   "enum": [
                     "Exact Match",
                     "Exclude Non HeadQuarters",

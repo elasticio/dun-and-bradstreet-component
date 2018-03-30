@@ -28,7 +28,6 @@
             },
             "address": {
               "type": "object",
-              "required": true,
               "properties": {
                 "streetAddressLine": {
                   "type": "array",
@@ -36,8 +35,7 @@
                     "type": "object",
                     "properties": {
                       "lineText": {
-                        "type": "string",
-                        "required": true
+                        "type": "string"
                       }
                     }
                   }
@@ -46,8 +44,7 @@
                   "type": "string"
                 },
                 "countryIsoAlpha2Code": {
-                  "type": "string",
-                  "required": true
+                  "type": "string"
                 },
                 "countyName": {
                   "type": "string"
