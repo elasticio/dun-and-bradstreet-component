@@ -25,53 +25,33 @@ import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
 import java.io.StringWriter;
 
-public class GetCleanseMatch{//} implements Module {
+public class GetCleanseMatch implements Module {
 
     protected static final Logger logger = LoggerFactory.getLogger(GetCleanseMatch.class);
 
-//    @SuppressWarnings("Duplicates")
-//    @Override
-//    public void execute(final ExecutionParameters parameters) {
-public static void main(String[] args) throws IOException {
+    @SuppressWarnings("Duplicates")
+    @Override
+    public void execute(final ExecutionParameters parameters) {
 
-
-//        JsonObject configuration = parameters.getConfiguration();
+        JsonObject configuration = parameters.getConfiguration();
         Message data;
         JsonObject jsonDataObject;
 
-        String bodyString = "{\n"
-            + " \"getCleanseMatchRequestDetail\": {\n"
-            + "    \"inquiryDetail\": {\n"
-            + "      \"dunsNumber\": \"804735132\",\n"
-            + "      \"subjectName\": \"Gorman Corporation\",\n"
-            + "      \"telephoneNumber\": {\n"
-            + "        \"telecommunicationNumber\": \"984562123\"\n"
-            + "      },\n"
-            + "      \"organizationIdentificationNumberDetail\": \"789654123\"\n"
-            + "    }\n"
-            + "  }\n"
-            + "}";
-
-
-//        JsonObject body = parameters.getMessage().getBody();
-//        logger.info("About to call DnB API. Request message: {}", body.toString());
+        JsonObject body = parameters.getMessage().getBody();
+        logger.info("About to call DnB API. Request message: {}", body.toString());
         ObjectMapper mapper = new ObjectMapper();
 
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
-//        JsonObject body = mapper.readValue(bodyString, GetCleanseMatchRequest.class);
         try {
-//            GetCleanseMatchRequest getCleanseMatchRequest = mapper.readValue(body.toString(), GetCleanseMatchRequest.class);
-            GetCleanseMatchRequest getCleanseMatchRequest = mapper.readValue(bodyString, GetCleanseMatchRequest.class);
+            GetCleanseMatchRequest getCleanseMatchRequest = mapper.readValue(body.toString(), GetCleanseMatchRequest.class);
 
             SOAPMessage response = new GenericSOAPClient.Builder()
                     .setRequestClass(GetCleanseMatchRequest.class)
                     .setBodyObject(getCleanseMatchRequest)
                     .setEndpointUrl(EndpointUrl.COMPANY_5_0)
                     .setSoapAction(SoapAction.GET_CLEANSE_MATCH)
-//                    .setUsername(Utils.getUsername(configuration))
-                    .setUsername("P2000000C49DC06FDA0481EAD1AE30A9")
-//                    .setPassword(Utils.getPassword(configuration))
-                    .setPassword("tcyt9ucg")
+                    .setUsername(Utils.getUsername(configuration))
+                    .setPassword(Utils.getPassword(configuration))
                     .call();
 
             JAXBElement jaxbElement = new GenericSOAPClient.Builder().bindToJaxb(GetCleanseMatchResponse.class, response);
@@ -81,8 +61,6 @@ public static void main(String[] args) throws IOException {
             StringWriter sw = new StringWriter();
             responseMapper.writeValue(sw, getCleanseMatchResponse);
             jsonDataObject = JSON.parseObject(sw.toString());
-
-      System.out.println(jsonDataObject.toString());
 
             data = new Message.Builder().body(jsonDataObject).build();
 
@@ -96,10 +74,10 @@ public static void main(String[] args) throws IOException {
                             .add("result", e.getMessage())
                             .build())
                     .build();
-//            parameters.getEventEmitter().emitException(e);
+            parameters.getEventEmitter().emitException(e);
         }
 
-//        parameters.getEventEmitter().emitData(data);
+        parameters.getEventEmitter().emitData(data);
 
     }
 
