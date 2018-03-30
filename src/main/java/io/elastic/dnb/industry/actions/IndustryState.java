@@ -5,6 +5,7 @@ import com.dnb.services.industry.OrderProductResponse;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
 import io.elastic.api.ExecutionParameters;
 import io.elastic.api.JSON;
 import io.elastic.api.Message;
@@ -40,6 +41,8 @@ public class IndustryState implements Module {
     JsonObject body = parameters.getMessage().getBody();
     logger.info("About to call D&B API. Request message: {}", body.toString());
     ObjectMapper mapper = new ObjectMapper();
+
+    mapper.registerModule(new JaxbAnnotationModule());
 
     mapper.configure(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT, true);
     mapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);

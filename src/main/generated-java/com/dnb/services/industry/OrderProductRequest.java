@@ -11,6 +11,7 @@ package com.dnb.services.industry;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -41,6 +42,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "OrderProductRequest", propOrder = {
     "orderProductRequestDetail"
 })
+@XmlRootElement(name = "OrderProductRequest")
 public class OrderProductRequest
     extends Request
 {
