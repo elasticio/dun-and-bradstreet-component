@@ -66,7 +66,7 @@
               }
             },
             "organizationIdentificationNumberDetail": {
-              "type": "string",
+              "type": "object",
               "properties": {
                 "OrganizationIdentificationNumber": {
                   "type": "string"
