@@ -38,7 +38,10 @@
           "required": true,
           "properties": {
             "dnbProductId": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "SBRI_ENH"
+              ]
             },
             "languagePreferenceCode": {
               "type": "string"

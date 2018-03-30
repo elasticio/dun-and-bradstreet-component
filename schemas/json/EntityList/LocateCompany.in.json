@@ -24,8 +24,7 @@
                 "type": "object",
                 "properties": {
                   "TelecommunicationAddress": {
-                    "type": "string",
-                    "required": true
+                    "type": "string"
                   }
                 }
               }
@@ -42,8 +41,7 @@
                         "type": "object",
                         "properties": {
                           "LineText": {
-                            "type": "string",
-                            "required": true
+                            "type": "string"
                           }
                         }
                       }
@@ -116,12 +114,10 @@
                       "type": "string"
                     },
                     "RadiusMeasurement": {
-                      "type": "number",
-                      "required": true
+                      "type": "number"
                     },
                     "RadiusMeasurementUnitCode": {
-                      "type": "integer",
-                      "required": true
+                      "type": "integer"
                     },
                     "LatitudeMeasurement": {
                       "type": "number"
@@ -137,8 +133,7 @@
                     "type": "object",
                     "properties": {
                       "AreaCodeNumber": {
-                        "type": "string",
-                        "required": true
+                        "type": "string"
                       }
                     }
                   }
@@ -151,8 +146,7 @@
                 "type": "object",
                 "properties": {
                   "FamilyTreeMemberRoleCode": {
-                    "type": "integer",
-                    "required": true
+                    "type": "integer"
                   }
                 }
               }
@@ -195,8 +189,7 @@
                 "type": "object",
                 "properties": {
                   "LegalFormCode": {
-                    "type": "integer",
-                    "required": true
+                    "type": "integer"
                   }
                 }
               }
@@ -440,8 +433,7 @@
                 "type": "object",
                 "properties": {
                   "OrganizationIdentificationNumber": {
-                    "type": "string",
-                    "required": true
+                    "type": "string"
                   },
                   "TypeText": {
                     "type": "string"
@@ -629,7 +621,6 @@
               "properties": {
                 "LocationNavigatorType": {
                   "type": "array",
-                  "required": true,
                   "items": {
                     "type": "string",
                     "enum": [

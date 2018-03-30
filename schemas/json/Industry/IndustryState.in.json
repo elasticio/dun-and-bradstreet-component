@@ -13,8 +13,7 @@
               "type": "object",
               "properties": {
                 "IndustryCode": {
-                  "type": "string",
-                  "required": true
+                  "type": "string"
                 },
                 "DNBCodeTableNumber": {
                   "type": "integer"
@@ -43,8 +42,7 @@
           "required": true,
           "properties": {
             "DNBProductID": {
-              "type": "string",
-              "required": true
+              "type": "string"
             },
             "LanguagePreferenceCode": {
               "type": "integer"

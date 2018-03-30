@@ -36,8 +36,7 @@
                   "type": "object",
                   "properties": {
                     "LineText": {
-                      "type": "string",
-                      "required": true
+                      "type": "string"
                     }
                   }
                 },
@@ -59,8 +58,7 @@
               "type": "object",
               "properties": {
                 "TelecommunicationNumber": {
-                  "type": "string",
-                  "required": true
+                  "type": "string"
                 },
                 "InternationalDialingCode": {
                   "type": "string"
@@ -71,8 +69,7 @@
               "type": "object",
               "properties": {
                 "OrganizationIdentificationNumber": {
-                  "type": "string",
-                  "required": true
+                  "type": "string"
                 }
               }
             }

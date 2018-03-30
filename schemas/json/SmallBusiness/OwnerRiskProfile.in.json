@@ -1,85 +1,98 @@
 {
   "type": "object",
   "properties": {
-    "transactionDetail": {
+    "OrderProductRequestDetail": {
       "type": "object",
       "properties": {
-        "applicationTransactionId": {
-          "type": "string"
-        },
-        "transactionTimestamp": {
-          "type": "string"
-        },
-        "submittingOfficeId": {
-          "type": "string"
-        }
-      }
-    },
-    "orderProductRequestDetail": {
-      "type": "object",
-      "properties": {
-        "inquiryDetail": {
+        "InquiryDetail": {
           "type": "object",
           "required": true,
           "properties": {
-            "dunsNumber": {
-              "type": "string"
+            "DUNSNumber": {
+              "type": "string",
+              "required": true
             },
-            "countryIsoAlpha2Code": {
+            "CountryISOAlpha2Code": {
               "type": "string"
             }
           }
         },
-        "productSpecification": {
+        "ProductSpecification": {
           "type": "object",
           "required": true,
           "properties": {
-            "languagePreferenceCode": {
-              "type": "string"
+            "DNBProductID": {
+              "type": "string",
+              "required": true,
+              "type": "array",
+              "enum": [
+                "SBCRP"
+              ]
             },
-            "characterSetPreferenceCode": {
-              "type": "string"
+            "LanguagePreferenceCode": {
+              "type": "integer"
             },
-            "tradeUpIndicator": {
+            "CharacterSetPreferenceCode": {
+              "type": "integer"
+            },
+            "TradeUpIndicator": {
               "type": "boolean"
             },
-            "returnOnlyInDateDataIndicator": {
+            "ReturnOnlyInDateDataIndicator": {
               "type": "boolean"
             },
-            "orderReasonCode": {
-              "type": "string"
+            "OrderReasonCode": {
+              "type": "integer"
             }
           }
         },
-        "archiveDetail": {
+        "ArchiveDetail": {
           "type": "object",
           "properties": {
-            "archiveProductOptOutIndicator": {
+            "ArchiveProductOptOutIndicator": {
               "type": "boolean"
             },
-            "extendArchivePeriodIndicator": {
+            "ExtendArchivePeriodIndicator": {
               "type": "boolean"
             },
-            "portfolioAssetContainerId": {
-              "type": "string"
+            "PortfolioAssetContainerID": {
+              "type": "integer"
             }
           }
         },
-        "inquiryReferenceDetail": {
+        "InquiryReferenceDetail": {
           "type": "object",
           "properties": {
-            "customerReferenceText": {
+            "CustomerReferenceText": {
               "type": "array",
               "items": {
                 "type": "string"
               }
             },
-            "customerBillingEndorsementText": {
+            "CustomerBillingEndorsementText": {
               "type": "string"
             }
           }
         }
       }
+    },
+    "TransactionDetail": {
+      "type": "object",
+      "properties": {
+        "ApplicationTransactionID": {
+          "type": "string"
+        },
+        "TransactionTimestamp": {
+          "type": "integer",
+          "format": "utc-millisec"
+        },
+        "SubmittingOfficeID": {
+          "type": "string"
+        }
+      }
+    },
+    "ServiceVersionNumber": {
+      "type": "string"
     }
   }
 }

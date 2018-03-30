@@ -31,8 +31,6 @@ public class OwnerRiskProfile implements Module {
 
     protected static final Logger logger = LoggerFactory.getLogger(OwnerRiskProfile.class);
 
-    private static final String DNBPRODUCTID = "SBCRP";
-
     @SuppressWarnings("Duplicates")
     @Override
     public void execute(final ExecutionParameters parameters) {
@@ -50,17 +48,6 @@ public class OwnerRiskProfile implements Module {
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         try {
             OrderProductRequest orderProductRequest = mapper.readValue(body.toString(), OrderProductRequest.class);
-
-            //DNBProductID MUST be equal to SBCRP
-            ProductSpecification productSpecification;
-
-            if (orderProductRequest.getOrderProductRequestDetail().getProductSpecification() == null) {
-                productSpecification = new ProductSpecification();
-            } else {
-                productSpecification = orderProductRequest.getOrderProductRequestDetail().getProductSpecification();
-            }
-            productSpecification.setDNBProductID(DNBPRODUCTID);
-            orderProductRequest.getOrderProductRequestDetail().setProductSpecification(productSpecification);
 
             SOAPMessage response = new GenericSOAPClient.Builder()
                     .setRequestClass(OrderProductRequest.class)

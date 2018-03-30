@@ -59,8 +59,7 @@
               "type": "object",
               "properties": {
                 "telecommunicationNumber": {
-                  "type": "string",
-                  "required": true
+                  "type": "string"
                 },
                 "internationalDialingCode": {
                   "type": "string"

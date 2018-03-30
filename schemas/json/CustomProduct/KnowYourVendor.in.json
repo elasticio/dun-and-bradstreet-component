@@ -41,8 +41,7 @@
               "type": "object",
               "properties": {
                 "OrganizationIdentificationNumber": {
-                  "type": "string",
-                  "required": true
+                  "type": "string"
                 },
                 "DNBCodeTableNumber": {
                   "type": "integer"
@@ -59,8 +58,7 @@
               "type": "object",
               "properties": {
                 "FilingOrganizationName": {
-                  "type": "string",
-                  "required": true
+                  "type": "string"
                 },
                 "FilingLocation": {
                   "type": "object",
@@ -72,8 +70,7 @@
                       }
                     },
                     "CountryISOAlpha2Code": {
-                      "type": "string",
-                      "required": true
+                      "type": "string"
                     }
                   }
                 },
@@ -83,8 +80,7 @@
                     "type": "object",
                     "properties": {
                       "FilingTypeCode": {
-                        "type": "integer",
-                        "required": true
+                        "type": "integer"
                       },
                       "FilingRolePlayerTypeCode": {
                         "type": "array",
@@ -112,8 +108,7 @@
               "type": "object",
               "properties": {
                 "IndustryCode": {
-                  "type": "string",
-                  "required": true
+                  "type": "string"
                 },
                 "DNBCodeTableNumber": {
                   "type": "integer"
@@ -156,8 +151,7 @@
                     "type": "object",
                     "properties": {
                       "LineText": {
-                        "type": "string",
-                        "required": true
+                        "type": "string"
                       },
                       "DisplaySequence": {
                         "type": "integer"
@@ -296,8 +290,7 @@
                     "type": "object",
                     "properties": {
                       "TelecommunicationNumber": {
-                        "type": "string",
-                        "required": true
+                        "type": "string"
                       },
                       "InternationalDialingCode": {
                         "type": "string"
@@ -314,12 +307,10 @@
               "type": "object",
               "properties": {
                 "QueueName": {
-                  "type": "string",
-                  "required": true
+                  "type": "string"
                 },
                 "QueueID": {
-                  "type": "string",
-                  "required": true
+                  "type": "string"
                 }
               }
             },
@@ -364,7 +355,6 @@
                 "properties": {
                   "OrganizationName": {
                     "type": "object",
-                    "required": true,
                     "properties": {
                       "value": {
                         "type": "string"
@@ -398,8 +388,7 @@
                 "type": "object",
                 "properties": {
                   "OrganizationName": {
-                    "type": "string",
-                    "required": true
+                    "type": "string"
                   },
                   "StartDate": {
                     "type": "object"
@@ -417,7 +406,6 @@
         },
         "ProductSpecification": {
           "type": "object",
-          "required": true,
           "properties": {
             "LanguagePreferenceCode": {
               "type": "integer"
@@ -718,19 +706,16 @@
             "type": "object",
             "properties": {
               "CreditBureauName": {
-                "type": "string",
-                "required": true
+                "type": "string"
               },
               "SubscriberNumber": {
-                "type": "string",
-                "required": true
+                "type": "string"
               },
               "SubscriberPasswordText": {
                 "type": "string"
               },
               "PermissiblePurposeValue": {
-                "type": "string",
-                "required": true
+                "type": "string"
               },
               "EndUserName": {
                 "type": "string"
