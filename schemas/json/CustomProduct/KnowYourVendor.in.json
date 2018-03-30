@@ -407,6 +407,13 @@
         "ProductSpecification": {
           "type": "object",
           "properties": {
+            "DnbProductId": {
+              "required": true,
+              "type": "array",
+              "enum": [
+                "SR_SLJ"
+              ]
+            },
             "LanguagePreferenceCode": {
               "type": "integer"
             },

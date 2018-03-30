@@ -408,6 +408,13 @@
           "type": "object",
           "required": true,
           "properties": {
+            "DnbProductId": {
+              "required": true,
+              "type": "array",
+              "enum": [
+                "SR_GLB"
+              ]
+            },
             "LanguagePreferenceCode": {
               "type": "integer"
             },
