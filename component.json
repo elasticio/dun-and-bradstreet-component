@@ -2,6 +2,7 @@
   "title": "Dun and Bradstreet",
   "description": "Dun and Bradstreet - Master Data Hierarchy, Credit Check, MDR Database",
   "language": "java",
+  "buildType": "docker",
   "credentials": {
     "fields": {
       "username": {
