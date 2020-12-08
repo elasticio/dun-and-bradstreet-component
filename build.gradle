@@ -33,7 +33,6 @@ repositories {
     mavenLocal()
 }
 
-
 dependencies {
     compile 'io.elastic:sailor-jvm:3.3.1'
     compile 'javax.ws.rs:javax.ws.rs-api:2.0'
@@ -71,6 +70,13 @@ buildscript {
     }
     dependencies {
         classpath 'org.owasp:dependency-check-gradle:6.0.3'
+    }
+}
+
+task downloadDependencies() {
+    description 'Download all dependencies to the Gradle cache'
+    doLast {
+        configurations.findAll { it.canBeResolved }.files
     }
 }
 
