@@ -47,7 +47,8 @@ public class SocialMediaProfiles implements Function {
       data = new Message.Builder().body(responseJson).build();
 
     } catch (InterruptedException | IOException e) {
-      logger.error("Oops!", e.getMessage());
+      logger.error(
+          "Oops! There was an error trying to call the SOAP API. See the emitted error message for the details");
       data = (new Message.Builder())
           .body(Json.createObjectBuilder()
               .add("result", e.getMessage())

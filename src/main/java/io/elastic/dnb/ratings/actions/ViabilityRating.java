@@ -89,7 +89,8 @@ public class ViabilityRating implements Function {
       logger.error("Can't map JSON object to MatchRequest XML");
       throw new ClassCastException("Can't map JSON object to MatchRequest XML");
     } catch (IOException | XMLStreamException | SOAPException e) {
-      logger.error("Oops!", e.getMessage());
+      logger.error(
+          "Oops! There was an error trying to call the SOAP API. See the emitted error message for the details");
       data = (new Message.Builder())
           .body(Json.createObjectBuilder()
               .add("result", e.getMessage())
