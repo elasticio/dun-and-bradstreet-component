@@ -163,7 +163,7 @@ public class GenericRESTClient {
                     .setPassword(password)
                     .authCall();
 
-            logger.info("Got auth token {} from the D&B Server", authToken);
+            logger.debug("Got auth token from the D&B Server");
         }
 
         //Main Connection
@@ -171,7 +171,7 @@ public class GenericRESTClient {
 
             URL url = new URL(baseUri + "person?" + target + "=" + targetValue);
 
-            logger.info("About to open connection to {}", url.toString());
+            logger.debug("About to open connection to the URL");
 
             conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod(httpMethod);
@@ -193,8 +193,6 @@ public class GenericRESTClient {
                     sb.append(output);
                 }
             }
-
-            logger.info("GenericRESTClient. REST Response from server: {}", sb.toString());
 
             conn.disconnect();
 
