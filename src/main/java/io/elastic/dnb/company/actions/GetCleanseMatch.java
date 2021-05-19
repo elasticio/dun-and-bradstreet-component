@@ -2,6 +2,7 @@ package io.elastic.dnb.company.actions;
 
 import com.dnb.services.company.GetCleanseMatchRequest;
 import com.dnb.services.company.GetCleanseMatchResponse;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.elastic.api.ExecutionParameters;
@@ -21,6 +22,7 @@ public class GetCleanseMatch implements Function {
 
     ObjectMapper mapper = new ObjectMapper();
     mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
+    mapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
 
     GenericSOAPClient.callService(parameters, GetCleanseMatchRequest.class,
         GetCleanseMatchResponse.class, EndpointUrl.COMPANY_5_0,
