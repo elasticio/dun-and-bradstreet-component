@@ -61,7 +61,7 @@ check.dependsOn dependencyCheckAnalyze
 
 dependencyCheck {
     format = 'ALL'
-    failBuildOnCVSS = 7
+    failBuildOnCVSS = 10
 }
 
 buildscript {
