@@ -1,3 +1,6 @@
+## 1.0.2 (May 20, 2021)
+* Fix bug in Cleanse and Match action when a single field was not treated as array item 
+
 ## 1.0.1 (December 7, 2020)
 
 * Upgrade sailor to 3.3.1

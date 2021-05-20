@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.elastic.api.ExecutionParameters;
 import io.elastic.api.Function;
 import io.elastic.dnb.GenericSOAPClient;
+import io.elastic.dnb.Utils;
 import io.elastic.dnb.soap.client.EndpointUrl;
 import io.elastic.dnb.soap.client.SoapAction;
 import org.slf4j.Logger;
@@ -19,11 +20,8 @@ public class FindCompetitor implements Function {
   @Override
   public void execute(final ExecutionParameters parameters) {
 
-    ObjectMapper mapper = new ObjectMapper();
-    mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
-
     GenericSOAPClient.callService(parameters, FindCompetitorRequest.class,
         FindCompetitorResponse.class, EndpointUrl.ENTITY_LIST_6_4,
-        SoapAction.FIND_COMPETITOR, mapper);
+        SoapAction.FIND_COMPETITOR, Utils.getConfiguredObjectMapper());
   }
 }
