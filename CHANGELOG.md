@@ -1,4 +1,4 @@
-## 1.0.2 (May 20, 2021)
+## 1.0.2 (May 21, 2021)
 * Fix bug in Cleanse and Match action when a single field was not treated as array item 
 
 ## 1.0.1 (December 7, 2020)
