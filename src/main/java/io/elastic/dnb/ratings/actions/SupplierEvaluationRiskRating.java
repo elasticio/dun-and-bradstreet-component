@@ -43,13 +43,8 @@ public class SupplierEvaluationRiskRating implements Function {
 
     JsonObject body = parameters.getMessage().getBody();
     logger.info("About to call DnB API with the request message");
-    ObjectMapper mapper = new ObjectMapper();
-
-    mapper.configure(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT, true);
-    mapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
-    mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
     try {
-      OrderProductRequest orderProductRequest = mapper
+      OrderProductRequest orderProductRequest = Utils.getConfiguredObjectMapper()
           .readValue(body.toString(), OrderProductRequest.class);
 
       //DNBProductID MUST be equal to SER
