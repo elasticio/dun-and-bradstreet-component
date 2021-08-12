@@ -57,23 +57,6 @@ dependencies {
     testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
 }
 
-// TODO uncomment when nist site will be online
-//check.dependsOn dependencyCheckAnalyze
-//
-//dependencyCheck {
-//    format = 'ALL'
-//    failBuildOnCVSS = 7
-//}
-
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'org.owasp:dependency-check-gradle:6.0.3'
-    }
-}
-
 task downloadDependencies() {
     description 'Download all dependencies to the Gradle cache'
     doLast {
