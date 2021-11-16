@@ -201,3 +201,5 @@ No triggers.
 [Viability Rating documentation](https://docs.dnb.com/direct/2.0/en-US/assessment/latest/orderproduct/viability-soap-API)
 
 
+## License
+Apache-2.0 © [elastic.io GmbH](https://www.elastic.io "elastic.io GmbH")

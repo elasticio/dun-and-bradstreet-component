@@ -1,4 +1,8 @@
-# 1.0.3 August 12, 2021)
+# 1.0.4 (November 16, 2021)
+* added LICENSE
+* removed version from build.gradle
+
+# 1.0.3 (August 12, 2021)
 * Fix build
 
 ## 1.0.2 (May 21, 2021)
