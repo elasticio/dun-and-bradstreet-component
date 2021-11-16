@@ -1,6 +1,6 @@
 # 1.0.4 (November 16, 2021)
-* added LICENSE
-* removed version from build.gradle
+* Add Apache-2.0 LICENSE
+* Remove a version field from build.gradle
 
 # 1.0.3 (August 12, 2021)
 * Fix build
