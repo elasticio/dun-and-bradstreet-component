@@ -1,3 +1,6 @@
+# 1.0.5 (May 17, 2023)
+* Update gradle wrapper
+
 # 1.0.4 (November 16, 2021)
 * Add Apache-2.0 LICENSE
 * Remove a version field from build.gradle
