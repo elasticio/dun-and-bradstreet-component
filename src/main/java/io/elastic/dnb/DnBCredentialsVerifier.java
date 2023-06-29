@@ -6,7 +6,7 @@ import io.elastic.api.CredentialsVerifier;
 import io.elastic.api.InvalidCredentialsException;
 import io.elastic.dnb.soap.client.EndpointUrl;
 import io.elastic.dnb.soap.client.SoapAction;
-import javax.json.JsonObject;
+import jakarta.json.JsonObject;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.soap.SOAPException;

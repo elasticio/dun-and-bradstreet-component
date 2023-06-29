@@ -1,8 +1,8 @@
 package io.elastic.dnb;
 
 import io.elastic.api.InvalidCredentialsException;
-import javax.json.Json;
-import javax.json.JsonObject;
+import jakarta.json.Json;
+import jakarta.json.JsonObject;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
