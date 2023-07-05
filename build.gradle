@@ -32,7 +32,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'io.elastic:sailor-jvm:4.0.1-SNAPSHOT'
+    implementation 'io.elastic:sailor-jvm:4.0.1'
     implementation 'javax.ws.rs:javax.ws.rs-api:2.0'
     implementation 'com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.11.0'
     implementation 'com.fasterxml.jackson.module:jackson-module-paranamer:2.11.0'

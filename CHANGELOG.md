@@ -1,3 +1,6 @@
+# 1.0.6 (July 07, 2023)
+* Bump Sailor to 4.0.1
+
 # 1.0.5 (May 17, 2023)
 * Update gradle wrapper
 
