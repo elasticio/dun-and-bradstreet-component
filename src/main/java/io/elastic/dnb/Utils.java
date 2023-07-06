@@ -10,8 +10,8 @@ import com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector;
 import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
 import com.fasterxml.jackson.module.jsonSchema.factories.SchemaFactoryWrapper;
-import javax.json.JsonObject;
-import javax.json.JsonString;
+import jakarta.json.JsonObject;
+import jakarta.json.JsonString;
 
 public class Utils {
 
